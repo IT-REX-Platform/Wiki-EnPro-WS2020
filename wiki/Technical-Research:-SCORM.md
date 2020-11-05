@@ -4,7 +4,7 @@
 
 SCORM is a standard for eLearning courses. A SCORM compliant course can be used with different Learning Management Systems (LMS), provided the LMS is also SCOMR compliant. 
 
-SCORM relies on HTML, CSS and Javascript to present content. This has the advantage that there are no limits on what can be created and how a course can be designed. 
+SCORM relies on HTML, CSS and Javascript to present content. This has the advantage that there are no limits on what can be created and how a course can be designed.
 
 A Javascript API that is implemented by the LMS is used to communicate between the SCORM course and the LMS. It provides the following functions:
 
