@@ -2,7 +2,7 @@
   "menu": {
     "item": "{{#levelRepeat}}  {{/levelRepeat}}* [{{{title}}}]({{{link}}})\n",
     "category": "{{#levelRepeat}}  {{/levelRepeat}}* {{#link}}[{{{title}}}]({{{link}}}){{/link}}{{^link}}{{{title}}}{{/link}}\n{{{subitems}}}",
-    "category-1": "![IT-Rex Logo](./ITRex-Logo-ob.svg | width=100)\n\n{{{subitems}}}\n"
+    "category-1": "![IT-Rex Logo](./ITRex-Logo-ob.png)\n\n{{{subitems}}}\n"
   },
   "rules": {
     "exclude": [],
