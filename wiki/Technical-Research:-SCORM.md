@@ -20,7 +20,7 @@ GetLastError() : CMIErrorCode
 GetErrorString( errorCode : CMIErrorCode ) : string
 GetDiagnostic( errocCode : CMIErrorCode ) : string
 ```
- 
+
 SCORM 1.1 / SCORM 1.2:
 
 ``` javascript
