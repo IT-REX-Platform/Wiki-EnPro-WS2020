@@ -21,7 +21,7 @@ jobs:
         # Make sure you have that / at the end. We use rsync 
         # WIKI_DIR's default is wiki/
         WIKI_DIR: wiki/
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GH_MAIL: marcelfrederik@aol.de
+        GH_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        GH_MAIL: ${{ secrets.WIKI_MAIL }}
         GH_NAME: ${{ github.repository_owner }}
         EXCLUDED_FILES: "a/ b.md"
