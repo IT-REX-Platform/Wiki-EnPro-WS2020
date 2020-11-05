@@ -2,7 +2,7 @@
 
 ## What is SCORM
 
-SCORM is a standard for eLearning courses. A SCORM compliant course can be used with different Learning Management Systems (LMS), provided the LMS is also SCOMR compliant. 
+SCORM is a standard for eLearning courses. A SCORM compliant course can be used with different Learning Management Systems (LMS), provided the LMS is also SCOMR compliant.
 
 SCORM relies on HTML, CSS and Javascript to present content. This has the advantage that there are no limits on what can be created and how a course can be designed.
 
