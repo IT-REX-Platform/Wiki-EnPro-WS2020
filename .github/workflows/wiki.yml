@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Push Wiki Changes
-      uses: IT-REX-Platform/github-wiki-action 
+      uses: IT-REX-Platform/github-wiki-action@8aafa352433296bfa91f84a0c25f2c8b6d22f097
       env:
         # Make sure you have that / at the end. We use rsync 
         # WIKI_DIR's default is wiki/
