@@ -1,4 +1,4 @@
-Welcome to the Wiki wiki!
+Welcome to the IT-Rex wiki!
 
 [Glossary](Glossary/Glossary)
 
