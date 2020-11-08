@@ -1,5 +1,7 @@
 Welcome to the IT-Rex wiki!
 
-[Glossary](Glossary/Glossary)
+[How to Wiki](./HowToWiki)
 
-[Technical Research](Technical-Research/Technical-Research)
+[Glossary](./Glossary)
+
+[Technical Research](./Technical-Research)
