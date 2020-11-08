@@ -11,7 +11,6 @@ FileName = {Category}, STRING, ".md";
 Category = STRING, ":-";
 ```
 
-White spaces are not allowed and ":-" separates categories. The name that is displayed in the navigation is parsed from the heading of the file.
-In this case the heading is "# How to Wiki". This leads to "How to Wiki" being displayed in the navigation.
+White spaces are not allowed and ":-" separates categories. The name that is displayed in the navigation is parsed from the last part of the fime name. "-" are exchanged by white spaces.
 
 **Important note**: The GitHub Action that creates the navigation and pushes the changes to the real wiki repository (GitHub uses another repository to display the wiki pages) is only triggered when something changes in the /wiki directory and only if the changes are pushed to the so called ["main"](https://www.zdnet.com/article/github-to-replace-master-with-main-starting-next-month/) branch.
