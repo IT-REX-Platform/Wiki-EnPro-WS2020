@@ -1,6 +1,6 @@
 Welcome to the IT-Rex wiki!
 
-[How to Wiki](./HowToWiki)
+[How to Wiki](./How-To-Wiki)
 
 [Glossary](./Glossary)
 
