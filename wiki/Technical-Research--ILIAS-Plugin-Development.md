@@ -78,16 +78,20 @@ Nach Beispielquery eines aktiven ILIAS-Servers mit integriertem REST-Plugin.
 | GET    | v1/admin/describe/:id                                                      | ADMIN                       |
 | GET    | v1/admin/desktop/overview                                                  | ADMIN                       |
 | ...    | (mehr admin routes)                                                        | ...                         |
+|        |                                                                            |                             |
 | GET    | v1/biblio/:ref_id                                                          | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/cal/events/:user_id                                                     | OAuth PER                   |
 | GET    | v1/cal/icalurl/:user_id                                                    | OAuth PER                   |
 | GET    | v1/cal/events                                                              | OAuth PER                   |
 | GET    | v1/cal/icalurl                                                             | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/contacts                                                                | OAuth PER                   |
 | POST   | v1/contacts/add                                                            | OAuth PER                   |
 | DELETE | v1/contacts/:addr_id                                                       | OAuth PER                   |
 | PUT    | v1/contacts/:addr_id                                                       | OAuth PER                   |
 | GET    | v1/contacts/:user_id                                                       | ADMIN                       |
+|        |                                                                            |                             |
 | GET    | v1/courses                                                                 | OAuth PER                   |
 | GET    | v1/courses/:ref_id                                                         | OAuth PER                   |
 | POST   | v1/courses                                                                 | OAuth PER                   |
@@ -95,49 +99,64 @@ Nach Beispielquery eines aktiven ILIAS-Servers mit integriertem REST-Plugin.
 | POST   | v1/courses/enroll                                                          | ADMIN                       |
 | GET    | v1/courses/join/:ref_id                                                    | OAuth PER                   |
 | GET    | v1/courses/leave/:ref_id                                                   | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/courses/export/create/:ref_id                                           | OAuth PER                   |
 | GET    | v1/courses/export/download/:ref_id                                         | OAuth PER                   |
 | GET    | v1/courses/export/list/:ref_id                                             | OAuth PER                   |
 | GET    | v1/courses/searchCourse/:ref_id                                            | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v2/courses/course/:refid                                                   | OAuth PER                   |
 | PUT    | v2/courses/course/:refid                                                   | OAuth PER                   |
 | POST   | v2/courses/course                                                          | OAuth PER                   |
 | DELETE | v2/courses/course/:refid                                                   | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v2/courses/participants/:refid                                             | OAuth PER                   |
 | GET    | v2/courses/participants/:type/:refid                                       | OAuth PER                   |
 | GET    | v2/courses/participant/:refid/:userid                                      | OAuth PER                   |
 | GET    | v2/courses/participant/:type/:refid/:userid                                | OAuth PER                   |
 | POST   | v2/courses/participant/:type/:refid/:userid                                | OAuth PER                   |
 | DELETE | v2/courses/participant/:refid/:userid                                      | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/desktop/overview                                                        | OAuth PER                   |
 | DELETE | v1/desktop/overview                                                        | OAuth PER                   |
 | POST   | v1/desktop/overview                                                        | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/ebook                                                                   | OAuth TOKEN                 |
 | ...    | (mehr ebook-Routes)                                                        | ...                         |
+|        |                                                                            |                             |
 | GET    | v1/files/:id                                                               | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/groups                                                                  | OAuth PER                   |
 | GET    | v1/groups/:ref_id                                                          | OAuth PER                   |
 | GET    | v1/groups/join/:ref_id                                                     | OAuth PER                   |
 | GET    | v1/groups/leave/:ref_id                                                    | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/ilias-app/desktop                                                       | OAuth TOKEN                 |
 | ...    | (mehr ilias-app Routes <br>// TODO: sind die eingebaut oder ein Plugin?)   | ...                         |
+|        |                                                                            |                             |
 | GET    | v1/learning-module/:refId                                                  | OAuth TOKEN                 |
 | GET    | v1/learning/:ref_id                                                        | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/learning/objectives/:ref_id                                             | OAuth PER                   |
 | GET    | v1/learning/objectives/:ref_id/:user_id                                    | OAuth PER                   |
 | GET    | v1/learning/objectives/:ref_id/:user_id/:objective_id                      | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/learning/scos/:ref_id                                                   | OAuth PER                   |
 | GET    | v1/learning/scos/:ref_id/:user_id                                          | OAuth PER                   |
 | GET    | v1/learning/scos/:ref_id/:user_id/:sco_id                                  | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/learning/progress/:ref_id                                               | OAuth PER                   |
 | GET    | v1/learning/progress/:ref_id/:user_id                                      | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/m/feedbackdrop                                                          | OAuth PER                   |
 | ...    | (mehr m-Routes <br>// TODO: was genau ist der "m"-Teil der Route? Module?) | ...                         |
+|        |                                                                            |                             |
 | GET    | v1/questionpools/getQuestions/:ref_id                                      | OAuth PER                   |
 | GET    | v1/questionpools/getQuestionsWithAnswers/:ref_id                           | OAuth PER                   |
 | GET    | v1/questionpools/getTextAnswers/:ref_id                                    | OAuth PER                   |
 | GET    | v1/questionpools/getSingleChoiceAnswers/:ref_id                            | OAuth PER                   |
 | GET    | v1/questionpools/getMultipleChoiceAnswers/:ref_id                          | OAuth PER                   |
+|        |                                                                            |                             |
 | GET    | v1/tests/routesAccess                                                      | --                          |
 | GET    | v1/tests/download/:ref_id                                                  | OAuth PER                   |
 | GET    | v1/tests/:ref_id                                                           | OAuth PER                   |
