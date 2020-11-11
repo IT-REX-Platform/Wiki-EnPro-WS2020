@@ -37,7 +37,7 @@ LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
 A SCORM package contain a _imsmanifest.xml_ that describes Resources, metadate and how the course is organized.
 The smallest completable unit in SCORM is the "Shareable Content Object" (SCO). They may be launched in their own frame, frameset or in a pop-up window and communicate with the LMS through the provided API object. This API object is searched by the SCO wth a simple standardized algorithm. It's supposed to be in a parent window of the SCOs window.
 
-![SCORM API](Rustici_scorm_diagram-1.png)
+![SCORM API](./Images/Rustici_scorm_diagram-1.png)
 
 ## Sources
 

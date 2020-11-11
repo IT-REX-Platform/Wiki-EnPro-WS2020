@@ -15,7 +15,7 @@ https://ionicframework.com/resources/articles/ionic-vs-flutter-comparison-guide
 
 ##  Cross-platform mobile frameworks used by software developers worldwide in 2019 and 2020 
 
-![Cross-platform mobile frameworks used by software developers worldwide in 2019 and 2020](./Graphics/statistic_id869224_cross-platform-mobile-frameworks-used-by-developers-worldwide-2019-and-2020.png)
+![Cross-platform mobile frameworks used by software developers worldwide in 2019 and 2020](./Images/statistic_id869224_cross-platform-mobile-frameworks-used-by-developers-worldwide-2019-and-2020.png)
 
 https://www.statista.com/statistics/869224/worldwide-software-developer-working-hours/
 
