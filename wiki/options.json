@@ -10,7 +10,7 @@
       "Home.md"
     ]
   },
-  "separator": "-x-",
+  "separator": "--",
   "linkTemplate": "./%s",
   "menuFile": "_Sidebar.md",
   "multilang": false,
