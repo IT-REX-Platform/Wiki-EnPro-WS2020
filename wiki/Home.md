@@ -5,3 +5,5 @@ Welcome to the IT-Rex wiki!
 [Glossary](./Glossary)
 
 [Technical Research](./Technical-Research)
+
+[The Story of IT Rex](./The-Story-of-IT-Rex)
