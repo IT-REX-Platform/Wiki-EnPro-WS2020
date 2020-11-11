@@ -49,13 +49,11 @@ Nutzer für Kurse:
 Enrolled users may fully participate in a course. Active user enrolment allows user to enter course. Only enrolled users may be group members. Grades are stored only for enrolled users. 
 
 ## Inhalte extrahieren 
-Verfügbarkeit: https://docs.moodle.org/dev/Availability_conditions 
-* Dozenten können Inhalte beschränkt verfügbar machen 
-* API zum checken 
-
-Videos 
-
-Vorlesungsfolien, etc. 
+* Verfügbarkeit: https://docs.moodle.org/dev/Availability_conditions 
+  * Dozenten können Inhalte beschränkt verfügbar machen 
+  * API zum checken 
+* Videos 
+* Vorlesungsfolien, etc. 
 
 Daten einfügen 
 * Custom fields in Nutzerprofile: https://docs.moodle.org/dev/User_profile_fields 
