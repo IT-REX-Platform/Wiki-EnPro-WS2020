@@ -4,11 +4,16 @@ For researching and development purposes we configured it to run docker hosting 
 
 The server can be reached at `129.69.217.173` from within the University network (use VPN!).  
 To connect through SSH, message Noel about setting up access (pubkey).  
-Our shared Moodle instance is currently listening on port 8081 and can thus be accessed at [http://129.69.217.173:8081/](http://129.69.217.173:8081/).
 
-Files for running services are currently located at:  
-```
-/srv/moodle              ; Moodle codebase
-/srv/moodle-docker       ; Docker-compose wrapper etc. for Moodle Docker containers
-/srv/moodle-db           ; Mapped volume for Moodle MySQL database files
-```
+The following services are currently running on the server:
+| **URI** | **Description** |
+| :--- | :--- |
+| [http://129.69.217.173:8081/](http://129.69.217.173:8081/) | Moodle testing instance |
+
+Files for running services are currently located at:
+| **Path** | **Description** |
+| :--- | :--- |
+| /srv/moodle | Moodle codebase 
+| /srv/moodle-docker | Docker-compose wrapper etc. for Moodle Docker containers |
+| /srv/moodle-db | Mapped volume for Moodle MySQL database files |
+
