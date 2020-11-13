@@ -1,3 +1,22 @@
+# Which OS / Browser should be supported
+
+
+* Mobile Apps (iOS / Android) (1)
+* Browser (1)
+  * Chromium/Chrome (1)
+  * Firefox (1)
+  * Safari (1)
+  * Edge (2)
+  * Opera  (3)
+  * Brave (3)
+* Desktop (2)
+  * Windows
+  * Linux
+  * MacOS
+
+(1): Must have , (2): Optional , (3): Nice to have
+
+
 # Frontend FrameWorks
 
 # Cross Platform Frameworks
