@@ -48,6 +48,7 @@ Note that `userid` denotes which user I am interested in receiving data about. T
 
 ### API Calls documentation
 The following table aims to track interesting REST routes that we might make use of later on.
+Moodle's official documentation on these can be found at [https://docs.moodle.org/dev/Web_service_API_functions](https://docs.moodle.org/dev/Web_service_API_functions).
 
 | Web Service Function | Parameters | Required capabilities | Description |
 | :--- | :--- | :--- | :--- |
