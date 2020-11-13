@@ -1,3 +1,4 @@
-[ILIAS Plugin Development](ILIAS-Plugin-Development)
+[ILIAS Plugin Development](./ILIAS-Plugin-Development)
 
-[Moodle](Moodle)
+[Moodle API Documentation](./Moodle-API)
+[Misc. Moodle Notes](./Moodle-Misc.)
