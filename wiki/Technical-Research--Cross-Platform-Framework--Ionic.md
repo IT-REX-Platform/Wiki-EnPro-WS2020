@@ -1,6 +1,6 @@
 - [Overview](#overview)
 - [Development](#development)
-- [Deployment](#deployment)
+- [Deployment](#deployment)Platform/Wiki Wiki
   - [Web](#web)
   - [Electron](#electron)
   - [App](#app)
@@ -33,7 +33,7 @@ The project is build for the web via framework specific build scripts (triggered
 
 The documentation doesn't go into detail about that and just refers to the Electron Documentation. But I am sure that it is necessary to build the project first with the Ionic-cli. I haven't tested it because there seems to be nothing special regarding Ionic besides that in that process.
 
-## App
+## Mobile
 
 Deployment as an app requires platform native tooling. Despite that Live Reload is supported if configured correctly (setting path to the native IDE in *capacitor.config.json*).
 
