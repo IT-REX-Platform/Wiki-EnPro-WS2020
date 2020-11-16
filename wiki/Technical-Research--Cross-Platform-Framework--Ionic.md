@@ -1,9 +1,9 @@
 - [Overview](#overview)
 - [Development](#development)
-- [Deployment](#deployment)Platform/Wiki Wiki
+- [Deployment](#deployment)
   - [Web](#web)
   - [Electron](#electron)
-  - [App](#app)
+  - [Mobile](#mobile)
     - [Android](#android)
     - [iOS](#ios)
 
