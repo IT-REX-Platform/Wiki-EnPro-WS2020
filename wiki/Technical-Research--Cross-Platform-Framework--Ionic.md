@@ -1,5 +1,6 @@
 - [Overview](#overview)
 - [Development](#development)
+  - [Debugging](#debugging)
 - [Deployment](#deployment)
   - [Web](#web)
   - [Electron](#electron)
@@ -21,6 +22,10 @@ The Documnetation is available for all previously mentioned frameworks and is av
 
 As previously stated only one code base is needed from which everything else is created. You can use every editor that is suitable for web technologies. Live Reload is also supported that means you don't have to recompile when you make changes. You can use Javascript frameworks but you don't have to. I tried it with Angular (only deploying a very simple app to Android) and with React (the completed gallery app from the documentation, which uses the camera). Both worked without fiddling arround.
 
+## Debugging
+
+Ionic application can be debugged. This can be done in the browser via VSCode or an exivalent text editor (but the documentation talks only about VS Code). The apps can also be debugged with a browser. Safari is required to debug an iOS app and Chrome to debug an Android App. VSCode can also be used to debug an android App with a [plugin](https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug).
+
 # Deployment
 
 Ionic projects can be deployed to iOS, Android, a Progressive Web App (PWA) and via Electron. Plattform specific generated projects are supposed to be added to source control. The resuting applications have a suprisingly good performance (I don't know if thats true when the appication grows but the developers of Ionic at least say that).
@@ -35,7 +40,7 @@ The documentation doesn't go into detail about that and just refers to the Elect
 
 ## Mobile
 
-Deployment as an app requires platform native tooling. Despite that Live Reload is supported if configured correctly (setting path to the native IDE in *capacitor.config.json*).
+Deployment as an app requires platform native tooling. Despite that Live Reload is supported if configured correctly (setting path to the native IDE in _capacitor.config.json_).
 
 ### Android
 
