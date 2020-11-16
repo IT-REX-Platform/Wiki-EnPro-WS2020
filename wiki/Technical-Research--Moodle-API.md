@@ -4,10 +4,11 @@ This instance can be found at [http://129.69.217.173:8081/](http://129.69.217.17
 
 # Platform Account Credentials
 The following common user accounts are available (more to follow):
-| Account name | Password | Informal Role / Capacity |
-| :--- | :--- | :--- |
-| admin | password | Platform administrator (please don't mess up, there is no backup :P) |
-| user | password | Generic student |
+| User ID | Account name | Password | Informal Role / Capacity |
+| :--- | :--- | :--- | :--- |
+| 2 | admin | password | Platform administrator (please don't mess up, there is no backup :P) |
+| 3 | user | password | Generic student |
+| 4 | usertwo | password | Generic student |
 
 # Moodle API
 As of the time of this edit, we're planning on using Moodle's REST API to retrieve relevant data from a linked Moodle platform.
