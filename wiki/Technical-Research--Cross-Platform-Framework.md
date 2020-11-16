@@ -16,16 +16,28 @@
 
 (1): Must have , (2): Optional , (3): Nice to have
 
+## Prototypes
+React native: Slawa, Dani
+Expo: Marcel
+Ionic: Christian
+Electron: Benedikt
+
+### Expected result
+
+* Hello World-App
+* Deploy to target
+
 
 # Frontend FrameWorks
 
 # Cross Platform Frameworks
 
 | Framework               | IDE                               | Language                   | Frameworks            | Runtime                                                 | Targets                                       | Launched | Pros       | Cons |
-|-------------------------|-----------------------------------|----------------------------|-----------------------|---------------------------------------------------------|-----------------------------------------------|----------|------------|------|
-| Ionic                   | VS-Code, Atom, WebStorm           | HTML, CSS, JavaScript (TS) | React, VueJs, Angular | Full screen Web browser                                 | Android, iOS, Web/PWA Desktop (electron)      | 2013     |            |      |
-| Flutter (Google)        | Android Studio, VS-Code, IntelliJ | Dart                       |                       | custom graphics engine Skia (own library of UI Widgets) | Android, iOS, Desktop (alpha), Web app (beta) | 2017     | Perormance | New  |
-| React Native (Facebook) | Atom, VS Code, WebStorm           | JavaScript                 | React                 | Copmiled to native UI components                        | Android, iOS, Web                             | 2015     |            |      |
+|-------------------------|-----------------------------------|----------------------------|-----------------------|---------------------------------------------------------|-----------------------------------------------|----------|------------|------| 
+| Ionic                   | VS-Code, Atom, WebStorm           | HTML, CSS, JavaScript (TS) | React, VueJs, Angular | Full screen Web browser                                 | Android, iOS, Web/PWA Desktop (electron)      | 2013     |            |      | [Ionic](https://ionicframework.com/) 
+| Flutter (Google)        | Android Studio, VS-Code, IntelliJ | Dart                       |                       | custom graphics engine Skia (own library of UI Widgets) | Android, iOS, Desktop (alpha), Web app (beta) | 2017     | Perormance | New  | [Flutter](https://flutter.dev/)
+| React Native (Facebook) | Atom, VS Code, WebStorm           | JavaScript                 | React                 | Copmiled to native UI components                        | Android, iOS, Web                             | 2015     |            |      | [React native](https://reactnative.dev/)
+| Expo                    |                                   | JavaScript                 | React                 |                                                         | Android, iOS, Web                             | 2015     |            |      | [Expo](https://expo.io/)
 | Xamarin (Microsoft)     | Visual Studio/Xamarin Studio      | C#                         | .Net                  |                                                         | Android, iOS, Desktop                         |          |            |      |
 
 ## Ionic vs Flutter
