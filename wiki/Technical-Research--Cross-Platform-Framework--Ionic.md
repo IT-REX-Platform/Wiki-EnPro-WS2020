@@ -58,4 +58,4 @@ Sadly i can't test that. But the process is similar to android but before buildi
 
 https://www.npmjs.com/package/capacitor-video-player
 
-I tested the plugin with this [project](https://github.com/jepiqueau/react-video-player-app-starter) instead of creating it myself. In addition to the plugin itself this [hook](https://www.npmjs.com/package/react-video-player-hook) is used. The performace is good and the player can play offline and online videos without problems.
+I tested the plugin with this [project](https://github.com/jepiqueau/react-video-player-app-starter) instead of creating it myself. In addition to the plugin itself this [hook](https://www.npmjs.com/package/react-video-player-hook) is used. The performace is good and the player can play offline and online videos without problems on all plattforms (except iOS because i can't test that).
