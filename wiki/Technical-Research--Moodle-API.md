@@ -53,4 +53,8 @@ Moodle's official documentation on these can be found at [https://docs.moodle.or
 
 | Web Service Function | Parameters | Required capabilities | Description |
 | :--- | :--- | :--- | :--- |
-| core_enrol_get_users_courses | userid | (?); Depending on userid, response yields varying levels of detail. | Returns a list of courses that a given user is enrolled in. |
+| **core_enrol_get_users_courses** | userid | (?); Depending on userid, response yields varying levels of detail. | Returns a list of courses that a given user is enrolled in. |
+| **core_course_get_contents** | courseid | (?) | Returns course content overview (incl. URLs for sub-content) |
+| **core_course_get_courses** | (?) | (?) | Returns list of all courses (no parameter = all courses on platform?); check out **core_course_get_courses_by_field** to get results by certain criteria |
+| core_course_get_course_module | cmid | (?) | Returns general information on specific course module (e.g. a quiz); not necessarily content! |
+| core_course_get_module | id (= cmid) | (?) | Returns an html fragment representing the specified module; not exactly sure what this is good for |
