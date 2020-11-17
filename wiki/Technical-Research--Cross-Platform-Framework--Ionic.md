@@ -7,6 +7,8 @@
   - [Mobile](#mobile)
     - [Android](#android)
     - [iOS](#ios)
+    - [Capacitor Plugins](#capacitor-plugins)
+      - [capacitor-video-player](#capacitor-video-player)
 
 # Overview
 
@@ -49,3 +51,11 @@ Deploying to Android requires Android Studio to be installed. First the project 
 ### iOS
 
 Sadly i can't test that. But the process is similar to android but before building the project in Xcode, permissions have to be configured.
+
+### Capacitor Plugins
+
+#### capacitor-video-player
+
+https://www.npmjs.com/package/capacitor-video-player
+
+I tested the plugin with this [project](https://github.com/jepiqueau/react-video-player-app-starter) instead of creating it myself. In addition to the plugin itself this [hook](https://www.npmjs.com/package/react-video-player-hook) is used. The performace is good and the player can play offline and online videos without problems.
