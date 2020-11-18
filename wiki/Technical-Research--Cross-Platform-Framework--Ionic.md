@@ -38,7 +38,7 @@ The project is build for the web via framework specific build scripts (triggered
 
 ## Electron
 
-The documentation doesn't go into detail about that and just refers to the Electron Documentation. But I am sure that it is necessary to build the project first with the Ionic-cli. I haven't tested it because there seems to be nothing special regarding Ionic besides that in that process.
+Electron support has been deprecated. This [npm package](https://github.com/capacitor-community/electron) is still maintained and provides support for electron and should be used because of that.
 
 ## Mobile
 
