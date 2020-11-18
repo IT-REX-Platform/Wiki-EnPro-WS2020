@@ -36,7 +36,7 @@ Users can be modified when logged in as an administrator and using the navigatio
 The roles available on ILIAS by default are:
 
 | Role Name | Description | Context |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | Administator | Role for systemadministrators. This role grants access to everything! | Global |
 | Anonymous | Default role for anonymous users (with no account) | Global |
 | Guest | Role grants only a few visible & read permissions. | Global |
