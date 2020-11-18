@@ -22,6 +22,25 @@ The gist is, that you can either use Expo with their managed workflow (which ena
 
 We would definitely use the bare workflow and do not want to rely on their managed services. Therefore the paid plan is not of interest here.
 
+## Bare Workflow
+https://docs.expo.io/introduction/managed-vs-bare/
+
+### Differences between managed and bare workflow:
+| Feature | Managed | Bare |
+|---------|---------|------|
+| Develop apps with only JavaScript/TypeScript | ✅	| |
+| Use Expo build service to create your iOS and Android builds | ✅	| ⏱ (in progress) |
+| Use Expo's push notification service | ✅	| ✅ |
+| Use Expo's over the air updates features |	✅ |	✅ |
+| Develop with the Expo client app |	✅ |	✅ (if you follow guidlines) |
+| Access to Expo SDK	| ✅ |	✅ |
+| Add custom native code and manage native dependencies	| |	✅ |
+| Develop in Xcode and Android Studio	| |	✅ |
+
+When starting with the managed workflow you can "eject" at any time and your project will just be a typical native project with the React Native and Expo SDK packages that your app is using installed and configured.
+
+Building the iOS SDK requires a MacOS operating system (use pc pool of university).
+
 ## Difference of Expo to React Native
 Managed solution for React Native which also includes React Nativ Web.
 
