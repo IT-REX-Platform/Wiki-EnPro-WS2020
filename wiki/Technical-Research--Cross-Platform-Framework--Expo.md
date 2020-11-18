@@ -14,6 +14,14 @@ It's a "bare" native project with React Native and one or more packages from the
 
 Based on React and React Native. Uses React Native Web for web app deploy.
 
+## Developer services
+
+There is an option to pay for Expo to get "Prioritized build infrastructure" and "Team features". This [blogpost](https://medium.com/@ji/hi-im-one-of-the-co-founders-of-expo-and-have-worked-on-it-for-several-years-and-have-the-context-a85810f373b9) sums this up a bit.
+
+The gist is, that you can either use Expo with their managed workflow (which enables among others automatic builds or OTA updates) or with the bare workflow (where you have to build and supply your services on your own). Paying for Expo gives you prioritized builds when using the managed workflow. Furthermore it allows to showcase apps to other team members (https://forums.expo.io/t/documentation-about-features-teams-in-paid-plan-is-not-so-clear/31225). I couldn't find more about the paid plan, it is very poorly documented.
+
+We would definitely use the bare workflow and do not want to rely on their managed services. Therefore the paid plan is not of interest here.
+
 ## Difference of Expo to React Native
 Managed solution for React Native which also includes React Nativ Web.
 
