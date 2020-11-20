@@ -19,5 +19,6 @@ Files for running services are currently located at:
 | /srv/moodle-db | Mapped volume for Moodle MySQL database files |
 | /srv/ilias-docker | Docker-compose and Dockerfile for Ilias |
 | /srv/ilias-docker/resources | Docker helper scripts for Ilias |
-| /srv/ilias-docker/.data/db | Mapped volume for Ilias MySQL database files |
-
+| /srv/ilias-docker/shared/db | Mapped volume for Ilias MySQL database files |
+| /srv/ilias-docker/shared/ilias_html | Mapped volume for Ilias codebase |
+| /srv/ilias-docker/shared/ilias_data | Mapped volume for Ilias client/user data |
