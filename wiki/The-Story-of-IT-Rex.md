@@ -1,5 +1,7 @@
 # The Story of IT Rex
 
+This document describes the overall story we want to tell in the IT-Rex platform. The Story of IT-Rex is designed to provide a logically consistent frame for individual gamification ideas. 
+
 ## Abstract
 
 For every course a student subscribes to on the platform, they get one IT-Rex with a specific colour (colour is defined by the lecturer per course). [Optionally: different species of dinosaurs]
