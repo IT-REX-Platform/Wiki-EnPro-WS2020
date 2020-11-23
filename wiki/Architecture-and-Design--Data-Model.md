@@ -1,3 +1,7 @@
+# Goal
+
+The goal is to create an overall baseline data model spanning over the different fields of user and role model, course structure, file (meta)data model, quizzes, ...
+
 # How to access the current Models:
 
 Open draw.io in your Browser.
