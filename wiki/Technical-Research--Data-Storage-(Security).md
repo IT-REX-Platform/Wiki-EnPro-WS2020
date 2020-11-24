@@ -105,10 +105,19 @@
 ---
 
 \
-Sample attacks can be found at https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
+**Sample attacks can be found at** https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
 
 # Sources
 
-https://www.opswat.com/blog/file-upload-protection-best-practices
+https://www.opswat.com/blog/file-upload-protection-best-practices  
 https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
 
+### Additional literature (possibly lots of overlap, need to check)
+
+https://stackoverflow.com/questions/830919/what-security-issues-appear-when-users-can-upload-their-own-files  
+https://www.php.net/manual/en/features.file-upload.common-pitfalls.php  
+https://blog.filestack.com/thoughts-and-knowledge/secure-file-upload/  
+https://blog.devolutions.net/2019/12/how-to-prevent-file-upload-vulnerabilities  
+https://security.stackexchange.com/questions/503/what-are-the-security-risks-of-letting-the-users-upload-content-to-my-site  
+https://www.wordfence.com/learn/how-to-prevent-file-upload-vulnerabilities/  
+https://www.computerweekly.com/answer/File-upload-security-best-practices-Block-a-malicious-file-upload  
