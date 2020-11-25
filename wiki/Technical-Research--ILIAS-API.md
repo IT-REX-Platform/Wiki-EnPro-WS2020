@@ -9,7 +9,7 @@ There are two points of entry for the ILIAS platform.
 
 ## Admin Interface
 
-The admin interface can be accessed via [http://129.69.217.173/ilias/setup/setup.php](http://129.69.217.173/ilias/setup/setup.php) and will lead to an admin interface.
+The admin interface can be accessed via [http://129.69.217.173:8082/ilias/setup/setup.php](http://129.69.217.173:8082/ilias/setup/setup.php) and will lead to an admin interface.
 
 The **client administrator login** can be done using a client-id and any administrator username/password. The client-id for our client will (for now only) be `itrex-client`. Therefore, an example login can be:
 
