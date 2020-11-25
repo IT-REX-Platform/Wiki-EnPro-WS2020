@@ -14,6 +14,149 @@ It's a "bare" native project with React Native and one or more packages from the
 
 Based on React and React Native. Uses React Native Web for web app deploy.
 
+
+### Limitations of the managed workflow
+
+- Not all iOS and Android APIs are available
+- The SDK doesn't support all types of background code execution
+- If you need to keep your app size extremely lean, the managed workflow may not be the best choice
+- Native libraries to integrate with proprietary services are usually not included in the SDK
+- The only supported push notification service is the Expo notification service
+- The minimum supported OS versions are Android 5+ and iOS 10+
+- Free builds can sometimes be queued
+- Updates (JS and assets) for OTA updates and builds are size-limited
+- Your app cannot target only children under 13 years old.
+
+### Limitations of the bare workflow
+
+- Build service only works in the managed workflow
+- Configuration must be done on each native project rather than once with app.json
+
+As you can see, the only disadvantage of bare workflow is that you have to configure more yourself.
+We can also integrate native components, written in Android/Kotlin and Swift. (With the managed workflow we are limited to expo-packages)
+
+[Doku](https://docs.expo.io/introduction/why-not-expo/)
+
+
+## Using Bare Workflow
+
+( Based on the offcial documentation [Doku](https://docs.expo.io/bare/exploring-bare-workflow/) ) 
+
+Make sure you have setup you local environment using this guide [Environment-Setup](https://reactnative.dev/docs/environment-setup)
+
+
+If you are using the bare workflow ios and android projects located in their own sub-folders.
+It is possible to work on these projects with Android Studio or Xcode.
+
+
+
+
+There are several posibilities to run/compile the different targets.
+
+## Prerequisites
+
+- https://nodejs.org/en/download/current/ (important: current and not LTS)
+
+- Install expo `npm install -g expo-cli`
+- Create new app `expo init MyCoolApp`
+  * Use bare workflow -> minimal (TypeScript)
+
+
+## Run / Debug / Deploy
+
+### Android
+
+#### Debug mode (With hot-reload)
+
+Run your local dev server:
+
+```
+npx react-native start
+```
+
+Then compile and deploy to the emulator:
+```
+npm run android
+```
+
+#### Release mode
+
+Go into the android subfolder an execute.
+```
+./gradlew assembleRelease
+```
+
+If you run into an error like `java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.v7.Java7`
+
+Change the used gradle-version from 6.2 to 6.3 in `android/gradle/wrapper/gradle-wrapper.properties`.
+
+If the build succeeded you can deploy the app via adb `adb install ./app/build/outputs/apk/release/app-release.apk`.
+(if you have multiple android devices running, use the `-s <DEVICE-NANE>` parameter to select the correct one)
+
+Liste the connected devices `adb devices`
+
+### iOS
+
+#### Debug
+
+```
+npm run ios
+```
+
+### web
+
+#### Debug
+
+```
+npm run web
+```
+
+#### Deploy
+
+`expo build:web`
+
+The target is now placed in the `web-build` subfolder
+
+If you want to test the binaries you can use the npm package `serve`.
+
+- Install serve via `npm install -g serve`
+- run serve via `serve -s web-build`
+
+
+### Android/Web/iOS Debug mode via Expo developer tools
+
+```bash
+expo start
+```
+
+### Video example
+
+- `expo install expo-av`
+
+Add the following lines after `<Text>...</Text>`
+
+```
+<Video
+  source={{ uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+  rate={1.0}
+  volume={1.0}
+  isMuted={false}
+  resizeMode="cover"
+  shouldPlay
+  useNativeControls={true}
+  style={{ width: 300, height: 300 }}
+/>
+```
+
+
+
+### Troubleshooting
+
+#### build abort: w: Detected multiple Kotlin daemon sessions at build/kotlin/sessions
+
+Try again ;)
+
+
 ## Developer services
 
 There is an option to pay for Expo to get "Prioritized build infrastructure" and "Team features". This [blogpost](https://medium.com/@ji/hi-im-one-of-the-co-founders-of-expo-and-have-worked-on-it-for-several-years-and-have-the-context-a85810f373b9) sums this up a bit.
