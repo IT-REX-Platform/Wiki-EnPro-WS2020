@@ -1,6 +1,43 @@
-# Test Options
+# Quizzes
 
-## Ilias
+## Quiz Types
+Idea: Every question is stored in a course wide question pool and can be reused in Turbo Quizzes or Rex-Duell.
+
+Quizzes in general should have reasonable default settings and should guide the user. For each quiz type there are different default settings defined.
+
+### Lecture Quiz
+* Lecture scope
+* can access question pool ???
+* can have different question types
+* Anonymous
+* Goal: Test the knowledge of content that has been taught in this lecture
+
+### Repetition Quiz
+David?
+
+### Turbo Quiz
+* Course scope
+* Can access all questions from the course wide question pool
+* Compute available time based on number of questions, question type and length of question.
+ -> Alternatively: Only simple questions with word limit (similar to Rex-Duell)
+* Get rewards (based on time/right answers?)
+* Anonymous
+* Goal: Repeat a subset of questions from the Lecture Quiz to strengthen knowledge
+
+### Rex-Duell
+* Course scope
+* Only single choice question types with four given answers
+* Can access single choice questions from the course wide question pool which are unlocked for Rex-Duell
+* Idea: Only questions with word limit so that reading the question is fast enough
+* Idea: Is playable when enough questions are in the question pool (define threshold)
+* Further ideas: https://miro.com/app/board/o9J_kiKVCR4=/?moveToWidget=3074457351591905625&cot=14
+* Option for anonymity? (don't appear in course wide leader board, etc.)
+* Goal: Motivate to learn through competition and rewards.
+
+
+## Which general options should IT-Rex quizzes provide?
+
+### Setting Options in Ilias
 * Question Pool
 * option to give participants always the same questions or random ones
 * option to create an anonymous test
@@ -20,8 +57,28 @@
 * if how and when participants can access their test results
 * if how and when participants can access the correct test answers
 
-## Which general options should IT-Rex quizzes provide?
-ToDo
+### Settings for IT-Rex (Lecture Quiz)
+* Name
+* Location (in which lecture or chapter)
+* Quiz Type
+* Gamification Settings
+  * Shuffle Questions (Default: True)
+  * Pass Percentage (Default: 50%)
+  * Timelimit (Default: per question 30 sec) -> only Turbo Quiz?
+* Settings per Question
+  * Question/Answer Type
+  * Question Description
+  * Answers (depending on type)
+  * Question Difficulty
+  * Timelimit for question?
+  * Hint
+  * Use question for Rex-Duell (Default: true - only single choice type)
+
+### Settings for IT-Rex (Turbo Quiz)
+* Timelimit (Default: per question 30 sec)
+* Timelimit per question?
+* add new questions??
+
 
 # Research for different question/answer types
 Multiple and single choice questions are the simplest types of questions that should definitely be included. I think it is important to also offer other question types to cope with repetitiveness that often comes with single or multiple choice questions. It feels refreshing to have some level of interaction and this also gives an incentive to think more about the question and what you are answering. Furthermore, some questions can be stated better with other forms of question types.
@@ -91,6 +148,7 @@ Example (vertical):
 * you have statements and answers given and need to assign the answers to the correct statements
 * 1:1 or n:n possible
 * answers can be solutions for the statements, captions, other statements that have a specific relation, ...
+* you can also upload images for statements to make use of diagrams, etc.
 * exact definitions of statements and answers are important here
 * gives some interaction that is also applicable for touch screens (if large enough)
 
@@ -106,7 +164,7 @@ Example:
 * you have to simply upload a file
 * manual grading but also gives the option to grade full points based on the upload itself.
 
-### Long Menu
+### Long Menu (Plugin)
 * alternative to cloze questions
 * gives suggestions for answers in a dropdown with auto completion
 
@@ -116,15 +174,16 @@ Example:
 
 ### Audio recording
 * you can record an audio and submit it as the answer
+* only manual grading
 
-### STACK questions
+### STACK questions (Plugin)
 * interesting for mathematics
 * very advanced
 * see https://docu.ilias.de/goto_docu_cat_4119.html
 
 Example: https://docu.ilias.de/ilias.php?ref_id=5824&obj_id=75135&cmd=layout&cmdClass=illmpresentationgui&cmdNode=iw&baseClass=ilLMPresentationGUI
 
-### Formula question
+### Formula question (Plugin)
 * type in a formula and require answers for given variables
 * automatically analyze the formula and give possible solutions
 
@@ -139,14 +198,16 @@ ToDo: think or search for other possible types that would make sense in IT-Rex
 * Numerical answer
 
 ### Useful
+* Classification
 * Faulty Text
+* Ordering
+#### Free Text Types
+Can be cumbersome on touch screen devices and harder to grade automatically
 * Cloze questions ("Lückentext")
 * Text subset questions ("Begriffe nennen")
-* Ordering
-* Classification
 * Essay questions
 
-### Nice to Have
+### Nice to Have (but harder to implement)
 * Hotmap / Imagemap
 * Formula question
 
@@ -156,3 +217,11 @@ ToDo: think or search for other possible types that would make sense in IT-Rex
 * Long Menu
 * Audio recording
 * STACK questions
+
+
+### Types used by Becker/Alireza
+* Multiple Choice / Single Choice
+* KPrim Choice
+* Numerical answer
+* Faulty Text
+* Classification
