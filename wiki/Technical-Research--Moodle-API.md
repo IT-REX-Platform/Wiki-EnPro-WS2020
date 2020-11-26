@@ -47,7 +47,41 @@ Note that `userid` denotes which user I am interested in receiving data about. T
 
 ---
 
-### API Calls documentation
+### Integration
+As part of our efforts to integrate IT-Rex with Moodle, we agreed on coming up with solutions for common problems in e-learning using the Moodle API.
+These solutions are meant to help facilitate better understanding of the Moodle API's strengths and weaknesses, and ultimately lead to a recommendation and a final decision on whether we are moving forward with the integration or going to have to shoot for alternatives instead.
+
+As per issue [ITREX-143](https://it-rex.atlassian.net/browse/ITREX-143), the main tasks are as follows:
+
+1. Retrieve meta information on a user's courses
+2. Retrieve slide sets from a course
+3. Retrieve lecture recordings / videos from a course
+4. Check / retrieve course membership (i.e. which courses is a given user a member of / who are the members of a given course)
+
+Furthermore, there are the following two low-priority tasks:
+
+5. Retrieve course appointments / dates
+6. Retrieve quizzes (content)
+
+#### Proposed Solutions
+
+| Task | Solution Description | Good or bad? Reasons? |
+| :--- | :--- |
+| 1. Retrieve meta information on a user's courses | *placeholder* | *placeholder* |
+| 2. Retrieve slide sets from a course | *placeholder* | *placeholder* |
+| 3. Retrieve lecture recordings / videos from a course | *placeholder* | *placeholder* |
+| 4. Check / retrieve course membership | *placeholder* | *placeholder* |
+
+#### Final Recommendation & Reasoning
+**Should we integrate with Moodle at all?:** -todo-  
+**Is data exchange viable?:** -todo-  
+**Is the data model compatible?:** -todo-  
+
+### API Calls documentation (deferred)
+
+**Editor's note:** Work on this has been abandoned as Moodle itself provides a very extensive and thorough documentation on its own API including sample responses [here](http://129.69.217.173:8081/admin/webservice/documentation.php).  
+The small amount of useful information that has been accumulated here is retained solely for referencing purposes.
+
 The following table aims to track interesting REST routes that we might make use of later on.
 Moodle's official documentation on these can be found at [https://docs.moodle.org/dev/Web_service_API_functions](https://docs.moodle.org/dev/Web_service_API_functions).
 
@@ -58,3 +92,4 @@ Moodle's official documentation on these can be found at [https://docs.moodle.or
 | **core_course_get_courses** | (?) | (?) | Returns list of all courses (no parameter = all courses on platform?); check out **core_course_get_courses_by_field** to get results by certain criteria |
 | core_course_get_course_module | cmid | (?) | Returns general information on specific course module (e.g. a quiz); not necessarily content! |
 | core_course_get_module | id (= cmid) | (?) | Returns an html fragment representing the specified module; not exactly sure what this is good for |
+| core_enrol_get_enrolled_users |  |  | to check -- potentially used to fetch user roles |
