@@ -65,14 +65,36 @@ Furthermore, there are the following two low-priority tasks:
 
 #### Proposed Solutions
 
-| Task | Solution Description | Good or bad? Reasons? |
-| :--- | :--- | :--- |
-| 1. Retrieve meta information on a user's courses | *placeholder* | *placeholder* |
-| 2. Retrieve slide sets from a course | *placeholder* | *placeholder* |
-| 3. Retrieve lecture recordings / videos from a course | *placeholder* | *placeholder* |
-| 4. Check / retrieve course membership | *placeholder* | *placeholder* |
+**1. Retrieve meta information on a user's courses**
 
-#### Final Recommendation & Reasoning
+*Description:* -todo-
+
+*Evaluation:* -todo-
+
+**2. Retrieve slide sets from a course**
+
+*Description:* -todo-
+
+*Evaluation:* -todo-
+
+**3. Retrieve lecture recordings / videos from a course**
+
+*Description:*
+Assuming the platform has been set up according to the subsection 'Mandatory preliminary setup' on this page, navigate to Plugins -> Web Services and edit the IT-Rex external service.
+Under 'show more', enable file downloads.  
+At this point, downloading or retrieving video files from Moodle is a 2-step-process. First, you fetch a general overview of a given course's contents using **core_course_get_contents**, then you extract your content's *fileurl* from the response. The result is an URL similar to this: [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1).  
+To be able to complete this request though, it is necessary to append one additional parameter–the user token. This is the same service token used as *wstoken* in other requests. In order for pluginfile.php to accept the token, the aforementioned *enable file downloads* setting has to be ticked for the associated service as otherwise the platform will return with a content access violation error.
+The final request will thus become [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b), which yields the requested file.
+  
+*Evaluation:* -todo-
+
+**4. Check / retrieve course membership**
+
+*Description:* -todo-
+
+*Evaluation:* -todo-
+
+#### Final verdict and reasoning
 **Should we integrate with Moodle at all?:** -todo-  
 **Is data exchange viable?:** -todo-  
 **Is the data model compatible?:** -todo-  
