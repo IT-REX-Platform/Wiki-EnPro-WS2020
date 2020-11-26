@@ -51,7 +51,7 @@ Note that `userid` denotes which user I am interested in receiving data about. T
 As part of our efforts to integrate IT-Rex with Moodle, we agreed on coming up with solutions for common problems in e-learning using the Moodle API.
 These solutions are meant to help facilitate better understanding of the Moodle API's strengths and weaknesses, and ultimately lead to a recommendation and a final decision on whether we are moving forward with the integration or going to have to shoot for alternatives instead.
 
-As per issue [ITREX-143](https://it-rex.atlassian.net/browse/ITREX-143), the main tasks are as follows:
+As per issue [ITREX-235](https://it-rex.atlassian.net/browse/ITREX-235), the main tasks are as follows:
 
 1. Retrieve meta information on a user's courses
 2. Retrieve slide sets from a course
@@ -66,7 +66,7 @@ Furthermore, there are the following two low-priority tasks:
 #### Proposed Solutions
 
 | Task | Solution Description | Good or bad? Reasons? |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | 1. Retrieve meta information on a user's courses | *placeholder* | *placeholder* |
 | 2. Retrieve slide sets from a course | *placeholder* | *placeholder* |
 | 3. Retrieve lecture recordings / videos from a course | *placeholder* | *placeholder* |
