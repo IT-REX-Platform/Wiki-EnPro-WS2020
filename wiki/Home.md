@@ -9,5 +9,5 @@
 ### [The Story of IT Rex](./The-Story-of-IT-Rex)
 
 ### [Application Architecture Documentation](./Application-Architecture-Documentation)
-* [Implementation View](./Implementation-View)
-* [Deployment View](./Deployment.View)
+* [Implementation View](./Application-Architecture-Documentation--Implementation-View)
+* [Deployment View](./Application-Architecture-Documentation--Deployment.View)
