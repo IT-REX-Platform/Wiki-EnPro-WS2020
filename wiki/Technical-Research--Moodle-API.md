@@ -99,6 +99,8 @@ The final request will thus become [http://129.69.217.173:8081/webservice/plugin
 **Is data exchange viable?:** -todo-  
 **Is the data model compatible?:** -todo-  
 
+---
+
 ### API Calls documentation (deferred)
 
 **Editor's note:** Work on this has been abandoned as Moodle itself provides a very extensive and thorough documentation on its own API including sample responses [here](http://129.69.217.173:8081/admin/webservice/documentation.php).  
