@@ -66,6 +66,11 @@ Furthermore, there are the following two low-priority tasks:
 
 #### Proposed Solutions
 
+**0. Retrieve user and service information related to web service token**
+
+Call **core_webservice_get_site_info** and all of your problems shall be solved.  
+Only requires the *wstoken* parameter. Response contains associated user id for subsequent requests.
+
 **1. Retrieve meta information on a user's courses**
 
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=2
