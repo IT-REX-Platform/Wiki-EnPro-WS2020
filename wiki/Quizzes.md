@@ -7,33 +7,47 @@ Quizzes in general should have reasonable default settings and should guide the 
 
 ### Lecture Quiz
 * Lecture scope
+* Static Quiz: Questions are explicitly included by the lecturer -> every quiz contains the same questions
+* Schedulable Quiz: Lecture Quizzes can be content of the timeline/chapters/...
 * can access question pool ???
 * can have different question types
 * Anonymous
 * Goal: Test the knowledge of content that has been taught in this lecture
 
 ### Repetition Quiz
-David?
+* Course scope
+* Static Quiz: Questions are explicitly included by the lecturer -> every quiz contains the same questions
+* Schedulable Quiz: Lecture Quizzes can be content of the timeline/chapters/...
+* can access question pool
+* can have different question types
+* Anonymous
+* Goal: Repeat course contents based on questions that have already been asked in previous lecture quizzes
 
 ### Turbo Quiz
 * Course scope
-* Can access all questions from the course wide question pool
+* Dynamic Quiz: Can randomly access any question from the course wide question pool
+* Non-schedulable Quiz: User chooses independently if and when a quiz is started
 * Compute available time based on number of questions, question type and length of question.
  -> Alternatively: Only simple questions with word limit (similar to Rex-Duell)
 * Get rewards (based on time/right answers?)
 * Anonymous
-* Goal: Repeat a subset of questions from the Lecture Quiz to strengthen knowledge
+* Goal: Repeat a subset of questions from the Lecture Quiz to strengthen knowledge, "play against the time"
 
 ### Rex-Duell
 * Course scope
+* Two users answer the exact same questions
 * Only single choice question types with four given answers
-* Can access single choice questions from the course wide question pool which are unlocked for Rex-Duell
+* Dynamic Quiz: Can access single choice questions from the course wide question pool which are unlocked for Rex-Duell
+* Non-schedulable Quiz: A user may challenge another user to compete in Rex-Duell
 * Idea: Only questions with word limit so that reading the question is fast enough
 * Idea: Is playable when enough questions are in the question pool (define threshold)
 * Further ideas: https://miro.com/app/board/o9J_kiKVCR4=/?moveToWidget=3074457351591905625&cot=14
 * Option for anonymity? (don't appear in course wide leader board, etc.)
-* Goal: Motivate to learn through competition and rewards.
+* Goal: Motivate to learn through competition and rewards, "play against a single opponent"
 
+### Rex-Event
+* Similar to Repetition Quiz Idea
+* Goal: Goal: Motivate to learn through competition and rewards, "play against the whole course"
 
 ## Which general options should IT-Rex quizzes provide?
 
