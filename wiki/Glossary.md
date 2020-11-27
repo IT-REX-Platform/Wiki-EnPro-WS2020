@@ -66,7 +66,7 @@ The type of the notification is given from its' context, like a comment reply or
 
 **Quiz** 
 
-A Quiz contains different questions that a student solves to get food items for IT-Rex. 
+A Quiz contains different questions that a student solves.
 
 **Recommended Course Timeline** 
 
