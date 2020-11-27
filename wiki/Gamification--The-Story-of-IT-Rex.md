@@ -52,8 +52,12 @@ Coin name suggestions: IT-coin / fossils
 
 ## User Achievement List / Representation
 
-On user level there is a coin wallet and a cosmetic inventory. Additionally the course progresses are accumulated: 
+On course level, users should be able to compare their IT-Rexes regarding different criteria.
 
-* Simple: Papa-Rex has an overall counter (e.g. XP/Experience Points) that sums up all IT-Rexes of individual courses.
+On user level there is a coin wallet and a cosmetic inventory. Additionally, values of the course-level IT-Rexes could be accumulated: 
+
+* Simple: Papa-Rex has an overall coin and food counter that sums up all coins and food items ever collected by a user to reflect their overall app experience.
 * [optionally: trophy or badge collection]
 * [advanced: There is a park (jurassic park) where all course IT-Rexes live, including park cosmetics...]
+
+**Details about the Scoring and Ranking System: [Ranking and Scoring System](./Gamification--Ranking-and-Scoring-System)**
