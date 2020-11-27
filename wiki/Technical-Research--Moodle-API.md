@@ -68,6 +68,8 @@ Furthermore, there are the following two low-priority tasks:
 
 **0. Retrieve user and service information related to web service token**
 
+REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=8cc58bb4ff9072db37767c3762557dcf&wsfunction=core_webservice_get_site_info
+
 Call **core_webservice_get_site_info** and all of your problems shall be solved.  
 Only requires the *wstoken* parameter. Response contains associated user id for subsequent requests.
 
