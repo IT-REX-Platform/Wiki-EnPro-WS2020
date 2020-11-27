@@ -67,13 +67,16 @@ Furthermore, there are the following two low-priority tasks:
 
 **1. Retrieve meta information on a user's courses**
 
-Link: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=
+REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=
+
+REST call parameters:
 | Parameters | Example value | Description |
 | :--- | :--- | :--- |
 | wstoken | 9d03213a36ba2475cb90a557c1a10e0b | The token belongs to the user, it defines which content is displayed. E.g. a request with wstoken of role "Generic student" doesn't show invisible content, but a request with wstoken of role "Platform administrator" does. |
 | wsfunction | core_enrol_get_users_courses | Response is a list of courses where the user is enrolled. |
 | userid | 2 | Determines which courses are shown in the response. |
 
+Response keys:
 | KEY | Example value | Description |
 | :--- | :--- | :--- |
 | id | 2 | Course ID. |
@@ -86,22 +89,6 @@ Link: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba
 | lang | en | Course language. This value can be empty if course and website language are identical. |
 | startdate | 1605225600 | This setting determines the start of the first week for a course in weekly format. It also determines the earliest date that logs of course activities are available for. If the course is reset and the course start date changed, all dates in the course will be moved in relation to the new start date. |
 | enddate | 1608256800 | The course end date is used for determining whether a course should be included in a user's list of courses. When the end date is past, the course is no longer listed in the navigation and is listed as past in the course overview. The course end date may also be used by custom reports. Users can still enter the course after the end date; in other words the date does not restrict access. |
-| asd | asd | asd |
-| asd | asd | asd |
-| asd | asd | asd |
-| asd | asd | asd |
-| asd | asd | asd |
-
-
-
-
-
-
-
-
-
-
-*Description:* -todo-
 
 *Evaluation:* -todo-
 
