@@ -83,7 +83,7 @@ Response keys:
 | displayname | Entwicklungsprojekt IT-REX | Course name. |
 | enrolledusercount | 3 | Number of enrolled users in a course. |
 | visible | 1 | This setting determines whether the course appears in the list of courses and whether students can access it. Always "1" for students, because invisible courses are always hidden for them, even if they are members. Can be "0" for teachers and managers. |
-| summary | \&lt;p\&gt;course summary bla bla bla | Text with course summary. Affected by KEY summaryformat. |
+| summary | \&lt;p\&gt;Course summary bla bla bla. | Text with course summary. Affected by KEY summaryformat. |
 | summaryformat | 1 | Summary formats: 1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN. |
 | format | weeks | Possible course formats are: weeks, topics, social, site. |
 | lang | en | Course language. This value can be empty if course and website language are identical. |
@@ -93,6 +93,9 @@ Response keys:
 *Evaluation:* -todo-
 
 **2. Retrieve slide sets from a course**
+
+
+
 
 *Description:* -todo-
 
