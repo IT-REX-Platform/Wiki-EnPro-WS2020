@@ -38,7 +38,8 @@ To prepare your instance for testing and potentially later on for integration wi
 http://129.69.217.173:8081/login/token.php?username=user&password=password&service=itrex
 ```
 ---
-**Sample REST request** using my service token `wstoken=903..e9` to retrieve a list of all courses via `wsfunction=core_enrol_get_users_courses` that a given user `userid=4` is enrolled in:
+**Sample REST request** using my service token `wstoken=903..e9` to retrieve a list of all courses via `wsfunction=
+` that a given user `userid=4` is enrolled in:
 ```
 http://129.69.217.173:8081/webservice/rest/server.php?wstoken=903c8eabf7c64852901e80680bdd2de9&wsfunction=core_enrol_get_users_courses&userid=4
 ```
@@ -67,7 +68,7 @@ Furthermore, there are the following two low-priority tasks:
 
 **1. Retrieve meta information on a user's courses**
 
-REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=
+REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=2
 
 REST call parameters:
 | Parameters | Example value | Description |
@@ -120,6 +121,13 @@ Course membership is derived from **1.**
 **4.1 Check / retrieve user roles in a course**
 
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_enrolled_users&courseid=2
+
+REST call parameters:
+| Parameters | Example value | Description |
+| :--- | :--- | :--- |
+| wstoken | 9d03213a36ba2475cb90a557c1a10e0b | The token belongs to the user, it defines which content is displayed. E.g. a request with wstoken of role "Generic student" doesn't show invisible content, but a request with wstoken of role "Platform administrator" does. |
+| wsfunction | core_enrol_get_enrolled_users | Response is a list of course members and their roles. |
+| userid | 2 | Determines which courses are shown in the response. |
 
 Response keys:
 | KEY | Example value | Description |
