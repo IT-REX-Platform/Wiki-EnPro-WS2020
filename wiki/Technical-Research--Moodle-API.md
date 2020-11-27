@@ -113,18 +113,18 @@ The final request will thus become [http://129.69.217.173:8081/webservice/plugin
 
 **4. Check / retrieve course membership**
 
-Course membership is retreived from **1.**.
+Course membership is retreived from **1.**
 
 *Evaluation:* -todo-
+
+**4.1 Check / retrieve user roles in a course**
+
+REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_enrolled_users&courseid=2
 
 #### Final verdict and reasoning
 **Should we integrate with Moodle at all?:** -todo-  
 **Is data exchange viable?:** -todo-  
 **Is the data model compatible?:** -todo-  
-
-**4.1 Check / retrieve user roles in a course**
-
-REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_enrolled_users&courseid=2
 
 ---
 
