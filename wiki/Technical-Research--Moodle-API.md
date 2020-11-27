@@ -94,10 +94,9 @@ Response keys:
 
 **2. Retrieve slide sets from a course**
 
-
-
-
-*Description:* -todo-
+*Description:*
+(See **3. Retrieve lecture recordings / videos from a course**; the process is the same!)  
+Sample request to download a PDF: [http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b).
 
 *Evaluation:* -todo-
 
