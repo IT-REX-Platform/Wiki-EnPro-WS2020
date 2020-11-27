@@ -67,11 +67,12 @@ Furthermore, there are the following two low-priority tasks:
 
 **1. Retrieve meta information on a user's courses**
 
-Link: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=2
-
-wstoken: 9d03213a36ba2475cb90a557c1a10e0b
-wsfunction: core_enrol_get_users_courses
-userid: 
+Link: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=
+| Parameters | Example value | Description |
+| :--- | :--- | :--- |
+| wstoken | 9d03213a36ba2475cb90a557c1a10e0b | The token belongs to the user, it defines which content is displayed. E.g. a request with wstoken of role "Generic student" doesn't show invisible content, but a request with wstoken of role "Platform administrator" does. |
+| wsfunction | core_enrol_get_users_courses | Response is a list of courses where the user is enrolled. |
+| userid | 2 | Determines which courses are shown in the response. |
 
 | KEY | Example value | Description |
 | :--- | :--- | :--- |
