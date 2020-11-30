@@ -55,8 +55,8 @@ These solutions are meant to help facilitate better understanding of the Moodle 
 As per issue [ITREX-235](https://it-rex.atlassian.net/browse/ITREX-235), the main tasks are as follows:
 
 1. Retrieve meta information on a user's courses
-2. Retrieve slide sets from a course
-3. Retrieve lecture recordings / videos from a course
+2. Retrieve lecture recordings / videos from a course
+3. Retrieve slide sets from a course
 4. Check / retrieve course membership (i.e. which courses is a given user a member of / who are the members of a given course)
 
 Furthermore, there are the following two low-priority tasks:
@@ -68,6 +68,8 @@ Furthermore, there are the following two low-priority tasks:
 
 **0. Retrieve user and service information related to web service token**
 
+*Description:*
+
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=8cc58bb4ff9072db37767c3762557dcf&wsfunction=core_webservice_get_site_info
 
 Call **core_webservice_get_site_info** and all of your problems shall be solved.  
@@ -76,6 +78,7 @@ Only requires the *wstoken* parameter. Response contains associated user id for 
 **1. Retrieve meta information on a user's courses**
 
 *Description:*
+
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=2
 
 REST call parameters:
@@ -100,27 +103,19 @@ Response keys:
 | enddate | 1608256800 | The course end date is used for determining whether a course should be included in a user's list of courses. When the end date is past, the course is no longer listed in the navigation and is listed as past in the course overview. The course end date may also be used by custom reports. Users can still enter the course after the end date; in other words the date does not restrict access. |
 
 *Evaluation:* <br>
--todo- <br>
-\+ Only those courses and information are included in the response that are intended for the respective user.  
+* Only those courses and information are included in the response that are intended for the respective user.  
 All meta information that is displayed to the student/lecturer on Moodle can be extracted with this REST call. 
-The main meta-information for the courses is included.  However, it has to be clarified if further information is needed. 
+The main meta-information for the courses is included. However, it has to be clarified if further information is needed. 
 
+* When updating course information, one has to keep track which data is updated, because IT-Rex doesn't update Moodle. Affect synchronisation of data.
 
-**2. Retrieve slide sets from a course**
+* All course inforamtion can be cached. Course information can be updated as follows:
+	1. Manually by lecturer in his IT-Rex course view. (Update button)
+	2. Periodic automatic update from IT-Rex backend, e.g. every hour.
 
-*Description:*
-(See **3. Retrieve lecture recordings / videos from a course**; the process is the same!)  
-Sample request to download a PDF: [http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b).
+**2. Retrieve lecture recordings / videos from a course**
 
-*Evaluation:* <br> 
--todo- <br>
-\- Course structur must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...). <br>
-\+ The slide sets can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex. 
-
-
-**3. Retrieve lecture recordings / videos from a course**
-
-*Description:*
+*Description:*  
 Assuming the platform has been set up according to the subsection 'Mandatory preliminary setup' on this page, navigate to Plugins -> Web Services and edit the IT-Rex external service.
 Under 'show more', enable file downloads.  
 At this point, downloading or retrieving video files from Moodle is a 2-step-process:<br>
@@ -129,21 +124,34 @@ At this point, downloading or retrieving video files from Moodle is a 2-step-pro
 To be able to complete this request though, it is necessary to append one additional parameter–the user token. This is the same service token used as *wstoken* in other requests. In order for pluginfile.php to accept the token, the aforementioned *enable file downloads* setting has to be ticked for the associated service as otherwise the platform will return with a content access violation error. <br>
 The final request will thus become [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b), which yields the requested file.
 
+*Evaluation:*  
+\- Correlation of Moodle course files to IT-Rex structure can be difficult.  
+\- Course structure must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...).  
+\+ The lecture recordings can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex.
 
-*Evaluation:* <br>
--todo- <br>
+**3. Retrieve slide sets from a course**
 
-\- Course structur must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...). <br>
-\+ The slide sets can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex. 
+*Description:*
+
+(See **2. Retrieve lecture recordings / videos from a course**; the process is the same!)  
+Sample request to download a PDF: [http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b).
+
+*Evaluation:*   
+\- Correlation of Moodle course files to IT-Rex structure can be difficult.  
+\- Course structure must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...).  
+\+ The slide sets can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex.
 
 **4. Check / retrieve course membership**
 
-Course membership is derived from **1.**
+*Description:*  
+Course membership is derived from **1.** If a course is in the list - the user is a member.
 
-*Evaluation:* -todo-
+*Evaluation:*  
+* Every call delivers a lot of extra information, should only be used when needed.
 
 **4.1 Check / retrieve user roles in a course**
 
+*Description:*  
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_enrolled_users&courseid=2
 
 REST call parameters:
@@ -160,15 +168,15 @@ Response keys:
 | shortname | manager | Role name. |
 
 #### Final verdict and reasoning
-**Should we integrate with Moodle at all?:** -todo-  
-**Is data exchange viable?:** -todo-  
-**Is the data model compatible?:** -todo-  
+**Should we integrate with Moodle at all?:** yes  
+**Is data exchange viable?:** yes, Moodle -> IT-Rex; other direction has not been evaluated  
+**Is the data model compatible?:** compatibility is expected  
 
 ---
 
 ### API Calls documentation (deferred)
 
-**Editor's note:** Work on this has been abandoned as Moodle itself provides a very extensive and thorough documentation on its own API including sample responses [here](http://129.69.217.173:8081/admin/webservice/documentation.php).  
+**Editor's note:** Work on documentation has been abandoned as Moodle itself provides a very extensive and thorough documentation on its own API including sample responses [here](http://129.69.217.173:8081/admin/webservice/documentation.php).  
 The small amount of useful information that has been accumulated here is retained solely for referencing purposes.
 
 The following table aims to track interesting REST routes that we might make use of later on.
