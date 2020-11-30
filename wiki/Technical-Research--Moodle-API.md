@@ -75,6 +75,7 @@ Only requires the *wstoken* parameter. Response contains associated user id for 
 
 **1. Retrieve meta information on a user's courses**
 
+*Description:*
 REST call: http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_enrol_get_users_courses&userid=2
 
 REST call parameters:
@@ -98,7 +99,12 @@ Response keys:
 | startdate | 1605225600 | This setting determines the start of the first week for a course in weekly format. It also determines the earliest date that logs of course activities are available for. If the course is reset and the course start date changed, all dates in the course will be moved in relation to the new start date. |
 | enddate | 1608256800 | The course end date is used for determining whether a course should be included in a user's list of courses. When the end date is past, the course is no longer listed in the navigation and is listed as past in the course overview. The course end date may also be used by custom reports. Users can still enter the course after the end date; in other words the date does not restrict access. |
 
-*Evaluation:* -todo-
+*Evaluation:* <br>
+-todo- <br>
+\+ Only those courses and information are included in the response that are intended for the respective user.  
+All meta information that is displayed to the student/lecturer on Moodle can be extracted with this REST call. 
+The main meta-information for the courses is included.  However, it has to be clarified if further information is needed. 
+
 
 **2. Retrieve slide sets from a course**
 
@@ -106,18 +112,29 @@ Response keys:
 (See **3. Retrieve lecture recordings / videos from a course**; the process is the same!)  
 Sample request to download a PDF: [http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/48/mod_resource/content/1/pdf_1.pdf?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b).
 
-*Evaluation:* -todo-
+*Evaluation:* <br> 
+-todo- <br>
+\- Course structur must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...). <br>
+\+ The slide sets can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex. 
+
 
 **3. Retrieve lecture recordings / videos from a course**
 
 *Description:*
 Assuming the platform has been set up according to the subsection 'Mandatory preliminary setup' on this page, navigate to Plugins -> Web Services and edit the IT-Rex external service.
 Under 'show more', enable file downloads.  
-At this point, downloading or retrieving video files from Moodle is a 2-step-process. First, you fetch a general overview of a given course's contents using **core_course_get_contents**, then you extract your content's *fileurl* from the response. The result is an URL similar to this: [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1).  
-To be able to complete this request though, it is necessary to append one additional parameter–the user token. This is the same service token used as *wstoken* in other requests. In order for pluginfile.php to accept the token, the aforementioned *enable file downloads* setting has to be ticked for the associated service as otherwise the platform will return with a content access violation error.
+At this point, downloading or retrieving video files from Moodle is a 2-step-process:<br>
+1. First, you fetch a general overview of a given course's contents using **core_course_get_contents**. REST call example: [http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_course_get_contents&courseid=2](http://129.69.217.173:8081/webservice/rest/server.php?wstoken=9d03213a36ba2475cb90a557c1a10e0b&wsfunction=core_course_get_contents&courseid=2).
+2. Then you extract your content's *fileurl* from the response. The result is an URL similar to this: [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1).  
+To be able to complete this request though, it is necessary to append one additional parameter–the user token. This is the same service token used as *wstoken* in other requests. In order for pluginfile.php to accept the token, the aforementioned *enable file downloads* setting has to be ticked for the associated service as otherwise the platform will return with a content access violation error. <br>
 The final request will thus become [http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b](http://129.69.217.173:8081/webservice/pluginfile.php/42/mod_resource/content/2/cursed.mp4?forcedownload=1&token=9d03213a36ba2475cb90a557c1a10e0b), which yields the requested file.
-  
-*Evaluation:* -todo-
+
+
+*Evaluation:* <br>
+-todo- <br>
+
+\- Course structur must be known or predefined (Weekly/Topics/Directions where the slides sets are saved/...). <br>
+\+ The slide sets can be easily procured and through the structure e.g. Weekly/Topic you can extract to which week/topic they should be added in IT-Rex. 
 
 **4. Check / retrieve course membership**
 
