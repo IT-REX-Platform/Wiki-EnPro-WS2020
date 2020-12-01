@@ -8,6 +8,6 @@
 
 ### [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
-### [Application Architecture Documentation](./Application-Architecture-Documentation)
-* [Implementation View](./Application-Architecture-Documentation--Implementation-View)
-* [Deployment View](./Application-Architecture-Documentation--Deployment-View)
+### [Application Architecture](./Application-Architecture)
+* [Implementation View](./Application-Architecture--Implementation-View)
+* [Deployment View](./Application-Architecture--Deployment-View)

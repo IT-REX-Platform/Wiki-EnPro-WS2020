@@ -13,7 +13,6 @@ For a better understandability, each Microservice will be explained in a section
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
 
 ## **Client Side**
----
 
 The Client Side consists of a single Microservice.
 As the name suggests, it runs on the client's machine locally.
@@ -29,7 +28,6 @@ This helps to achieve a smooth User Experience, as well as better performance on
 
 
 ## **Server Side**
----
 
 The Server Side consists out of 12 Microservices that together form the Backend of the IT-Rex Application.
 
@@ -71,9 +69,7 @@ Typically this would happen by receiving requests from the Frontend-Service. The
 ### **Ranking Service**
 
 ## **External Services**
----
 
 ## **General Design & Decisions**
----
 
 This kind of functionality is distributed and spread across services, that own the Data 
