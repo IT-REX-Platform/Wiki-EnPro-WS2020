@@ -7,7 +7,7 @@ This page describes general thoughts and design decisions that were used to crea
 In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen.
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.1](./Images/Architecture/Component-Diagram-v2.1.PNG)
+![Component-Diagram-v2.2](./Images/Architecture/Component-Diagram-v2.2.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
