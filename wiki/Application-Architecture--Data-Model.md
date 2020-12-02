@@ -6,6 +6,7 @@ The goal is to create an overall baseline data model spanning over the different
 
 ![CourseStructureModel](./Images/Architecture/DataModel_CourseStructure.png)
 
+
 ## Description
 
 ToDo
