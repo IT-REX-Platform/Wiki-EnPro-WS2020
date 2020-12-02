@@ -2,20 +2,20 @@
 
 The goal is to create an overall baseline data model spanning over the different fields of user and role model, course structure, file (meta)data model, quizzes, ...
 
-# How to access the current Models:
+# Course Structure Model
 
-Open draw.io in your Browser.
+![CourseStructureModel](./Images/Architecture/DataModel_CourseStructure.png)
 
-Choose OneDrive as storage location and access the model from the IT-Rex Sharepoint as demonstrated in the following screenshots.
 
-![Screenshot01](./Images/DrawIO/Screenshot01.png)
+## Description
 
-![Screenshot02](./Images/DrawIO/Screenshot02.png)
+ToDo
 
-![Screenshot03](./Images/DrawIO/Screenshot03.png)
 
-![Screenshot04](./Images/DrawIO/Screenshot04.png)
+# Quiz Data Model
 
-![Screenshot05](./Images/DrawIO/Screenshot05.png)
+![CourseStructureModel](./Images/Architecture/DataModel_Quiz.png)
 
-![Screenshot06](./Images/DrawIO/Screenshot06.png)
+## Description
+
+ToDo
