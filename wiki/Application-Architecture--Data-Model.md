@@ -14,7 +14,7 @@ ToDo
 
 # Quiz Data Model
 
-![CourseStructureModel](./Images/Architecture/DataModel_Quiz.png)
+![QuizDataModel](./Images/Architecture/DataModel_Quiz.png)
 
 ## Description
 
