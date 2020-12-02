@@ -14,6 +14,11 @@ It's a "bare" native project with React Native and one or more packages from the
 
 Based on React and React Native. Uses React Native Web for web app deploy.
 
+## Helpful links
+[React Native Guy on Youtube](https://www.youtube.com/c/wcandillon/featured)
+<br>
+[React Native Guy#2 on Youtube](https://www.youtube.com/c/CatalinMironDev/featured)
+
 
 ### Limitations of the managed workflow
 
