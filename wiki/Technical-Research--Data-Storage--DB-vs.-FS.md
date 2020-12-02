@@ -1,9 +1,9 @@
 # Storing files in the database: pros and cons
 
 ## Pros
-	- acid consistency / files and db in snyc; rollback of update is complicated when files are stored outside of db
+	- acid consistency / files and db in sync; rollback of update is complicated when files are stored outside of db
 	- backups automatically include files
-	- security implications
+	- security implications (see page on Security Implications)
 	- more scalable in multi-server scenario
 		- failover and availability concerns
 
@@ -12,7 +12,7 @@
 	- people might rearrange files, breaking the link between them and the db entry
 	- binary file object size limit
 	- increases size of database
-	- decreased portability (sql server's FILESTREAM object)
+	- decreased portability (e.g. sql server's FILESTREAM object being vendor-specific)
 	- possible additional layer wrapped around the file (Ole object for example)
 	- can't really use cloud storage
 
@@ -24,7 +24,7 @@
 		- store route in db
 
 ## Reasoning:
-	- we're going to have files with sizes of different magnitudes (few MB for slides, hundreds of MBs for lecture recodings)
+	- we're going to have files with different orders of magnitude in size (few MB for slides, hundreds of MBs for lecture recordings)
 	- recordings probably too large even for modern DBMS
 	- mixed approach probably not a good idea
 		- if we have to implement proper handling for recordings, there's no reason not to incorporate smaller files as well
