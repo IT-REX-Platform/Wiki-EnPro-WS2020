@@ -1,6 +1,34 @@
-# Which OS / Browser should be supported
+# Cross Platform Framework
+Suggestion: Expo with bare workflow
+
+Pros:
+- Monorepo, Variation through file endings. e.g. index.ios.js, index.web.js. etc.
+- Good documentation
+- Support of native platform features
+- Free and Open Source
+- Performant apps due to underlying React Native
+- Project deployable to native dev environments (Android studio, xcode)
+
+Cons:
+- Desktop app probably harder to implement
+
+Why?
+- expo over react native
+  - lower effort for monorepo codebase
+  - react native web already integrated
+- expo over ionic
+  - native look and feel on mobile devices
+  - faster, no ressource overhead for web tech on mobile devices
+
+Development strategy:
+- in case of dev issues -> carry-over to pure react native possible
+- try to minimize dependencies on expo specific implementations
+- separate business logic in specific components (UI independent)
+- etc. 
 
 
+# Notes
+## Which OS / Browser should be supported
 * Mobile Apps (iOS / Android) (1)
 * Browser (1)
   * Chromium/Chrome (1)
@@ -50,8 +78,8 @@ https://ionicframework.com/resources/articles/ionic-vs-flutter-comparison-guide
 
 https://www.statista.com/statistics/869224/worldwide-software-developer-working-hours/
 
-# Web Frameworks
+## Web Frameworks
 
-## VueJs
-## AngularJs
-## React
+### VueJs
+### AngularJs
+### React
