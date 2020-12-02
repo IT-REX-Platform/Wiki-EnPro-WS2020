@@ -18,11 +18,11 @@ The AdjustableTimePeriod embodies one period in that a student is supposed to co
 
 ### Chapter
 
-A Chapter is a thematical collection of contents. A chapter becomes available to the Student when the startDate is reached and is supposed to be completed when the endDate is reached. A Student completes a chapter when all contained Content items have been completed. It also contains a maxFoodSum. The sum of all Chapters maxFoodSums has to be equal to the maxFoodSum of the containing AdjustableTimePeriod.
+A Chapter is a thematical collection of Contents. A chapter becomes available to the Student when the startDate is reached and is supposed to be completed when the endDate is reached. A Student completes a chapter when all contained Content items have been completed. It also contains a maxFoodSum. The sum of all Chapters maxFoodSums has to be equal to the maxFoodSum of the containing AdjustableTimePeriod.
 
 ### Content
 
-A Content item is supposed to be part of a chapter. It appears for the student when the startDate is reached and is supposed to be completed when the endDate is reached. It has a foodReward. The sum of all contents foodRewards has to be equal to the maxFoodSum of the containing chapter.
+A Content item is supposed to be part of a chapter. It becomes available to the student when the startDate is reached and is supposed to be completed when the endDate is reached. It has a foodReward. The sum of all contents foodRewards has to be equal to the maxFoodSum of the containing chapter.
 
 ### QuestionPool
 
