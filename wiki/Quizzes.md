@@ -1,4 +1,4 @@
-This document describes ideas and concepts about quizzes in IT-Rex. It contains the research process and the decisions made about quiz types, quiz options and answer types. For the data model describing quiz components and relations see [Quiz Data Model](./Application-Architecture--Data-Model#user-role-model).
+This document describes ideas and concepts about quizzes in IT-Rex. It contains the research process and the decisions made about quiz types, quiz options and answer types. For the data model describing quiz components and relations see [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 # Quiz Types
 Idea: Every question is stored in a course wide question pool and can be reused in Quizzes, including Turbo Quiz and Rex-Duell.
