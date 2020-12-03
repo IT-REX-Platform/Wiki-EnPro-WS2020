@@ -82,7 +82,7 @@ For further information go to User Role Model (bring in line, abstract?).
 
 # Quiz Data Model
 
-For more information about the design decisions for Quizzes (including setting options, quiz types, etc.) go to [Quizzes](./Quizzes.md).
+For more information about the design decisions for Quizzes (including setting options, quiz types, etc.) go to [Quizzes](./Quizzes).
 
 ![QuizDataModel](./Images/Architecture/DataModel_Quiz.png)
 
@@ -127,7 +127,6 @@ The QuestionCategory is a representation of a lecture Chapter (see Course Struct
 ### AnswerType
 
 The AnswerType represents how the Question can be answered. The simplest of these types are shown in the model: SingleChoice, MultipleChoice and Numerical answer.
-
 
 
 # User Role Model
