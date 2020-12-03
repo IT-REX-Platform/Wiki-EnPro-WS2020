@@ -1,0 +1,2 @@
+- sqli protection
+- db user permissions (read only access for everyday queries)
