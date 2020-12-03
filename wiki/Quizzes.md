@@ -1,20 +1,20 @@
-# Quizzes
+This document describes ideas and concepts about quizzes in IT-Rex. It contains the research process and the decisions made about quiz types, quiz options and answer types. For the data model describing quiz components and relations see [Quiz Data Model](./Application-Architecture--Data-Model#user-role-model).
 
-## Quiz Types
-Idea: Every question is stored in a course wide question pool and can be reused in Turbo Quizzes or Rex-Duell.
-
-Quizzes in general should have reasonable default settings and should guide the user. For each quiz type there are different default settings defined.
+# Quiz Types
+Idea: Every question is stored in a course wide question pool and can be reused in Quizzes, including Turbo Quiz and Rex-Duell.
 
 ### Lecture Quiz
-* Lecture scope
+* Chapter scope
 * Static Quiz: Questions are explicitly included by the lecturer -> every quiz contains the same questions
 * Schedulable Quiz: Lecture Quizzes can be content of the timeline/chapters/...
-* can access question pool ???
+* can access question pool
 * can have different question types
 * Anonymous
 * Goal: Test the knowledge of content that has been taught in this lecture
 
 ### Repetition Quiz
+With our current data model it is possible to realize such a Repetition Quiz with the normal Lecture Quiz. Therefore we decided to not include this type for the moment.
+
 * Course scope
 * Static Quiz: Questions are explicitly included by the lecturer -> every quiz contains the same questions
 * Schedulable Quiz: Lecture Quizzes can be content of the timeline/chapters/...
@@ -47,18 +47,27 @@ Quizzes in general should have reasonable default settings and should guide the 
 
 ### Rex-Event
 * Similar to Repetition Quiz Idea
-* Goal: Goal: Motivate to learn through competition and rewards, "play against the whole course"
+* Questions are not random but specifically chosen/created by the lecturer
+* Every player gets the same questions
+* Is only available for a certain period of time
+* After time is up ranking is published and players are rewarded
+* Reward players who are better than the average
+* Goal: Motivate to learn through competition and rewards, "play against the whole course"
 
-## Which general options should IT-Rex quizzes provide?
+# Which general options should IT-Rex quizzes provide?
 
-### Setting Options in Ilias
+IT-Rex quizzes should provide the most basic and useful options. Options should not be too extensive (like in Ilias) to make the creation of quizzes as simple and fast as possible. To support this quizzes must have reasonable default settings and should guide the user. For each quiz type there are different default settings defined.
+
+Quizzes in IT-Rex don't have the aim of examination.
+
+## Setting Options in Ilias
 * Question Pool
 * option to give participants always the same questions or random ones
 * option to create an anonymous test
 * test can be made available only for a limited time
 * password protected
 * add an info about the test
-* options for exam mode -> out of scope for us?
+* options for exam mode -> out of scope for us
 * make the point/score system visible for the participants
 * fixed or mixed order of questions
 * hint system
@@ -71,7 +80,9 @@ Quizzes in general should have reasonable default settings and should guide the 
 * if how and when participants can access their test results
 * if how and when participants can access the correct test answers
 
-### Settings for IT-Rex (Lecture Quiz)
+## Settings for IT-Rex
+
+### Lecture Quiz
 * Name
 * Location (in which lecture or chapter)
 * Quiz Type
@@ -80,7 +91,7 @@ Quizzes in general should have reasonable default settings and should guide the 
   * Pass Percentage (Default: 50%)
   * Timelimit (Default: per question 30 sec) -> only Turbo Quiz?
 * Settings per Question
-  * Question/Answer Type
+  * Answer Type
   * Question Description
   * Answers (depending on type)
   * Question Difficulty
@@ -88,17 +99,17 @@ Quizzes in general should have reasonable default settings and should guide the 
   * Hint
   * Use question for Rex-Duell (Default: true - only single choice type)
 
-### Settings for IT-Rex (Turbo Quiz)
+### Turbo Quiz specifics
 * Timelimit (Default: per question 30 sec)
 * Timelimit per question?
 * add new questions??
 
 
-# Research for different question/answer types
-Multiple and single choice questions are the simplest types of questions that should definitely be included. I think it is important to also offer other question types to cope with repetitiveness that often comes with single or multiple choice questions. It feels refreshing to have some level of interaction and this also gives an incentive to think more about the question and what you are answering. Furthermore, some questions can be stated better with other forms of question types.
+# Research for different Answer types
+Multiple and single choice questions are the simplest types of answers that should definitely be included. I think it is important to also offer other answer types to cope with repetitiveness that often comes with single or multiple choice questions. It feels refreshing to have some level of interaction and this also gives an incentive to think more about the question and what you are answering. Furthermore, some questions can be stated better with other forms of answer types.
 
 ## Ilias Quizzes
-Ilias offers several question types with different level of interaction.
+Ilias offers several answer types with different level of interaction.
 https://docu.ilias.de/data/docu/lm_data/lm_8782/Test_Assessment_38.html#d54e480
 
 ### Multiple Choice / Single Choice
@@ -233,7 +244,7 @@ Can be cumbersome on touch screen devices and harder to grade automatically
 * STACK questions
 
 
-### Types used by Becker/Alireza
+### Types used by Becker/Hoorn/Alireza
 * Multiple Choice / Single Choice
 * KPrim Choice
 * Numerical answer

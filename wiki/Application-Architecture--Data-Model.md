@@ -46,11 +46,11 @@ Lecture slides, PDF preferred.
 
 ### LecureQuiz
 
-Quiz type that should test the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to Quiz Data Model. -> inconsistent to Quiz Data Model!!
+Quiz type that should test the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model). -> inconsistent to Quiz Data Model!!
 
 ### QuestionPool
 
-The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every course has exactly one QuestionPool. For further information go to Quiz Data Model.
+The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every course has exactly one QuestionPool. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### ContentPool
 
@@ -58,11 +58,11 @@ The ContentPool contains all Contents that belong to the Course. They can be ref
 
 ### RexDuell
 
-Every course has exactly one RexDuell. It is a type of quiz that enables the students to compete with each other by answering questions about the course content. For further information go to Quiz Data Model.
+Every course has exactly one RexDuell. It is a type of quiz that enables the students to compete with each other by answering questions about the course content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### TurboQuiz
 
-Every course has exactly one TurboQuiz. It is a type of quiz that enables the students to learn course content by answering quizzes with a time constraint. For further information go to Quiz Data Model.
+Every course has exactly one TurboQuiz. It is a type of quiz that enables the students to learn course content by answering quizzes with a time constraint. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### IT-Rex
 
@@ -70,15 +70,15 @@ IT-Rex becomes hungry when a Content appears. The foodDeficit grows as much as t
 
 ### Student
 
-Students participate in Courses and complete the contained Content, Chapters and (indirectly) AdjustableTimePeriods. Thereby they get rewarded with foodRewards to feed their IT-Rexes. They can also play quizzes like RexDuell and TurboQuiz to gain additional rewards. For further information go to User Role Model.
+Students participate in Courses and complete the contained Content, Chapters and (indirectly) AdjustableTimePeriods. Thereby they get rewarded with foodRewards to feed their IT-Rexes. They can also play quizzes like RexDuell and TurboQuiz to gain additional rewards. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#user-role-model).
 
 ### Lecturer
 
-Lecturers can create and delete Courses and lecture the contained Content. Every Course has at least one Lecturer. Lecturer manage Courses by creating AdjustableTimePeriods and Chapters and uploading the Content. For further information go to User Role Model.
+Lecturers can create and delete Courses and lecture the contained Content. Every Course has at least one Lecturer. Lecturer manage Courses by creating AdjustableTimePeriods and Chapters and uploading the Content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#user-role-model).
 
 ### User
 
-For further information go to User Role Model (bring in line, abstract?).
+For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#user-role-model) (bring in line, abstract?).
 
 # Quiz Data Model
 
@@ -106,11 +106,11 @@ Every course has exactly one TurboQuiz. It is a type of quiz that enables the st
 
 ### Course
 
-The Course is the central component that contains Quizzes. For further information go to Quiz Data Model.
+The Course is the central component that contains Quizzes. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### ContentPool
 
-The ContentPool contains all Quizzes other than RexDuell and TurboQuiz that belong to the Course. Every course has exactly one ContentPool. For further information go to Course Structure Data Model.
+The ContentPool contains all Quizzes other than RexDuell and TurboQuiz that belong to the Course. Every course has exactly one ContentPool. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model).
 
 ### QuestionPool
 
@@ -122,7 +122,7 @@ Questions are stored in the QuestionPool and can be used in Quizzes. A Question 
 
 ### QuestionCategory
 
-The QuestionCategory is a representation of a lecture Chapter (see Course Structure Data Model) and indicates if a Question has a relation to the content of a specific Chapter. There is also a default QuestionCategory if a Question does not fit to a Chapter.
+The QuestionCategory is a representation of a lecture Chapter (see [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model)) and indicates if a Question has a relation to the content of a specific Chapter. There is also a default QuestionCategory if a Question does not fit to a Chapter.
 
 ### AnswerType
 
