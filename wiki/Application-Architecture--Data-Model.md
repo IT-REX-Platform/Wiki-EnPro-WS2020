@@ -44,25 +44,24 @@ Abstract Content type that encapsulates any content other than Documents. Exampl
 
 Lecture slides, PDF preferred.
 
-### LecureQuiz
-
-Quiz type that should test the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model). -> inconsistent to Quiz Data Model!!
+### LectureQuiz
+Tests the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### QuestionPool
 
-The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every course has exactly one QuestionPool. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every Course has exactly one QuestionPool. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### ContentPool
 
-The ContentPool contains all Contents that belong to the Course. They can be referenced in multiple different chapters this way without uploading them multiple times. Every course has exactly one ContentPool.
+The ContentPool contains all Contents that belong to the Course. It is a mean to have an overview about uploaded Content and also store Content that has not been added to a Chapter. Every Course has exactly one ContentPool.
 
 ### RexDuell
 
-Every course has exactly one RexDuell. It is a type of quiz that enables the students to compete with each other by answering questions about the course content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+Every course has exactly one RexDuell. It enables the students to compete with each other by answering questions about the Course Content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### TurboQuiz
 
-Every course has exactly one TurboQuiz. It is a type of quiz that enables the students to learn course content by answering quizzes with a time constraint. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+Every course has exactly one TurboQuiz. It enables the students to learn Course Content by answering quizzes with a time constraint. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### IT-Rex
 
@@ -94,15 +93,19 @@ An IdentifiableElement has a name and an id. The id is used to identify an entit
 
 ### Quiz
 
-A Quiz has Questions and can be specified by its QuizSettings.
+A Quiz has Questions and can be specified by its QuizSettings. Quizzes are used by LectureQuizzes, RexDuell and TurboQuiz.
+
+### LectureQuiz
+
+It is the most basic Quiz and is also known as "Lehrstandskontrolle". A LectureQuiz tests the knowledge of students about Course chapters. It can block access to further chapters.
 
 ### RexDuell
 
-Every course has exactly one RexDuell. It is a type of quiz that enables the students to compete with each other by answering questions about the course content. It can only access Questions from the QuestionPool of AnswerType 'SingleChoice' that provides exactly four possible answers.
+Every Course has exactly one RexDuell. It enables the students to compete with each other by answering Questions about the Course content. It can only access Questions from the QuestionPool of AnswerType 'SingleChoice' that provides exactly four possible answers.
 
 ### TurboQuiz
 
-Every course has exactly one TurboQuiz. It is a type of quiz that enables the students to learn course content by answering quizzes with a time constraint. Because of the time constraint not every Question might be applicable for the TurboQuiz.
+Every Course has exactly one TurboQuiz. It enables the students to learn Course content by answering Quizzes with a time constraint. Because of the time constraint not every Question might be applicable for the TurboQuiz.
 
 ### Course
 
@@ -110,7 +113,7 @@ The Course is the central component that contains Quizzes. For further informati
 
 ### ContentPool
 
-The ContentPool contains all Quizzes other than RexDuell and TurboQuiz that belong to the Course. Every course has exactly one ContentPool. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model).
+The ContentPool contains all LecturQuizzes that belong to the Course. Every Course has exactly one ContentPool. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model).
 
 ### QuestionPool
 
