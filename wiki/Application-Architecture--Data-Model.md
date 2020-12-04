@@ -45,6 +45,7 @@ Abstract Content type that encapsulates any content other than Documents. Exampl
 Lecture slides, PDF preferred.
 
 ### LectureQuiz
+
 Tests the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
 
 ### QuestionPool
@@ -97,7 +98,7 @@ A Quiz has Questions and can be specified by its QuizSettings. Quizzes are used 
 
 ### LectureQuiz
 
-It is the most basic Quiz and is also known as "Lehrstandskontrolle". A LectureQuiz tests the knowledge of students about Course chapters. It can block access to further chapters.
+It is the most basic Quiz and is also known as "Lehrstandskontrolle". A LectureQuiz tests the knowledge of students about Course content. It can hold Questions with any AnswerType.
 
 ### RexDuell
 
