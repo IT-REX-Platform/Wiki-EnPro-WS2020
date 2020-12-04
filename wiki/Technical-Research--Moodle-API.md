@@ -167,7 +167,7 @@ Response keys:
 | roleid | 1 | Role ID. |
 | shortname | manager | Role name. |
 
-#### Final verdict and reasoning
+# Final verdict and reasoning
 **Should we integrate with Moodle at all?:** yes  
 **Is data exchange viable?:** yes, Moodle -> IT-Rex; other direction has not been evaluated  
 **Is the data model compatible?:** compatibility is expected  
