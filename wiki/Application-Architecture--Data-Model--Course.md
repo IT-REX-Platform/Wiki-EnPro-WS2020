@@ -42,11 +42,11 @@ Lecture slides, PDF preferred.
 
 ### LectureQuiz
 
-Tests the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+Tests the knowledge of students about other Content contained in the Chapter. It can block access to further Chapters. Also known as "Lehrstandskontrolle". For further information go to [Quiz Data Model](./Application-Architecture--Data-Model--Quiz#quiz-data-model).
 
 ### QuestionPool
 
-The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every Course has exactly one QuestionPool. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+The QuestionPool contains all Questions that belong to the Course. They can be used in multiple different quizzes. Every Course has exactly one QuestionPool. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model--Quiz#quiz-data-model).
 
 ### ContentPool
 
@@ -54,11 +54,11 @@ The ContentPool contains all Contents that belong to the Course. It is a mean to
 
 ### RexDuell
 
-Every course has exactly one RexDuell. It enables the students to compete with each other by answering questions about the Course Content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+Every course has exactly one RexDuell. It enables the students to compete with each other by answering questions about the Course Content. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model--Quiz#quiz-data-model).
 
 ### TurboQuiz
 
-Every course has exactly one TurboQuiz. It enables the students to learn Course Content by answering quizzes with a time constraint. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model#quiz-data-model).
+Every course has exactly one TurboQuiz. It enables the students to learn Course Content by answering quizzes with a time constraint. For further information go to [Quiz Data Model](./Application-Architecture--Data-Model--Quiz#quiz-data-model).
 
 ### IT-Rex
 
@@ -66,12 +66,12 @@ IT-Rex becomes hungry when a Content appears. The foodDeficit grows as much as t
 
 ### Student
 
-Students participate in Courses and complete the contained Content, Chapters and (indirectly) AdjustableTimePeriods. Thereby they get rewarded with foodRewards to feed their IT-Rexes. They can also play quizzes like RexDuell and TurboQuiz to gain additional rewards. For further information go to [User Role Model](./Application-Architecture--Data-Model#user-role-model).
+Students participate in Courses and complete the contained Content, Chapters and (indirectly) AdjustableTimePeriods. Thereby they get rewarded with foodRewards to feed their IT-Rexes. They can also play quizzes like RexDuell and TurboQuiz to gain additional rewards. For further information go to [User Role Model](./Application-Architecture--Data-Model--User#user-role-model).
 
 ### Lecturer
 
-Lecturers can create and delete Courses and lecture the contained Content. Every Course has at least one Lecturer. Lecturer manage Courses by creating AdjustableTimePeriods and Chapters and uploading the Content. For further information go to [User Role Model](./Application-Architecture--Data-Model#user-role-model).
+Lecturers can create and delete Courses and lecture the contained Content. Every Course has at least one Lecturer. Lecturer manage Courses by creating AdjustableTimePeriods and Chapters and uploading the Content. For further information go to [User Role Model](./Application-Architecture--Data-Model--User#user-role-model).
 
 ### User
 
-For further information go to [User Role Model](./Application-Architecture--Data-Model#user-role-model) (bring in line, abstract?).
+For further information go to [User Role Model](./Application-Architecture--Data-Model--User#user-role-model) (bring in line, abstract?).

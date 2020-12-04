@@ -28,11 +28,11 @@ Every Course has exactly one TurboQuiz. It enables the students to learn Course 
 
 ### Course
 
-The Course is the central component that contains Quizzes. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model).
+The Course is the central component that contains Quizzes. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model--Course#course-structure-data-model).
 
 ### ContentPool
 
-The ContentPool contains all LecturQuizzes that belong to the Course. Every Course has exactly one ContentPool. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model).
+The ContentPool contains all LecturQuizzes that belong to the Course. Every Course has exactly one ContentPool. For further information go to [Course Structure Data Model](./Application-Architecture--Data-Model--Course#course-structure-data-model).
 
 ### QuestionPool
 
@@ -44,7 +44,7 @@ Questions are stored in the QuestionPool and can be used in Quizzes. A Question 
 
 ### QuestionCategory
 
-The QuestionCategory is a representation of a lecture Chapter (see [Course Structure Data Model](./Application-Architecture--Data-Model#course-structure-data-model)) and indicates if a Question has a relation to the content of a specific Chapter. There is also a default QuestionCategory if a Question does not fit to a Chapter.
+The QuestionCategory is a representation of a lecture Chapter (see [Course Structure Data Model](./Application-Architecture--Data-Model--Course#course-structure-data-model)) and indicates if a Question has a relation to the content of a specific Chapter. There is also a default QuestionCategory if a Question does not fit to a Chapter.
 
 ### AnswerType
 
