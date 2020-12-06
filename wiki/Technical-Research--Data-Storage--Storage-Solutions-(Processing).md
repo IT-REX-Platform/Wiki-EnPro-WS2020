@@ -15,3 +15,13 @@ If we choose to go with a more modern codec, chances are we may be able to produ
 YouTube, being one of if not the most popular video streaming platform on the internet, uses **VP9** for most of their video quality brackets (and is working on transitioning to even more efficient ones as we speak). **VP9** is an open and royalty-free alternative to **HEVC (h.265)**, the successor to **AVC (h.264)**. For comparison, **h.265** can save up to 50% in raw file size compared to **h.264** without any perceivable loss in quality. **VP9** produces similar file sizes, but encoders are a little slower than the **h.265** ones.
 
 
+## Check Video Container / Codecs Client-Side
+
+I could't find a library which works on iOS/Android an web simultaneously.
+For web we could use [mp4box.js](https://medium.com/@JackPu/how-js-get-video-codec-548a33cf7454) and for iOS/Android React-native-video](https://github.com/react-native-video/react-native-video).
+
+ If we play the video in the app before we upload it, we can use the onLoad callback of react-native-video to display the codecs [onLoad](https://www.npmjs.com/package/react-native-video#onload).
+
+
+## Additional Links
+[Android supported formats](https://developer.android.com/guide/topics/media/media-formats.html)
