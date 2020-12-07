@@ -5,7 +5,7 @@
 ## Description
 
 Permissions follow CRUD rules where applicable. CRUD = Create, read, update and delete.
-"Reading" and "updating" are often used interchangeably with "viewing" and "modifying" in the description.
+"Reading" and "updating" are often used interchangeably with "viewing" and "modifying" in the description. Additionally we used permissions to leave and enter a Course, play Quizzes, publish and unpublish Course elements and earning rewards for gamification.
 
 The model shows two sets of roles, one on the system and the other one on the Course level. System wide roles are set once for every deployment of IT-Rex. Course wide roles are set inside the system for every existing course independently.
 
@@ -57,15 +57,15 @@ The CourseUser is either a CourseOwner, CourseManager or CourseParticipant. It p
 
 ### CourseUserPermissions
 
-The most basic permissions on Course level are leaving the Course, viewing general Course information and playing the Quizzes. The latter includes reading and playing LectureQuizzes, TurboQuiz and RexDuell. Leaving the course may be limited for CourseOwners.
+The most basic permissions on Course level are leaving the Cours and viewing general Course information. Leaving the course may be limited for CourseOwners.
 
 ### CourseParticipant
 
-CourseParticipants are usually Students who participate in the Course (clarify: should Lecturers also be able to participate in Courses?). They can view content in chapters, view and update their personal Course IT-Rex and earn rewards for various actions.
+CourseParticipants are usually Students who participate in the Course (clarify: should Lecturers also be able to participate in Courses?). They can view published Content in Chapters, view and update their personal Course IT-Rex and earn rewards for various actions. Additionally they can play published Quizzes, which includes reading and playing LectureQuizzes, TurboQuiz and RexDuell.
 
 ### CourseManager
 
-CourseManagers are assistants to the Lecturer who teaches the Course. They can originate from a Student or Lecturer account. They are able to manage most of the Course and its content. This includes CRUD content, chapter, AdjustableTimePeriod, questions, TurboQuiz, RexDuell and CourseParticipants. They can also read and update the ContentPool and QuestionPool which are automatically created at Course creation and cannot be deleted independently of the Course. Additionally they can view statistics about the Course (e.g. number and progress of participants).
+CourseManagers are assistants to the Lecturer who teaches the Course. They can originate from a Student or Lecturer account. They are able to manage most of the Course and its content. This includes CRUD content, chapter, AdjustableTimePeriod, questions, TurboQuiz, RexDuell and CourseParticipants. On top of this they are able to publish and unpublish Content, Chapters, TurboQuiz and RexDuell to be visible/invisible for the CourseParticipants. For testing purposes they are able to play the Quizzes even before they are published. They can also read and update the ContentPool and QuestionPool which are automatically created at Course creation and cannot be deleted independently of the Course. Additionally they can view statistics about the Course (e.g. number and progress of participants).
 
 ### CourseOwner
 

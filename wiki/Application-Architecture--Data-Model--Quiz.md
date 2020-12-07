@@ -12,7 +12,7 @@ An IdentifiableElement has a name and an id. The id is used to identify an entit
 
 ### Quiz
 
-A Quiz has Questions and can be specified by its QuizSettings. Quizzes are used by LectureQuizzes, RexDuell and TurboQuiz.
+A Quiz has Questions and can be specified by its QuizSettings. Quizzes are used by LectureQuizzes, RexDuell and TurboQuiz. Remark: When publishing a Quiz the system should check if there is at least one Question associated to it.
 
 ### LectureQuiz
 
