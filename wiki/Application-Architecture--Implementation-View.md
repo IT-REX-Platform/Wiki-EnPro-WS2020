@@ -80,18 +80,19 @@ Fetching the up-to-date user-specific data and providing it is therefore one of 
 For the course service it is necessary to check for existing information like courses and their meta-data in the LMS systems.
 If those are existent, the services is able to fetch them and provide it to the course service.
 
-**!** The LMS adapter has no further functionality than fetching data from the external system to the authentication service. The authentication process is handled entirely within the authentication service. **!**
+**!** The LMS adapter has no further functionality than fetching data from the external system to the authentication service / course service. The authentication process of the user is handled entirely within the authentication service. **!**
 
 
 ### **Course Service**
 
 The course service is the main service for processing and providing information that belongs to a course.
-It is invoked by the Frontend-Backend service.
+It is invoked by the Frontend-Backend service. The course service fetches data about courses (meta information) from the LMS adapter to synchronize and organize courses in IT-Rex. <br>
 Based on incoming requests, the following services are invoked by the course service itself in order to provide the necessary data:
 * Document Service
 * Media Service
 * Quiz Service
 * RexDuel Service
+* _Scoring Service_
 
 The information provided by the above listed services is then used inside the course service to fulfill tasks like visualizing and publishing certain contents.
 Another important task is to transform the invoked data into a single timeline that is split up by chapters.
