@@ -118,7 +118,20 @@ Modifying, Updating and adding content are other tasks that are handled inside h
 
 
 ### **Quiz Service**
+
+The Quiz service is used by the Course service in order to get, create, modify or delete quizzes.
+By providing questions and answers, along with quiz settings and meta information, quizzes can be created inside the quiz service and stored in the connected Quiz Database.
+
+The main functionality resides in delivering a quiz object to the course service with correct questions and answers for the given context (i.e. Questions for the correct chapter in the correct course).
+
+Depending on the context, three different modes for the returned quizzes seem to be useful:
+* Lecture Quiz: This is the normal quiz that would be used in the context of a chapter inside a Course.
+* Turbo Quiz: A timed Quiz that contains all questions inside a course for an exam-like feeling.
+* Rex-Duel Quiz: Specified rex-duel approved questions, that are course-wide.
+
+
 ### **Rex Duel Service**
+
 
 
 ### **Gamification Service**
