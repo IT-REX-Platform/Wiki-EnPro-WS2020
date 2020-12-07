@@ -105,7 +105,7 @@ The Document service is invoked by the course service and handles all logic rela
 For the beginning, the main focus will be on handling PDF files.
 Later-on, other Document formats like .pptx or similar could be supported aswell.
 
-The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
+The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted. Therefore the service is connected to the document database. 
 
 ### **Media Service**
 
@@ -115,8 +115,8 @@ The main focus here lies on video, audio and image formats like .mp4, .mp3 and .
 Just like the Document Service, the Media Service is invoked by the course service.
 This is necessary for basic functionality like uplaoding and displaying videos for chapters.
 When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
-Additionally, it reads from the Database in order to provide the requested Media to each user.
-Modifying, Updating and adding content are other tasks that are handled inside here.
+Additionally, it reads from the Media Database in order to provide the requested Media to each user.
+Modifying, updating and adding content are other tasks that are handled inside here.
 
 
 ### **Quiz Service**
