@@ -80,6 +80,7 @@ Fetching the up-to-date user-specific data and providing it is therefore one of 
 For the course service it is necessary to check for existing information like courses and their meta-data in the LMS systems.
 If those are existent, the services is able to fetch them and provide it to the course service.
 
+**!** The LMS adapter has no further functionality than fetching data from the external system to the authentication service. The authentication process is handled entirely within the authentication service. **!**
 
 
 ### **Course Service**
