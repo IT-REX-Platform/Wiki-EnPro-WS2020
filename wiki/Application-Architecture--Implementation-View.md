@@ -29,12 +29,12 @@ This helps to achieve a smooth User Experience, as well as better performance on
 
 ## **Server Side**
 
-The Server Side consists out of 12 Microservices that together form the Backend of the IT-Rex Application.
+The Server Side consists out of 13 Microservices that together form the Backend of the IT-Rex Application.
 
 
 
 
-### **Backend for Frontend**
+### **Frontend-Backend Service**
 The [Backend for Frontend](https://samnewman.io/patterns/architectural/bff/) is an architectural pattern, commonly used for multiplatform scenarios.
 
 It enables different implementations for the same backend that provides data to the Frontend-Service for visualisation.
@@ -59,21 +59,54 @@ _Comparison of REST and GraphQL:_ <br>
 
 ### **Authentication Service**
 
+In order to use the application, users must be able to log-in.
+Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
+Therefore the authentication service is invoked by the Frontend-Backend service.
+It's tasks contain:
+* Filling the User Database of IT-Rex with current user information
+* Fetching Data from the LMSAdapter for the specific User
+* Authentication / Providing Access
 
-### **Course Service**
+In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality.
 
 ### **LMS Adapter**
 
+The Learning Management System (LMS) Adapter is a microservice designed to connect with external learning platforms.
+For our use-case, Ilias and Moodle are two prime examples for such external services.
+
+This service is mainly invoked by the authentication service and the course service.
+In order to process user information that is managed in the external learning management systems, an integration is needed and handled inside this microservice.
+Fetching the up-to-date user-specific data and providing it is therefore one of the main tasks.
+For the course service it is necessary to check for existing information like courses and their meta-data in the LMS systems.
+If those are existent, the services is able to fetch them and provide it to the course service.
+
+
+
+### **Course Service**
+
+The course service is the main service for processing and providing information that belongs to a course.
+It is invoked by the Frontend-Backend service.
+Based on incoming requests, the following services are invoked by the course service itself in order to provide the necessary data:
+* Document Service
+* Media Service
+* Quiz Service
+* RexDuel Service
+
+The information provided by the above listed services is then used inside the course service to fulfill tasks like visualizing and publishing certain contents.
+Another important task is to transform the invoked data into a single timeline that is split up by chapters.
+In order to do so, the course service is connected to a database, where course-specific information is stored persistently.
+
 
 ### **Document Service**
-### **Video Service**
+
+### **Media Service**
 ### **Quiz Service**
-### **Rex Duell Service**
+### **Rex Duel Service**
 
 
 ### **Gamification Service**
 ### **Scoring Service**
-### **Customization Service**
+### **Customization Inventory**
 ### **Customization Shop**
 ### **Ranking Service**
 
