@@ -10,6 +10,7 @@ The following services are currently running on the server:
 | :--- | :--- |
 | [http://129.69.217.173:8081/](http://129.69.217.173:8081/) | Moodle testing instance |
 | [http://129.69.217.173:8082/](http://129.69.217.173:8082/) | Ilias testing instance |
+| [https://129.69.217.173:8083/](https://129.69.217.173:8083/) | Keycloak testing instance (HTTPS only) |
 
 Files for running services are currently located at:
 | **Path** | **Description** |
@@ -22,3 +23,6 @@ Files for running services are currently located at:
 | /srv/ilias-docker/shared/db | Mapped volume for Ilias MySQL database files |
 | /srv/ilias-docker/shared/ilias_html | Mapped volume for Ilias codebase |
 | /srv/ilias-docker/shared/ilias_data | Mapped volume for Ilias client/user data |
+| /srv/keycloak | Docker-compose for Keycloak |
+| /srv/keycloak/db_data | Mapped volume for Keycloak Postgres database files |
+| /srv/keycloak/https/tls.* | Mapped certificate and key for TLS |
