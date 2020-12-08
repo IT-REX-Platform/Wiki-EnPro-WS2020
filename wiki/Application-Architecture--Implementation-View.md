@@ -176,16 +176,32 @@ Although it is not shown in the component diagram, there probably will be a conn
 
 ### **Customization Inventory\***
 
+The Customization Inventory is a service where the user-specific items are managed.
+IT-Rexes can be equipped with several accessories that can be bought.
+After owning them, the Inventory holds these items.
+
 
 ### **Customization Shop\***
+
+The Customization Shop is a service responsible for the web-shop like logic where IT-Rex specific accessories can be bought.
+Users can spend IT-Coins in order to own inventories, which in turn can be used by the Customization inventory then.
+
 ### **Ranking Service\***
+
+The Ranking Service contains the logic to compare users between each other.
+This could be done through various characteristics like progress and score.
+By using such metrics, a ranking can be created, showing how each user has performed, compared to the others.
+
 
 ## **External Services**
 
-## **General Design & Decisions**
+The current external Services that are considered are the two Learning Management Systems Ilias and Moodle.
+One of the main reasons for integrating them is fetching user information in order to:
+* Populate our database with users, corresponding roles and meta-Information
+* Refresh/Update available user information in order to get the latest state
+* Authenticate users
 
-This kind of functionality is distributed and spread across services, that own the Data 
-
+On the other hand, this integration may allow us to fetch study-specific information like attended courses for students and managed courses for lecturers.
 
 ---
-##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and probably are not complete and may change in their functionality and connections to other services. 
+##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and are not complete. Thus they may change in their functionality and connections to other services. 
