@@ -4,11 +4,10 @@ This page describes general thoughts and design decisions that were used to crea
 
 ## **Application Architecture**
 
-In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen. For a good read on Microservices, see the [Blog by Martin Fowler](https://martinfowler.com/articles/microservices.html). It states that "a component is a unit of software that is independently replaceable and upgradeable".
-
+In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen.
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.3](./Images/Architecture/Component-Diagram-v2.3.png)
+![Component-Diagram-v2.2](./Images/Architecture/Component-Diagram-v2.3.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
@@ -58,23 +57,17 @@ _Comparison of REST and GraphQL:_ <br>
 **Error code processing:** REST can accurately return HTTP error code, GraphQL returns 200 uniformly, and wraps error information. <br>
 **Version number:** REST is implemented via v1/v2, and GraphQL is implemented through the Schema extension. <br>
 
-### User Management Service
+### **Authentication Service**
 
 In order to use the application, users must be able to log-in.
 Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
-Therefore the user management service is invoked by the Frontend-Backend service.
+Therefore the authentication service is invoked by the Frontend-Backend service.
 It's tasks contain:
 * Filling the User Database of IT-Rex with current user information
 * Fetching Data from the LMSAdapter for the specific User
-* Enriching this data with IT-Rex specifics (e.g. roles)
 * Authentication / Providing Access
-* Authorization of users inside the system
 
-// Needs clarification
 In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality.
-
-In addition this service is also responsible for authorizing users through roles.
-All of this may be implemented via KeyCloak.
 
 ### **LMS Adapter**
 
@@ -87,34 +80,32 @@ Fetching the up-to-date user-specific data and providing it is therefore one of 
 For the course service it is necessary to check for existing information like courses and their meta-data in the LMS systems.
 If those are existent, the services is able to fetch them and provide it to the course service.
 
-**!** The LMS adapter has no further functionality than fetching data from the external system to the authentication service / course service. The authentication process of the user is handled entirely within the authentication service. **!**
 
 
 ### **Course Service**
 
 The course service is the main service for processing and providing information that belongs to a course.
-It is invoked by the Frontend-Backend service. The course service fetches data about courses (meta information) from the LMS adapter to synchronize and organize courses in IT-Rex. <br>
+It is invoked by the Frontend-Backend service.
 Based on incoming requests, the following services are invoked by the course service itself in order to provide the necessary data:
 * Document Service
 * Media Service
 * Quiz Service
 * RexDuel Service
-* _Scoring Service_
 
 The information provided by the above listed services is then used inside the course service to fulfill tasks like visualizing and publishing certain contents.
 Another important task is to transform the invoked data into a single timeline that is split up by chapters.
 In order to do so, the course service is connected to a database, where course-specific information is stored persistently.
+
+Furthermore, there is a connection to the LMSAdapter. This service can be invoked in order to fetch already existing information about the user. The main goal here is to get the courses automatically, so that the lecturer does not have to explicitly create them.
 
 
 ### **Document Service**
 
 The Document service is invoked by the course service and handles all logic related to displayable documents in the application.
 For the beginning, the main focus will be on handling PDF files.
-Later-on, other Document formats like .pptx or similar could be supported as well.
+Later-on, other Document formats like .pptx or similar could be supported aswell.
 
-The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted. Therefore the service is connected to the document database.
-
-For more information about the content model go to [Content Data Model](Application-Architecture--Data-Model--Content)
+The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
 
 ### **Media Service**
 
@@ -122,12 +113,10 @@ The Media Service is very similar to the Document service, but focuses on other 
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
 
 Just like the Document Service, the Media Service is invoked by the course service.
-This is necessary for basic functionality like uploading and displaying videos for chapters.
+This is necessary for basic functionality like uplaoding and displaying videos for chapters.
 When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
-Additionally, it reads from the Media Database in order to provide the requested Media to each user.
-Modifying, updating and adding content are other tasks that are handled inside here.
-
-For more information about the content model go to [Content Data Model](Application-Architecture--Data-Model--Content)
+Additionally, it reads from the Database in order to provide the requested Media to each user.
+Modifying, Updating and adding content are other tasks that are handled inside here.
 
 
 ### **Quiz Service**
@@ -145,16 +134,58 @@ Depending on the context, three different modes for the returned quizzes seem to
 
 ### **Rex Duel Service**
 
+Although there is already a Quiz service that handles quiz-based logic, the Rex-Duel Service is another microservice that is invoked by the course service.
+In order to provide competitive and interactive rex-duels, we chose to extract this functionality from the Quiz service and create an own service instead.
+
+Simply spoken, the Rex Duel Service sends a request to the Quiz Service, which in turn returns a rex-duel quiz.
+The returned rex-duel quiz is just a data object without the necessary logic to play against other users.
+
+This is where the Rex Duel Service comes into place.
+The game-logic is implemented here and storing of the session progress and other meta-data relevant for the rex-duel is handled in a separate database that is connected to this service.
 
 
-### **Gamification Service**
-### **Scoring Service**
-### **Customization Inventory**
-### **Customization Shop**
-### **Ranking Service**
+### **Gamification Service\***
+
+The Gamification Service is the entry point for gamification-based requests.
+It's main goal is to combine all underlying, more specific gamification services.
+In order to do so, incoming requests get processed and the logic inside the Gamification Service then decides which more specific services need to be invoked.
+
+To fulfill a set of gamification aspects, a combination of following services may be invoked:
+* Scoring service
+* Customization Inventory
+* Customization Shop
+* Ranking Service
+
+With this design, we are able scale and extend the gamification functionality, because new services can easily be added. This is especially important, because the extent of gamification may change later on.
+
+### **Scoring Service\***
+
+The Scoring service is responsible for rewards in the form of IT-Coins.
+In order to do so a scoring logic will be have to established.
+Things like:
+* Time to finish a Quiz
+* Question difficulty
+* Consecutive days in a row
+
+all might influence how the Scoring Service behaves. 
+But exact characteristics still have to be determined.
+
+It is currently not clear how this service is exactly handled. 
+Although it is not shown in the component diagram, there probably will be a connection towards the Course Service when this gets implemented in order to check for finished Videos, Quizzes and other course content.
+
+
+### **Customization Inventory\***
+
+
+### **Customization Shop\***
+### **Ranking Service\***
 
 ## **External Services**
 
 ## **General Design & Decisions**
 
-This kind of functionality is distributed and spread across services, that own the Data
+This kind of functionality is distributed and spread across services, that own the Data 
+
+
+---
+##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and probably are not complete and may change in their functionality and connections to other services. 
