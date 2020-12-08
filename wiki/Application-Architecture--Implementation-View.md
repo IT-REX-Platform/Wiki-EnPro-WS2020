@@ -62,14 +62,16 @@ _Comparison of REST and GraphQL:_ <br>
 
 In order to use the application, users must be able to log-in.
 Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
-Therefore the authentication service is invoked by the Frontend-Backend service.
+Therefore the user management service is invoked by the Frontend-Backend service.
 It's tasks contain:
 * Filling the User Database of IT-Rex with current user information
 * Fetching Data from the LMSAdapter for the specific User
+* Enriching this data with IT-Rex specifics (e.g. roles)
 * Authentication / Providing Access
+* Authorization of users inside the system
 
 // Needs clarification
-In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality. 
+In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality.
 
 In addition this service is also responsible for authorizing users through roles.
 All of this may be implemented via KeyCloak.
