@@ -8,7 +8,7 @@ In order to enable horizontal scaling for the IT-Rex application, a Microservice
 
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.2](./Images/Architecture/Component-Diagram-v2.3.png)
+![Component-Diagram-v2.3](./Images/Architecture/Component-Diagram-v2.3.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
@@ -58,7 +58,7 @@ _Comparison of REST and GraphQL:_ <br>
 **Error code processing:** REST can accurately return HTTP error code, GraphQL returns 200 uniformly, and wraps error information. <br>
 **Version number:** REST is implemented via v1/v2, and GraphQL is implemented through the Schema extension. <br>
 
-### **Authentication Service**
+### User Management Service
 
 In order to use the application, users must be able to log-in.
 Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
@@ -68,7 +68,11 @@ It's tasks contain:
 * Fetching Data from the LMSAdapter for the specific User
 * Authentication / Providing Access
 
-In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality.
+// Needs clarification
+In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality. 
+
+In addition this service is also responsible for authorizing users through roles.
+All of this may be implemented via KeyCloak.
 
 ### **LMS Adapter**
 
