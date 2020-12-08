@@ -4,7 +4,8 @@ This page describes general thoughts and design decisions that were used to crea
 
 ## **Application Architecture**
 
-In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen.
+In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen. For a good read on Microservices, see the [Blog by Martin Fowler](https://martinfowler.com/articles/microservices.html). It states that "a component is a unit of software that is independently replaceable and upgradeable".
+
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
 ![Component-Diagram-v2.2](./Images/Architecture/Component-Diagram-v2.3.png)
@@ -103,9 +104,11 @@ In order to do so, the course service is connected to a database, where course-s
 
 The Document service is invoked by the course service and handles all logic related to displayable documents in the application.
 For the beginning, the main focus will be on handling PDF files.
-Later-on, other Document formats like .pptx or similar could be supported aswell.
+Later-on, other Document formats like .pptx or similar could be supported as well.
 
-The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted. Therefore the service is connected to the document database. 
+The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted. Therefore the service is connected to the document database.
+
+For more information about the content model go to [Content Data Model](Application-Architecture--Data-Model--Content)
 
 ### **Media Service**
 
@@ -113,10 +116,12 @@ The Media Service is very similar to the Document service, but focuses on other 
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
 
 Just like the Document Service, the Media Service is invoked by the course service.
-This is necessary for basic functionality like uplaoding and displaying videos for chapters.
+This is necessary for basic functionality like uploading and displaying videos for chapters.
 When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
 Additionally, it reads from the Media Database in order to provide the requested Media to each user.
 Modifying, updating and adding content are other tasks that are handled inside here.
+
+For more information about the content model go to [Content Data Model](Application-Architecture--Data-Model--Content)
 
 
 ### **Quiz Service**
