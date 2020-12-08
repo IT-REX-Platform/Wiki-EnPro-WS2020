@@ -4,10 +4,11 @@ This page describes general thoughts and design decisions that were used to crea
 
 ## **Application Architecture**
 
-In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen.
+In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen. For a good read on Microservices, see the [Blog by Martin Fowler](https://martinfowler.com/articles/microservices.html). It states that "a component is a unit of software that is independently replaceable and upgradeable".
+
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.2](./Images/Architecture/Component-Diagram-v2.3.png)
+![Component-Diagram-v2.3](./Images/Architecture/Component-Diagram-v2.3.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
@@ -57,17 +58,23 @@ _Comparison of REST and GraphQL:_ <br>
 **Error code processing:** REST can accurately return HTTP error code, GraphQL returns 200 uniformly, and wraps error information. <br>
 **Version number:** REST is implemented via v1/v2, and GraphQL is implemented through the Schema extension. <br>
 
-### **Authentication Service**
+### **User Management Service**
 
 In order to use the application, users must be able to log-in.
 Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
-Therefore the authentication service is invoked by the Frontend-Backend service.
+Therefore the user management service is invoked by the Frontend-Backend service.
 It's tasks contain:
 * Filling the User Database of IT-Rex with current user information
 * Fetching Data from the LMSAdapter for the specific User
+* Enriching this data with IT-Rex specifics (e.g. roles)
 * Authentication / Providing Access
+* Authorization of users inside the system
 
+// Needs Clarification
 In order to validate / compare credentials with already existing external systems, the LMS Adapter is invoked, which is another microservice, specifically designed to handle such functionality.
+
+In addition this service is also responsible for authorizing users through roles.
+All of this may be implemented via KeyCloak.
 
 ### **LMS Adapter**
 
@@ -80,6 +87,7 @@ Fetching the up-to-date user-specific data and providing it is therefore one of 
 For the course service it is necessary to check for existing information like courses and their meta-data in the LMS systems.
 If those are existent, the services is able to fetch them and provide it to the course service.
 
+**!** The LMS adapter has no further functionality than fetching data from the external system to the user management service / course service. The authentication process of the user is handled entirely within the user management service. **!**
 
 
 ### **Course Service**
@@ -103,7 +111,7 @@ Furthermore, there is a connection to the LMSAdapter. This service can be invoke
 
 The Document service is invoked by the course service and handles all logic related to displayable documents in the application.
 For the beginning, the main focus will be on handling PDF files.
-Later-on, other Document formats like .pptx or similar could be supported aswell.
+Later-on, other Document formats like .pptx or similar could be supported as well.
 
 The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
 
@@ -113,7 +121,7 @@ The Media Service is very similar to the Document service, but focuses on other 
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
 
 Just like the Document Service, the Media Service is invoked by the course service.
-This is necessary for basic functionality like uplaoding and displaying videos for chapters.
+This is necessary for basic functionality like uploading and displaying videos for chapters.
 When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
 Additionally, it reads from the Database in order to provide the requested Media to each user.
 Modifying, Updating and adding content are other tasks that are handled inside here.
@@ -167,10 +175,10 @@ Things like:
 * Question difficulty
 * Consecutive days in a row
 
-all might influence how the Scoring Service behaves. 
+all might influence how the Scoring Service behaves.
 But exact characteristics still have to be determined.
 
-It is currently not clear how this service is exactly handled. 
+It is currently not clear how this service is exactly handled.
 Although it is not shown in the component diagram, there probably will be a connection towards the Course Service when this gets implemented in order to check for finished Videos, Quizzes and other course content.
 
 
@@ -204,4 +212,4 @@ One of the main reasons for integrating them is fetching user information in ord
 On the other hand, this integration may allow us to fetch study-specific information like attended courses for students and managed courses for lecturers.
 
 ---
-##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and are not complete. Thus they may change in their functionality and connections to other services. 
+##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and are not complete. Thus they may change in their functionality and connections to other services.
