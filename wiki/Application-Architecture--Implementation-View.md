@@ -76,6 +76,10 @@ In order to validate / compare credentials with already existing external system
 In addition this service is also responsible for authorizing users through roles.
 All of this may be implemented via KeyCloak.
 
+Related Pages: 
+* [User Data Model](./Application-Architecture--Data-Model--User)
+* [User Access Management](./User-Access-Management)
+
 ### **LMS Adapter**
 
 The Learning Management System (LMS) Adapter is a microservice designed to connect with external learning platforms.
@@ -89,6 +93,9 @@ If those are existent, the services is able to fetch them and provide it to the 
 
 **!** The LMS adapter has no further functionality than fetching data from the external system to the user management service / course service. The authentication process of the user is handled entirely within the user management service. **!**
 
+Related Pages: 
+* [Moodle API](./Technical-Research--Moodle-API)
+* [ILIAS API](./Technical-Research--ILIAS-API)
 
 ### **Course Service**
 
@@ -106,6 +113,9 @@ In order to do so, the course service is connected to a database, where course-s
 
 Furthermore, there is a connection to the LMSAdapter. This service can be invoked in order to fetch already existing information about the user. The main goal here is to get the courses automatically, so that the lecturer does not have to explicitly create them.
 
+Related Pages:
+* [Course Data Model](./Application-Architecture--Data-Model--Course)
+
 
 ### **Document Service**
 
@@ -114,6 +124,9 @@ For the beginning, the main focus will be on handling PDF files.
 Later-on, other Document formats like .pptx or similar could be supported as well.
 
 The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
+
+Related Pages:
+* [Content Data Model](./Application-Architecture--Data-Model--Content)
 
 ### **Media Service**
 
@@ -126,6 +139,8 @@ When uploading, chosen files get passed to the document service, which manages t
 Additionally, it reads from the Database in order to provide the requested Media to each user.
 Modifying, Updating and adding content are other tasks that are handled inside here.
 
+Related Pages:
+* [Content Data Model](./Application-Architecture--Data-Model--Content)
 
 ### **Quiz Service**
 
@@ -139,6 +154,9 @@ Depending on the context, three different modes for the returned quizzes seem to
 * Turbo Quiz: A timed Quiz that contains all questions inside a course for an exam-like feeling.
 * Rex-Duel Quiz: Specified rex-duel approved questions, that are course-wide.
 
+Related Pages:
+* [Quiz Data Model](./Application-Architecture--Data-Model--Quiz)
+* [Quizzes](./Quizzes)
 
 ### **Rex Duel Service**
 
@@ -151,6 +169,10 @@ The returned rex-duel quiz is just a data object without the necessary logic to 
 This is where the Rex Duel Service comes into place.
 The game-logic is implemented here and storing of the session progress and other meta-data relevant for the rex-duel is handled in a separate database that is connected to this service.
 
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
+* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
+* [Quizzes](./Quizzes)
 
 ### **Gamification Service\***
 
@@ -165,6 +187,10 @@ To fulfill a set of gamification aspects, a combination of following services ma
 * Ranking Service
 
 With this design, we are able scale and extend the gamification functionality, because new services can easily be added. This is especially important, because the extent of gamification may change later on.
+
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
+* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
 ### **Scoring Service\***
 
@@ -181,6 +207,9 @@ But exact characteristics still have to be determined.
 It is currently not clear how this service is exactly handled.
 Although it is not shown in the component diagram, there probably will be a connection towards the Course Service when this gets implemented in order to check for finished Videos, Quizzes and other course content.
 
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
+* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
 ### **Customization Inventory\***
 
@@ -188,11 +217,16 @@ The Customization Inventory is a service where the user-specific items are manag
 IT-Rexes can be equipped with several accessories that can be bought.
 After owning them, the Inventory holds these items.
 
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
 ### **Customization Shop\***
 
 The Customization Shop is a service responsible for the web-shop like logic where IT-Rex specific accessories can be bought.
 Users can spend IT-Coins in order to own inventories, which in turn can be used by the Customization inventory then.
+
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
 ### **Ranking Service\***
 
@@ -200,6 +234,9 @@ The Ranking Service contains the logic to compare users between each other.
 This could be done through various characteristics like progress and score.
 By using such metrics, a ranking can be created, showing how each user has performed, compared to the others.
 
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
+* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
 ## **External Services**
 
@@ -210,6 +247,10 @@ One of the main reasons for integrating them is fetching user information in ord
 * Authenticate users
 
 On the other hand, this integration may allow us to fetch study-specific information like attended courses for students and managed courses for lecturers.
+
+Related Pages: 
+* [Moodle API](./Technical-Research--Moodle-API)
+* [ILIAS API](./Technical-Research--ILIAS-API)
 
 ---
 ##### \* The Gamification Service and invoked Services are in an early phase of idea-finding and are not complete. Thus they may change in their functionality and connections to other services.
