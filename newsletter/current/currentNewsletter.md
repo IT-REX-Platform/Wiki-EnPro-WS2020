@@ -1,10 +1,10 @@
-<img align="left" width="100" src="../graphix/rexlogo.png"/>
+<img align="left" width="200" src="../graphix/rexlogo.png"/>
 <br/>
 <br/>
 
 # IT-Rex Newsletter 01
 
-<p style="float: right">Published: Dec 09, 2020</p>
+<p align="right">Published: Dec 09, 2020</p>
 <br/>
 
 ## Roadmap
