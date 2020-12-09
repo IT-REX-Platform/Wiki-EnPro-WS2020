@@ -128,14 +128,14 @@ Example response:
 
 ```json
 {
-  courses: [
+  "courses": [
     [
       {
-        ref_id: "61",
-        title: "Example course",
-        description: "Example description.",
-        create_date: "2020-11-18 12:08:30",
-        type: "crs"
+        "ref_id": "61",
+        "title": "Example course",
+        "description": "Example description.",
+        "create_date": "2020-11-18 12:08:30",
+        "type": "crs"
       }
     ]
   ]
@@ -166,23 +166,23 @@ Example response:
 
 ```json
 {
-  contents: [
+  "contents": [
     {
-      ref_id: "62",
-      type: "fold",
-      title: "Folder in example course",
-      description: "It's a folder!",
-      parent_ref_id: "61"
+      "ref_id": "62",
+      "type": "fold",
+      "title": "Folder in example course",
+      "description": "It's a folder!",
+      "parent_ref_id": "61"
     }
   ],
-  info: {
-    ref_id: "61",
-    title: "Example course",
-    description: "Example description.",
-    create_date: "2020-11-18 12:08:30",
-    type: "crs"
+  "info": {
+    "ref_id": "61",
+    "title": "Example course",
+    "description": "Example description.",
+    "create_date": "2020-11-18 12:08:30",
+    "type": "crs"
   },
-  members: [
+  "members": [
     "6"
   ]
 }
@@ -202,9 +202,35 @@ Inside the `contents`-key:
 
 ### 2. Retrieve lecture recordings / videos from a course
 
+Retrieving the lecure recordings or videos from a course currently seems like a non-trivial task.
+
+The course-route(s) discussed in [section 1](#1-retrieve-meta-information-on-a-users-courses) list direct children of the course in their content-key given an id of the course in question, but no recursive children after that.
+
+In the routes available by default in the RESTPlugin there is a `v1/files/:refid` route, which retrieves any files given a valid `refid` in the database. However, this is direct downloading only.
+
+Another possible candidate for accessing objects (recursively) is the route `v1/ilias-app/objects/:refid` (or its equivalent `v2/ilias-app/objects/:refid`), where (according to the code) a recursive list of elements per object and its subobjects is created and returned.  
+**However**: until now there is apparently no way to easily access those routes, even with an API-key which has the rights to access this route. The response will be a "Unknown route" error.
+
 ### 3. Retrieve slide sets from a course
 
+As the procedure would likely be equivalent, see [section 2 for details](#2-retrieve-lecture-recordings--videos-from-a-course).
+
 ### 4. Check / retrieve course membership (i.e. which courses is a given user a member of / who are the members of a given course)
+
+Checking course membership is possible in both ways.
+
+As the example response in [section 1 for a specific course](#1-retrieve-meta-information-on-a-users-courses) shows, the course has a `members`-key, which holds the id of the users enrolled in this course.
+
+On the other hand, a course using the generic request `v1/course` should only appear in the list if the user is actually a member of the course, thus this property is already given.
+
+
+## Integration - Results
+
+Integration with ILIAS is possible and should be done. Because we further abstract the connection to a learning management system, it should be easy to access the relevant data for that in ILIAS.
+
+The problem is the data exchange. Downloading and uploading direct files is possible (see [section 2](#2-retrieve-lecture-recordings--videos-from-a-course)), but there is no concrete way of getting an overview of nested items inside a course (apparently, this is to confirm).
+
+The data model should all in all be compatible with the one presumably used in IT-REX.
 
 ---
 
