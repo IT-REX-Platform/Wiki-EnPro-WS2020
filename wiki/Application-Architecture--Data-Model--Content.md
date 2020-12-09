@@ -46,7 +46,7 @@ A LectureQuiz is the Quiz that can be attached to a Chapter. Please refer to the
 
 ### Quiz
 
-Please refer to the [Quiz Data Model](Application-Architecture--Data-Model--Quiz#quiz) for more information.
+Please refer to the [Quiz Data Model](Application-Architecture--Data-Model--Quiz#quiz) for more information. 
 
 ### Question
 
