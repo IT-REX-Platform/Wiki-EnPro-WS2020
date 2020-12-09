@@ -10,7 +10,7 @@ The Content class contains a url. This url is used to fetch this content item fr
 
 ### Resource
 
-Resources are elements that are all contents that are not a LectureQuiz (i.e. Video, Audio, Images and Documents). They contain a MIME-Type which is needed so that a browser can identify what kind of data they are. This is a string because there are hundreds of those. Additionally there is a path which is used to identify where this element can be found in the filesystem (provided that we use the filesystem and no other kind of storage system to use store them). This path must be different enough from the url of the Content (see [Content](Application-Architecture--Data-Model--Content#content))
+Resources are elements that are all contents that are not a LectureQuiz (i.e. Video, Audio, Images and Documents). They contain a MIME-Type which is needed so that a browser can identify what kind of data they are. This is a string because there are hundreds of those. Additionally there is a path which is used to identify where this element can be found in the filesystem (provided that we use the filesystem and no other kind of storage system to use store them). This path must be different enough from the url of the Content (see [Content](Application-Architecture--Data-Model--Content#content)).
 
 ### Media
 
