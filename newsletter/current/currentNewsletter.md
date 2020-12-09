@@ -1,4 +1,4 @@
-<img style="float: left; width: 100px; " src="../graphix/rexlogo.png"/>
+<img align="left" width="100" src="../graphix/rexlogo.png"/>
 <br/>
 <br/>
 
