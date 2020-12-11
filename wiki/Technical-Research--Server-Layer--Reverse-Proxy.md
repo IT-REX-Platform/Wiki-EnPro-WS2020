@@ -15,7 +15,8 @@ A reverse proxy is a server between clients and backend server/s. It accepts req
 * Caching: reverse proxy stores a copy of server's response before returning it. This copy is used if a client makes the same request, resulting in backend server load reduction.
 * Compression: reverse proxy can compress server responses to reduce bandwidth use which also reduces load time.
 * Scalability: clients only see reverse proxy's IP address, leaving developers free to change backend infrastructure configuration.
-* Load balancing: if multiple backend servers are deployed, the workload can be distributed evenly. Down servers are detected and requests are diverted to other servers. Security: additional layer of defence.
+* Load balancing: if multiple backend servers are deployed, the workload can be distributed evenly. Down servers are detected and requests are diverted to other servers.
+* Security: additional layer of defence.
 
 ## Cons
 * Single point of failure.
