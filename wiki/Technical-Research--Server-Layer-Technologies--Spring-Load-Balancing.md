@@ -42,3 +42,7 @@ Nginx does not have a service registry. This means you need to have a custom slo
 
 https://kinsta.com/de/wissensdatenbank/was-ist-nginx/
 https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/
+
+# Preliminary verdict
+
+The result of this research is that the solutions named above are all valid. The Netflix OSS components are able to work together without relying on outside components but using a proxy like Nginx is still a good thing. Especially because we probably will use a container orchestrator like Kubernetes. In this case it is still possible to use a Netflix Ribbon or another client side load balancer like one provided by Spring Cloud. The abstraction layer that Spring Cloud provides should still be used for all of this regardless.
