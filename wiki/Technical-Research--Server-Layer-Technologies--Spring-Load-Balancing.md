@@ -28,3 +28,17 @@ Spring Cloud provides tools for developers to quickly build common patterns in d
 https://spring.io/projects/spring-cloud
 
 # Ngnix
+
+Nginx is a web server that provides 
+- A reverse proxy with caching
+- IPv6
+- Load balancing
+- FastCGI with caching
+- WebSockets
+- Handling of static files, indexfiles and automatic indexing
+- TLS/SSL with SNI
+
+Nginx does not have a service registry. This means you need to have a custom sloution for that. One possible solution is to use [Consul Template to dynamically reconfigure configuration files](https://www.airpair.com/scalable-architecture-with-docker-consul-and-nginx). This task can also be done by a container orchestrator like Kubernetes. The greatest benefit of using Nginx (or any other server side load balancing solution) is that it requires less communication before the actual request starts than client side load balancing, which requires fetching the list of possible endpoints before the request can be made. 
+
+https://kinsta.com/de/wissensdatenbank/was-ist-nginx/
+https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/
