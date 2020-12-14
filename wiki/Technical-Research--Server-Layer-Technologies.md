@@ -1,14 +1,5 @@
 # Server Layer
 
-A poll is in progress.
+**Framework**: Spring Boot
 
-* Spring
-* Django
-* Micronaut
-* ExpressJS
-* Flask
-* PHP Laravel
-* Node.js
-* Python
-* NestJS
-* OKWS
+**Language**: Java
