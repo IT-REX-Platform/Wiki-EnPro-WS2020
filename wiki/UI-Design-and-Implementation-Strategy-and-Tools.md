@@ -1,6 +1,6 @@
 ## Strategic perspective
 
-Everyone is a fullstack developer. This gives everyone insights in the entire project. That makes all developers flexible. This means the UI is developed in parallel to the backend. The UI will be functional in the beginning and become more detailed with time.
+Everyone is a fullstack developer. This gives everyone insights in the entire project. That makes all developers flexible. This means the UI is developed in parallel to the backend. The UI will be functional in the beginning and become more detailed with time. This means that there will be no explicit, separate UI design. The design will be evaluated during the development of the application. Therefore, the UI prototype will be helpful to get an idea of what we need to do.
 
 ## Itegration perspective
 
