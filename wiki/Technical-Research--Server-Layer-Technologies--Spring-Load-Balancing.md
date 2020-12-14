@@ -21,8 +21,10 @@ https://www.baeldung.com/zuul-load-balancing
 https://www.baeldung.com/spring-cloud-netflix-eureka
 
 
-# Spring Cloud LoadBalancer
+# Spring Cloud
 
-Spring Cloud LoadBalancer provides an abstraction for other load client side balancing. It does essentially the same thing that Ribbon does but can use different implementations. In contrast to Ribbon it is still in active development. This makes it a better choice than the Netflix stuff (except maybe Eureka).
+Spring Cloud provides tools for developers to quickly build common patterns in deistributed systems. Spring Cloud offers tools to achieve Load Balancing. This is achieved by an abstraction layer that can take multiple different implementations, including but not limited to the Netflix OSS. It does offer alternatives to ribbon but there seems to be no alternative to Zuul. This means one has to stay with Zuul or use an external service. Despite that you should use the provided abstraction layer and all the utilities provided by Spring Cloud because they can still use the Netflix OS components.
+
+https://spring.io/projects/spring-cloud
 
 # Ngnix
