@@ -8,7 +8,7 @@ In order to enable horizontal scaling for the IT-Rex application, a Microservice
 
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.3](./Images/Architecture/Component-Diagram-v2.3.png)
+![Component-Diagram-v2.4](./Images/Architecture/Component-Diagram-v2.4.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
