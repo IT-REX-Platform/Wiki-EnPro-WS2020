@@ -8,7 +8,7 @@ To connect through SSH, message Noel about setting up access (pubkey).
 The following services are currently running on the server:
 | **URI** | **Description** |
 | :--- | :--- |
-| [https://129.69.217.173:808/](https://129.69.217.173:8080/) | Jenkins Server - will be moved to other port (just for testing) |
+| [https://129.69.217.173:8080/](https://129.69.217.173:8080/) | Jenkins Server - will be moved to other port (just for testing) |
 | [http://129.69.217.173:8081/](http://129.69.217.173:8081/) | Moodle testing instance |
 | [http://129.69.217.173:8082/](http://129.69.217.173:8082/) | Ilias testing instance |
 | [https://129.69.217.173:8083/](https://129.69.217.173:8083/) | Keycloak testing instance (HTTPS only) |
