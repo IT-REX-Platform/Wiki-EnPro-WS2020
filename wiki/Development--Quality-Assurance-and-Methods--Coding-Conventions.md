@@ -35,28 +35,53 @@ as well as [Google Java Style Guide](https://checkstyle.sourceforge.io/styleguid
 
 
 A detailed list, which conventions Checkstyle checks can be found [here]((https://checkstyle.sourceforge.io/google_style.html)) for the Google Java Style  the documentation for Sun Code Conventions are here in contrast incomplete. 
-Google Conventions as well as the Sun Code Conventions were also tested via the Checksytle tool. Here it was noticed that the style check with the Sun Code Conventions makes stricter restrictions than Google Java Style Guide,  
+Google Conventions as well as the Sun Code Conventions were also tested via the Checkstyle tool. Here it was noticed that the style check with the Sun Code Conventions makes stricter restrictions than Google Java Style Guide,  
 which are completely suitable for the project.
 
 It was therefore decided to use the [Google Java Style Guide](https://checkstyle.sourceforge.io/styleguides/google-java-style-20180523/javaguide.html).
 
-    
+#### Basic Google Conventions  
+* **Naming Conventions**:
+    * All names should be formulated in a expressive way apart from e.g. counters in loops
+    * **File names**: case-sensitive name of the top-level class
+    * **Class names**: 
+        * UpperCamelCase
+        * Nouns or noun phrases
+    * **Method names**:
+        * lowerCamelCase
+        * verbs or verb phrases 
+    * **Constant names**: 
+        * UPPERCASE_LETTERS
+    * **Parameter/Local variable names**:
+        * lowerCamelCase        
+* **Formatting**:
+    * **Braces** are used with if, else, for, do and while statements, even when the body is empty or contains only a single statement. 
+        * No line break before the opening brace.
+        * Line break after the opening brace.
+        * Line break before the closing brace.
+        * Line break after the closing brace, only if that brace terminates a statement or terminates the body of a method, constructor, or named class. For example, there is no line break after the brace if it is followed by else or a comma.
+    * **Line Length**: max length 100 characters 
+    * ...
+    * Intellij automatically formats the code according to the Google Java Code Guidelines if the google_style.xml is imported.
+* **Comments**:
+    * **Javadoc Comments:**  A doc comment must precede a class, field, constructor or method declaration. Used to to define the overall purpose or behavior of a class or member/method.  
+        * It is made up of two parts: A description followed by block tags.
+        * The block tags used for our purposes should be: (@author)? @param, @return, @throws, @deprecated in this order 
+    * **Implementation Comments**: Use Multi-line or Single-line Comments
+                 
 
-
-Spring Boot Best Practices für die Projekt Struktur und Beans/Annotations. Ansonsten aud Java Code Conventions zurückgreifen 
-
---> Google conventions vs sun style conventions betrachten 
-
-
-
-
-Checkstyle is a development tool to help programmers write Java code that adheres to a coding standard. It automates the process of checking Java code to spare humans of this boring (but important) task. This makes it ideal for projects that want to enforce a coding standard.
-
-Projekt struktur und Beans von Spring Beachten 
-
-
+#### [Best Practises Spring Boot](https://www.e4developer.com/2018/08/06/spring-boot-best-practices/) 
+* 'Correct' Project structure
+    * keep entry Class in top-level source directory
+    * well-named packages
+    * keep all controllers together 
+* Keep **@Controller’s** clean and focused
+    * Controllers should be stateless 
+    * Controllers should not execute business logic but rely on delegation
+* Build your **@Service’s** around business capabilities
 
 
 ## Sources
 
 - [Code Conventions](https://www.triology.de/blog/code-conventions)
+- [Spring Boot best practices](https://www.e4developer.com/2018/08/06/spring-boot-best-practices/)
