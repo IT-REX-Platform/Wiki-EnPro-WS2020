@@ -8,11 +8,11 @@ To connect through SSH, message Noel about setting up access (pubkey).
 The following services are currently running on the server:
 | **URI** | **Description** |
 | :--- | :--- |
-| [http://129.69.217.173:8081/](http://129.69.217.173:8081/) | Moodle testing instance |
-| [http://129.69.217.173:8082/](http://129.69.217.173:8082/) | Ilias testing instance |
-| [https://129.69.217.173:8083/](https://129.69.217.173:8083/) | Keycloak testing instance (HTTPS only) |
-| [http://129.69.217.173:8084/](https://129.69.217.173:8084/) | Jenkins Server | 
-| [http://129.69.217.173:8085/](https://129.69.217.173:8085/) | Apache HTTP Server for running our Frontend testwise |
+| http://129.69.217.173:8081/ | Moodle testing instance |
+| http://129.69.217.173:8082/ | Ilias testing instance |
+| https://129.69.217.173:8083 | Keycloak testing instance (HTTPS only) |
+| http://129.69.217.173:8084  | Jenkins Server | 
+| http://129.69.217.173:8085  | Apache HTTP Server for running our Frontend testwise |
 
 Files for running services are currently located at:
 | **Path** | **Description** |
