@@ -30,13 +30,15 @@ and marks violations of the Google Java Code Guidelines. A list of what conventi
 5. Adjust the scan scope if necessary 
 
 Adding the code style schema to the editor:
-5. Download the google_style.xml
+5. Download the google_style.xml 
 6. Navigate to:  File &rarr; Settings &rarr; Editor &rarr; Code Style
 7. Import the google_style.xml scheme as follows: ![CodeStyleSchema](./Images/CodeStyleSchama.png)
 
  **&rarr; Restart Intellij**
  
  After the restart the CheckStyle Plugin automatically checks the Google Java Style Conventions in the Background and marks the violations in the editor.  
+
+
  
 ### Bug hunting 
 - Find Bugs 
