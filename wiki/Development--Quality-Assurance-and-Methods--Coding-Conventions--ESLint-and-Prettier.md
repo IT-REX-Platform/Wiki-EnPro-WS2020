@@ -1,5 +1,5 @@
 # How to setup ESLint and Prettier in a project in VSCode from zero
-(If you cloned a project that uses ESLint and Prettier, then go to 6. to active those features in your VSCode.)
+(If you cloned a project that uses ESLint and Prettier, then go to **6.** to active those features in your VSCode.)
 
 ## ESLint
 
