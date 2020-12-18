@@ -6,7 +6,7 @@
 1. Install core ESLint library, ESLint TypeScript parser (to allow ESLint to lint TypeScript code) and ESLint TypeScript plugin (which contains some TypeScript-specific ESLint rules).<br>
 *npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin*
 
-2. Create .eslintrc file, select options that fit the project.<br>
+2. Create .eslintrc file, select options that fit the project. Add rules.<br>
 *npx eslint --init*
 
 3. Create .eslintignore file, insert file/folder names to be ignored by ESLint.
