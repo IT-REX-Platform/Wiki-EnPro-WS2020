@@ -114,6 +114,10 @@ The Document service is connected to an outside service via the Document Adapter
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
+### Document Adapter
+
+The Document Adapter connects the Document service to an outside datasource. Currently this source is set up by us but in the future this could be an LMS system.
+
 ### Media Service
 
 The Media Service is very similar to the Document service, but focuses on other types of media.
