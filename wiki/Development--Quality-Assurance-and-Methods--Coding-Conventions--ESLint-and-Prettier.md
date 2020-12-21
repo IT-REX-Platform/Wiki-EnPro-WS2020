@@ -6,7 +6,7 @@
 1. Install core ESLint library, ESLint TypeScript parser (to allow ESLint to lint TypeScript code) and ESLint TypeScript plugin (which contains some TypeScript-specific ESLint rules).<br>
 *npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin*
 
-2. Create .eslintrc file, select options that fit the project. Add rules.<br>
+2. Create .eslintrc file, select options that fit the project, add rules.<br>
 *npx eslint --init*
 
 3. Create .eslintignore file, insert file/folder names to be ignored by ESLint.
@@ -25,10 +25,12 @@
 7. Install plugin "Prettier - Code formatter".
 
 8. In VSCode -> Preferences -> Settings -> activate "Format on save".<br>
-Or add in VSCode settings.json: *"editor.formatOnSave": true*
+Or add in VSCode settings.json:<br>
+*"editor.formatOnSave": true*
 
 9. In VSCode -> Preferences -> Settings -> choose "Eslint: Node Path" and add your path to node.<br>
-Or add in VSCode settings.json: *"eslint.nodePath": "C:\\your_path_here\\nodejs"*
+Or add in VSCode settings.json:<br>
+*"eslint.nodePath": "C:\\your_path_here\\nodejs"*
 
 10. In VSCode -> open a file to be formatted (any .ts, .tsx, etc. file) -> Ctrl+Shift+P -> type "Format Document With" -> choose Prettier as formatter.<br>
 Or add in VSCode settings.json:<br>
