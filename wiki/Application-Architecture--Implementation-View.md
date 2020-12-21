@@ -109,6 +109,8 @@ Later-on, other Document formats like .pptx or similar could be supported as wel
 
 The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
 
+The Document service is connected to an outside service via the Document Adapter.
+
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
@@ -122,6 +124,8 @@ This is necessary for basic functionality like uploading and displaying videos f
 When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
 Additionally, it reads from the Database in order to provide the requested Media to each user.
 Modifying, Updating and adding content are other tasks that are handled inside here.
+
+The Media service is connected to an outside service via the Media Adapter.
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
