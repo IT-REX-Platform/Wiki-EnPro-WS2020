@@ -61,7 +61,7 @@ The most basic permissions on Course level are leaving the Cours and viewing gen
 
 ### CourseParticipant
 
-CourseParticipants are usually Students who participate in the Course (clarify: should Lecturers also be able to participate in Courses?). They can view published Content in Chapters, view and update their personal Course IT-Rex and earn rewards for various actions. Additionally they can play published Quizzes, which includes reading and playing LectureQuizzes, TurboQuiz and RexDuell.
+CourseParticipants are usually Students who participate in the Course. They can view published Content in Chapters, view and update their personal Course IT-Rex and earn rewards for various actions. Additionally they can play published Quizzes, which includes reading and playing LectureQuizzes, TurboQuiz and RexDuell. A lecturer account cannot participate in course. A student account is needed for that.
 
 ### CourseManager
 
