@@ -134,6 +134,8 @@ Or add in VSCode settings.json:<br>
 | @typescript-eslint/unified-signatures |
 
 ## Extension Rules
+| Rule | Recommended | Active | Type | Comment |
+| ---- | ----------- | ------ | ---- | ------- |
 | @typescript-eslint/brace-style |
 | @typescript-eslint/comma-dangle |
 | @typescript-eslint/comma-spacing |
