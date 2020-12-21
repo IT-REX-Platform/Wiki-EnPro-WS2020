@@ -74,4 +74,4 @@ Lecturers can create and delete Courses and lecture the contained Content. Every
 
 ### User
 
-For further information go to [User Role Model](./Application-Architecture--Data-Model--User#user-role-model) (bring in line, abstract?).
+For further information go to [User Role Model](./Application-Architecture--Data-Model--User#user-role-model).
