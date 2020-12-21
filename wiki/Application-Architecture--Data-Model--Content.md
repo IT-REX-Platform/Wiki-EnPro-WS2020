@@ -1,6 +1,6 @@
 # Content Data Model
 
-![ContentDataModel](./Images/Architecture/Content-Model.png)
+![ContentDataModel](./Images/Architecture/Content-Data-Model.png)
 
 ## Description
 

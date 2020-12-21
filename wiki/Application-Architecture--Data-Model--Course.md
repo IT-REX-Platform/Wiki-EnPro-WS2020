@@ -1,6 +1,6 @@
 # Course Structure Data Model
 
-![CourseStructureModel](./Images/Architecture/DataModel_CourseStructure.png)
+![CourseStructureModel](./Images/Architecture/Course-Structure-Data-Model.png)
 
 ## Description
 

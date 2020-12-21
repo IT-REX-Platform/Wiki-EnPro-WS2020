@@ -2,7 +2,7 @@
 
 For more information about the design decisions for Quizzes (including setting options, quiz types, etc.) go to [Quizzes](./Quizzes).
 
-![QuizDataModel](./Images/Architecture/DataModel_Quiz.png)
+![QuizDataModel](./Images/Architecture/Quiz-Data-Model.png)
 
 ## Description
 
