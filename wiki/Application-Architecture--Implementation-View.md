@@ -130,6 +130,10 @@ The Media service is connected to an outside service via the Media Adapter.
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
+### Media Adapter
+
+The Media Adapter connects the Media Service to an outside datasource. Currently this source is set up by us but in the future this could be an LMS system.
+
 ### Quiz Service
 
 The Quiz service is used by the Course service in order to get, create, modify or delete quizzes.
