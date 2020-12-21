@@ -33,14 +33,9 @@ is used for checking the Code Conventions.
 Checkstyle supports the [Sun Code Conventions](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConvTOC.doc.html) 
 as well as [Google Java Style Guide](https://checkstyle.sourceforge.io/styleguides/google-java-style-20180523/javaguide.html).
 
+It was decided to use the [Sun Code Conventions](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConvTOC.doc.html).
 
-A detailed list, which conventions Checkstyle checks can be found [here]((https://checkstyle.sourceforge.io/google_style.html)) for the Google Java Style  the documentation for Sun Code Conventions are here in contrast incomplete. 
-Google Conventions as well as the Sun Code Conventions were also tested via the Checkstyle tool. Here it was noticed that the style check with the Sun Code Conventions makes stricter restrictions than Google Java Style Guide,  
-which are completely suitable for the project.
-
-It was therefore decided to use the [Google Java Style Guide](https://checkstyle.sourceforge.io/styleguides/google-java-style-20180523/javaguide.html).
-
-#### Basic Google Conventions  
+#### Basic Sun Code COnventions 
 * **Naming Conventions**:
     * All names should be formulated in a expressive way apart from e.g. counters in loops
     * **File names**: case-sensitive name of the top-level class
@@ -79,6 +74,7 @@ It was therefore decided to use the [Google Java Style Guide](https://checkstyle
     * Controllers should be stateless 
     * Controllers should not execute business logic but rely on delegation
 * Build your **@Service’s** around business capabilities
+* ...
 
 
 ## Sources
