@@ -92,19 +92,10 @@ Related Pages:
 
 ### Course Service
 
-The course service is the main service for processing and providing information that belongs to a course.
-It is invoked by the Frontend-Backend service.
-Based on incoming requests, the following services are invoked by the course service itself in order to provide the necessary data:
-* Document Service
-* Media Service
-* Quiz Service
-* RexDuel Service
+The course service is invoked by the Frontend-Backend service. It provides course related information like who participates in a course, who owns the course, which chapters exist, etc.
+Another important task is to transform the invoked data into a single timeline that is split up by AdjustableTimePeriods and chapters. In order to do so, the course service is connected to a database, where course-specific information is stored persistently.
 
-The information provided by the above listed services is then used inside the course service to fulfill tasks like visualizing and publishing certain contents.
-Another important task is to transform the invoked data into a single timeline that is split up by chapters.
-In order to do so, the course service is connected to a database, where course-specific information is stored persistently.
-
-Furthermore, there is a connection to the LMSAdapter. This service can be invoked in order to fetch already existing information about the user. The main goal here is to get the courses automatically, so that the lecturer does not have to explicitly create them.
+Furthermore, there is a connection to the LMSAdapter. This service can be invoked in order to fetch already existing information about the course. The main goal here is to get the courses automatically, so that the lecturer does not have to explicitly create them.
 
 Related Pages:
 * [Course Data Model](./Application-Architecture--Data-Model--Course)
