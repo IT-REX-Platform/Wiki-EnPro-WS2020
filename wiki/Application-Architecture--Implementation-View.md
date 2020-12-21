@@ -2,7 +2,7 @@
 
 This page describes general thoughts and design decisions that were used to create the [Component Diagram v2.1](https://miro.com/app/board/o9J_ldsCOKg=/?moveToWidget=3074457352019930466&cot=12).
 
-## **Application Architecture**
+## Application Architecture
 
 In order to enable horizontal scaling for the IT-Rex application, a Microservices Approach was chosen. For a good read on Microservices, see the [Blog by Martin Fowler](https://martinfowler.com/articles/microservices.html). It states that "a component is a unit of software that is independently replaceable and upgradeable".
 
@@ -13,12 +13,12 @@ The following Diagram shows how the Domain was split up into smaller functional 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
 
-## **Client Layer**
+## Client Layer
 
 The Client Layer consists of a single Component.
 As the name suggests, it runs on the client's machine locally.
 
-### **Frontend**
+### Frontend
 This Component is used for displaying all the relevant information to the user.
 It's main tasks are:
  * Manage user Input and forward it to the Backend for Frontend
@@ -28,14 +28,14 @@ With this small set of functionality, the goal was to minimize computational/log
 This helps to achieve a smooth User Experience, as well as better performance on the Client Layer.
 
 
-## **Server Layer**
+## Server Layer
 
 The Server Layer consists out of 13 Microservices that together form the Backend of the IT-Rex Application.
 
 
 
 
-### **Frontend-Backend Service**
+### Frontend-Backend Service
 The [Backend for Frontend](https://samnewman.io/patterns/architectural/bff/) is an architectural pattern, commonly used for multiplatform scenarios.
 
 It enables different implementations for the same backend that provides data to the Frontend Component for visualisation.
@@ -54,7 +54,7 @@ Related Pages:
 * [REST vs GraphQL](./Technical-Research--Api-Technologies)
 
 
-### **User Management Service**
+### User Management Service
 
 In order to use the application, users must be able to log-in.
 Through a user's account it is possible for us to identify a users' courses, progress and other necessary information.
@@ -76,7 +76,7 @@ Related Pages:
 * [User Data Model](./Application-Architecture--Data-Model--User)
 * [User Access Management](./User-Access-Management)
 
-### **LMS Adapter**
+### LMS Adapter
 
 The Learning Management System (LMS) Adapter is a microservice designed to connect with external learning platforms.
 For our use-case, Ilias and Moodle are two prime examples for such external services.
@@ -93,7 +93,7 @@ Related Pages:
 * [Moodle API](./Technical-Research--Moodle-API)
 * [ILIAS API](./Technical-Research--ILIAS-API)
 
-### **Course Service**
+### Course Service
 
 The course service is the main service for processing and providing information that belongs to a course.
 It is invoked by the Frontend-Backend service.
@@ -113,7 +113,7 @@ Related Pages:
 * [Course Data Model](./Application-Architecture--Data-Model--Course)
 
 
-### **Document Service**
+### Document Service
 
 The Document service is invoked by the course service and handles all logic related to displayable documents in the application.
 For the beginning, the main focus will be on handling PDF files.
@@ -124,7 +124,7 @@ The main functionality inside the service is the management of documents. For th
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
-### **Media Service**
+### Media Service
 
 The Media Service is very similar to the Document service, but focuses on other types of media.
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
@@ -138,7 +138,7 @@ Modifying, Updating and adding content are other tasks that are handled inside h
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
-### **Quiz Service**
+### Quiz Service
 
 The Quiz service is used by the Course service in order to get, create, modify or delete quizzes.
 By providing questions and answers, along with quiz settings and meta information, quizzes can be created inside the quiz service and stored in the connected Quiz Database.
@@ -154,7 +154,7 @@ Related Pages:
 * [Quiz Data Model](./Application-Architecture--Data-Model--Quiz)
 * [Quizzes](./Quizzes)
 
-### **Rex Duel Service**
+### Rex Duel Service
 
 Although there is already a Quiz service that handles quiz-based logic, the Rex-Duel Service is another microservice that is invoked by the course service.
 In order to provide competitive and interactive rex-duels, we chose to extract this functionality from the Quiz service and create an own service instead.
@@ -170,7 +170,7 @@ Related Pages:
 * [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 * [Quizzes](./Quizzes)
 
-### **Gamification Service\***
+### Gamification Service\*
 
 The Gamification Service is the entry point for gamification-based requests.
 It's main goal is to combine all underlying, more specific gamification services.
@@ -188,7 +188,7 @@ Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 * [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
-### **Scoring Service\***
+### Scoring Service\*
 
 The Scoring service is responsible for rewards in the form of IT-Coins.
 In order to do so a scoring logic will be have to established.
@@ -207,7 +207,7 @@ Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 * [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
-### **Customization Inventory\***
+### Customization Inventory\*
 
 The Customization Inventory is a service where the user-specific items are managed.
 IT-Rexes can be equipped with several accessories that can be bought.
@@ -216,7 +216,7 @@ After owning them, the Inventory holds these items.
 Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
-### **Customization Shop\***
+### Customization Shop\*
 
 The Customization Shop is a service responsible for the web-shop like logic where IT-Rex specific accessories can be bought.
 Users can spend IT-Coins in order to own inventories, which in turn can be used by the Customization inventory then.
@@ -224,7 +224,7 @@ Users can spend IT-Coins in order to own inventories, which in turn can be used 
 Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
-### **Ranking Service\***
+### Ranking Service\*
 
 The Ranking Service contains the logic to compare users between each other.
 This could be done through various characteristics like progress and score.
@@ -234,7 +234,7 @@ Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 * [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
-## **External Services**
+## External Services
 
 The current external Services that are considered are the two Learning Management Systems Ilias and Moodle.
 One of the main reasons for integrating them is fetching user information in order to:
