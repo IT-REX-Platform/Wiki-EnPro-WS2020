@@ -8,7 +8,7 @@ In order to enable horizontal scaling for the IT-Rex application, a Microservice
 
 The following Diagram shows how the Domain was split up into smaller functional components, the Microservices and their interactions.
 
-![Component-Diagram-v2.4](./Images/Architecture/Component-Diagram-v2.4.png)
+![Component-Diagram-v2.5](./Images/Architecture/Component-Diagram-v2.5.png)
 
 For a better understandability, each Microservice will be explained in a section below.
 Afterwards, another section covering general information can be found, that is not bound to single Microservices.
@@ -27,13 +27,9 @@ It's main tasks are:
 With this small set of functionality, the goal was to minimize computational/logical code in order to keep the Frontend Component as light-weight as possible.
 This helps to achieve a smooth User Experience, as well as better performance on the Client Layer.
 
-
 ## Server Layer
 
 The Server Layer consists out of 13 Microservices that together form the Backend of the IT-Rex Application.
-
-
-
 
 ### Frontend-Backend Service
 The [Backend for Frontend](https://samnewman.io/patterns/architectural/bff/) is an architectural pattern, commonly used for multiplatform scenarios.
@@ -53,6 +49,7 @@ To implement this pattern an API language must first be agreed upon.
 Related Pages: 
 * [REST vs GraphQL](./Technical-Research--Api-Technologies)
 
+We use this to integrate the services together and to bring the data into a usable format for the frontend.
 
 ### User Management Service
 
