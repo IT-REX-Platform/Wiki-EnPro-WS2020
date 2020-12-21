@@ -30,10 +30,10 @@ already existing Coding Conventions. Commonly one of these is selected and only 
 
 As documented in the topic Static Code Style Analysis, the plugin [Checkstyle](https://checkstyle.sourceforge.io/index.html) 
 is used for checking the Code Conventions. 
-Checkstyle supports the [Sun Code Conventions](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConvTOC.doc.html) 
+Checkstyle supports the [Sun Code Conventions](https://introcs.cs.princeton.edu/java/11style/codeconventions-150003.pdf) 
 as well as [Google Java Style Guide](https://checkstyle.sourceforge.io/styleguides/google-java-style-20180523/javaguide.html).
 
-It was decided to use the [Sun Code Conventions](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConvTOC.doc.html).
+It was decided to use the [Sun Code Conventions](https://introcs.cs.princeton.edu/java/11style/codeconventions-150003.pdf).
 
 #### Basic Sun Code COnventions 
 * **Naming Conventions**:
