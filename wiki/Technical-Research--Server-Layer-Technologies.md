@@ -6,11 +6,11 @@ We can only use JVM languages with Spring. Java is the language most of the deve
 
 Download of OpenJDK 11: https://adoptopenjdk.net/
 
+## **BuildTool**: Gradle
 
-## **BuildTool**:
+Decided based on poll. Also Gradle seems to perform better.
 
 Article comparing Ant, Maven and Gradle: https://www.baeldung.com/ant-maven-gradle
-
 
 ## **Framework**: Spring and Spring Boot
 
