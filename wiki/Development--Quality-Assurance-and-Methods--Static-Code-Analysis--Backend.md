@@ -8,7 +8,7 @@ These are the results:
 
 ![SurveyResults](./Images/StaticCodeAnalysis_Survey.png)
 
-Ranking:
+**Ranking**:
 
 1. Code conventions
 2. Nesting depth
@@ -25,7 +25,7 @@ Ranking:
 
 
 
-### Code Conventions
+## Code Conventions
 To check if the written source code in the backend conforms to the  [Sun Code Conventions](https://introcs.cs.princeton.edu/java/11style/codeconventions-150003.pdf)
 the development environment Intellij and the Plugin Checkstyle are used. 
 
@@ -56,14 +56,29 @@ Adding the code style schema to the editor:
  
  After the restart the CheckStyle Plugin automatically checks the Sun Code Conventions in the Background and marks the violations in the editor.  
 
+## Nesting depth
 
+## Testing coverage 
+
+## Path complexity 
+
+## Potential bugs
+Partially covered by Intellij.
+
+## Code Smells
+#### Lines of code (per class)
+The Sun conventions that are used for coding conventions define: Files longer than 2000 lines are cumbersome and should be avoided.
+
+#### Duplicates (Clones)
+Covered by Intellij.
+
+#### Code vs comment lines
+
+## Maintainability
+
+## Chrun
+## Component coupling 
  
-### Bug hunting 
-- Find Bugs 
-- Spot Bugs 
-
-
-  
 
 
 
