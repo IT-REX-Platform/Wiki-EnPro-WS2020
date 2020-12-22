@@ -225,13 +225,14 @@ As the example response in [section 1 for a specific course](#1-retrieve-meta-in
 On the other hand, a course using the generic request `v1/course` should only appear in the list if the user is actually a member of the course, thus this property is already given.
 
 
-## Integration - Results
+## Integration - Summary / Final Verdict
 
 Integration with ILIAS is possible and should be done. Because we further abstract the connection to a learning management system, it should be easy to access the relevant data for that in ILIAS.
 
-The problem is the data exchange. Downloading and uploading direct files is possible (see [section 2](#2-retrieve-lecture-recordings--videos-from-a-course)), but there is no concrete way of getting an overview of nested items inside a course (apparently, this is to confirm).
+The problem is the data exchange. Downloading and uploading direct files is possible (see [section 2](#2-retrieve-lecture-recordings--videos-from-a-course)). The (recursive) access to items inside a course is not given by a trivial route. There are candidates which look promising given the code, but can't be accessed (and there is no documentation on why not).  
+Once these routes could be made accessible, retrieving videos/recordings and slidesets should be relatively trivial.
 
-The data model should all in all be compatible with the one presumably used in IT-REX.
+The data model should all in all be compatible with the one used in IT-REX.
 
 ---
 
