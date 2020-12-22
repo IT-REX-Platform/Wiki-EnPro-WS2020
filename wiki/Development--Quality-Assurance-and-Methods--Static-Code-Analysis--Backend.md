@@ -1,6 +1,30 @@
 
 ## Backend: Java/Spring Boot 
 
+
+In order to find out which metrics in the area of Static Code Analysis are considered necessary and useful by the developers of the team, a survey was launched using Mentimeter.  
+
+These are the results: 
+
+![SurveyResults](./Images/StaticCodeAnalysis_Survey.png)
+
+Ranking:
+
+1. Code conventions
+2. Nesting depth
+3. Testing coverage 
+3. Path complexity 
+4. Potential bugs
+5. Code Smells
+    1. Lines of code (per class)
+    2. Duplicates (Clones)
+    3. Code vs comment lines
+6. Maintainability
+7. Chrun
+8. Component coupling 
+
+
+
 ### Code Conventions
 To check if the written source code in the backend conforms to the  [Sun Code Conventions](https://introcs.cs.princeton.edu/java/11style/codeconventions-150003.pdf)
 the development environment Intellij and the Plugin Checkstyle are used. 
