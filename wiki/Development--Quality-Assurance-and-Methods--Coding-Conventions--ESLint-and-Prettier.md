@@ -17,7 +17,7 @@ Add rules: [ESLint rules](https://eslint.org/docs/rules/), [ESLint Plugin TypeSc
 4. Install Prettier, eslint-config-prettier (to disable linting rules that might interfere with an existing Prettier rule) and eslint-plugin-prettier (to run Prettier analysis as part of ESLint).<br>
 *npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier*
 
-5. Create .prettierrc.json, add rules to be applied when formatting: [Prettier Options](https://prettier.io/docs/en/options.html).
+5. Create .prettierrc.json, add rules to be applied when formatting: [Prettier options](https://prettier.io/docs/en/options.html).
 
 ## Git hook
 
