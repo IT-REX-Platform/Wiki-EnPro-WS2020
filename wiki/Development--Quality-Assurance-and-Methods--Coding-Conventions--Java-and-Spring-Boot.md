@@ -54,6 +54,8 @@ It was decided to use the [Sun Code Conventions](https://introcs.cs.princeton.ed
                  
 For code examples and further information about the conventions please check the documentation linked [here](https://introcs.cs.princeton.edu/java/11style/codeconventions-150003.pdf). 
 
+If rules contained in the conventions are found to be inapplicable for us during the programming phase, the conventions that checkstyle chekes should be adjusted for all developers in the style .xml file included in Intellij.
+
 #### [Best Practises Spring Boot](https://www.e4developer.com/2018/08/06/spring-boot-best-practices/) 
 * 'Correct' Project structure
     * keep entry Class in top-level source directory
