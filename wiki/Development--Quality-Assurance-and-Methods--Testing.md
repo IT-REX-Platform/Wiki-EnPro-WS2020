@@ -53,7 +53,7 @@ JHipster does a lot of stuff:
 - **UI tests** with **Jest**
 - **Architecture tests** with **ArchUnit**
 
-Optionally, JHipster can also generate:
+Optionally, JHipster can also generates:
 - **Performance tests** with **Gatling**.
 - **Behaviour-driven tests** with **Cucumber**.
 - **Angular/React/Vue integration tests** with **Protractor**.
