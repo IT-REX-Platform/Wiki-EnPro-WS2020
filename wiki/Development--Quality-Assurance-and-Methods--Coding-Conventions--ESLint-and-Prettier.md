@@ -18,6 +18,8 @@
 
 5. Create .prettierrc.json, insert rules to be applied when formatting.
 
+[Prettier Options](https://prettier.io/docs/en/options.html)
+
 ## VSCode
 
 6. Install plugin "ESLint".
