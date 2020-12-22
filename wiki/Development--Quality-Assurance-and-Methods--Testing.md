@@ -11,11 +11,21 @@
 ### How do we test?
 - Classical
 - Test driven
-- Test first
+- Test 
+
+**Suggestion:** Since we do not have an explicit requirements base I would recommend using a **test first** approach. Therefore our test specification is basically an implicit documentation of our requirements.
 ### Metrics?
 Code coverage?
 Visualization? Tracking? -> Grafana?
 [Pro Tips: Using Grafana in Quality Assurance](https://grafana.com/blog/2018/11/29/pro-tips-using-grafana-in-quality-assurance/)
+
+### Test automatisation?
+What do we test when, how and where?
+local, Jenkins stages...
+<br>
+Smoke tests?
+<br>
+
 ## Test tools:
 ### Frontend
 Expo recommends **Jest** as "most widely used JavaScript unit testing framework"
