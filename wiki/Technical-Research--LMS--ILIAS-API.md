@@ -209,7 +209,8 @@ The course-route(s) discussed in [section 1](#1-retrieve-meta-information-on-a-u
 In the routes available by default in the RESTPlugin there is a `v1/files/:refid` route, which retrieves any files given a valid `refid` in the database. However, this is direct downloading only.
 
 Another possible candidate for accessing objects (recursively) is the route `v1/ilias-app/objects/:refid` (or its equivalent `v2/ilias-app/objects/:refid`), where (according to the code) a recursive list of elements per object and its subobjects is created and returned.  
-**However**: until now there is apparently no way to easily access those routes, even with an API-key which has the rights to access this route. The response will be a "Unknown route" error.
+**However**: until now there is apparently no way to easily access those routes, even with an API-key which has the rights to access this route. The response will be a "Unknown route" error.  
+The sourcecode for the `ilias-app`-route is located in [`ILIASAppRoutes.php`](https://github.com/IT-REX-Platform/Ilias.RESTPlugin/blob/be0f8eecd2393dd7c67e34070b6f12bf49a5f050/RESTController/extensions/ilias_app_v2/routes/ILIASAppRoutes.php#L32) and suggests getting a recursive listing of the details of any object by `ref-id` of the ILIAS database. Once this route is accessible - either by getting the route to work or making our own variation of this API route - another verification is needed that this works like intended. If it does, we can use this route for accessing any object and its children.
 
 ### 3. Retrieve slide sets from a course
 
