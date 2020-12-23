@@ -1,0 +1,127 @@
+
+application {
+  config {
+    baseName backendForFrontend
+    applicationType gateway
+    packageName de.uni_stutgart.it_rex.backend
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    prodDatabaseType postgresql
+    skipClient true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de,cn]
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName coursService
+    applicationType microservice
+    packageName de.uni_stutgart.it_rex.course
+    authenticationType oauth2
+    prodDatabaseType postgresql
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de,cn]
+    serviceDiscoveryType eureka
+    }
+  entities *
+}
+
+enum ROLE {
+	STUDENT,
+    LECTURER,
+    HIWI
+}
+
+entity Person {
+	id UUID
+	name String
+    mail String
+}
+
+entity Course {
+	name String
+    id UUID
+    startDate Date
+    endDate Date
+    maxFoodSum Integer
+    courseDescription Blob
+}
+
+entity Participant {
+	status ROLE
+}
+
+
+entity Chapter {
+	maxFoodSum Integer
+}
+
+entity Content { // Abstract
+	order Integer
+    foodReward Integer
+    name String
+    id UUID
+    startDate Date
+    endData Date
+    referenceId UUID
+}
+
+entity Event (Content) {
+
+}
+
+entity Document (Content) {
+
+}
+
+entity LectureQuiz (Content) {
+
+}
+
+entity Media (Content) { // Abstract
+
+}
+
+entity Image (Media) {
+
+}
+
+entity Video (Media) {
+
+}
+
+entity Audio (Media) {
+
+}
+
+relationship OneToMany {
+	Person{course} to Participant{person}
+    Participant{person} to Course{participant}
+    Course{chapter} to Chapter{course}
+    Chapter{content} to Content{chapter}
+}
+
+relationship OneToOne {
+	Person{user(login) required} to User
+    Course to RexDuell
+    Course to QuestionPool
+    Course to ContentPool
+    Course to Tur
+}
+
+
+
+
+
+
+ 
