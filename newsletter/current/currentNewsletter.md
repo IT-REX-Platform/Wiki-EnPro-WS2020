@@ -25,8 +25,8 @@ In order to implement first functionality and get a feeling for the system, own 
 
 * Set-up of a **Continuous Integration and Deployment Toolchain**: A Jenkins was set up including a pipeline for building the client application. The pipeline for the backend, i.e. single microserivces, is still in progress. 
 * Designed a **Strategy for Implementing the UI** - see details in the [Wiki](https://github.com/IT-REX-Platform/Wiki/wiki/Development--UI-Design-and-Implementation-Strategy-and-Tools).
-* Defined the remaining parts of the **Technology Stack**: In addition to the previous decision of using Expo for the Frontend, we decided to implement microservices with Java 11 using Spring Boot. In addition, the adaption of JHipster for the microservices environment is currently under exploration.
-* Definition of **Quality Assurance Methods and Tools** is in progress: The focus is Testing, Static Code Analysis and Coding Conventions. Plugins and Tools are currently being explored and defined. 
+* Defined the remaining parts of the **Technology Stack**: In addition to the previous decision of using Expo for the Frontend, we decided to implement microservices with Java 11 using Spring Boot. In addition, the adoption of JHipster for the microservices environment is currently under exploration.
+* Definition of **Quality Assurance Methods and Tools** is in progress: The focus is on Testing, Static Code Analysis and Coding Conventions. Plugins and Tools are currently being explored and defined. 
 
 ## Next Steps
 
