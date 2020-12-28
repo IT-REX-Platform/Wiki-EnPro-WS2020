@@ -14,6 +14,26 @@ Some metrics for good code that should be covered by a static analysis tool.  Ca
 - **Clones**
 - **Compliance with Coding Conventions**
 
+# Quick Overview
+## Backend 
+
+|Metric| Goal | Measures | Tools | 
+| :--- | :--- | :--- | :--- |
+|Coding Conventions| More readable, consistent coding style to simplify teamwork | Sun Code Conventions | Checkstyle Plug-In for Intellij IDEA & Jenkins | 
+|Testing coverage| Avoid bugs early and create the most qualitative code base as possible |  - | - |
+|Potential bugs| Reduce the number of possible bugs to get an error-free code base |Search for error patterns to avoid actual errors. | - | 
+|Nesting depth| -|-|-|
+|Path complexity| -|-|-|
+|(Code Smells) Lines of code|Files with no more than 2000 lines to ensure understandability and manageability|Sun Code Conventions|Checkstyle Plug-In for Intellij IDEA & Jenkins|
+|(Code Smells) Duplicates|Avoid duplicated code to simplify the structure of the code base, make it shorter and easier to support|-|Intellij IDEA|
+|(Code Smells) Code vs comment lines|-|-|-|
+
+
+
+
+
+
+
 
 
 ## Sources
