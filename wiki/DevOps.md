@@ -21,17 +21,19 @@ Furthermore, this will enable us to easily help other developers when facing pro
 
 # Git-Workflow
 
-! not yet finished !
-
 In order to work on different topics in parallel we also decided on a workflow.
-For this, we chose the [Git-flow workflow](https://www.atlassian.com/de/git/tutorials/comparing-workflows/gitflow-workflow).
-This approach works as follows:
+For this, we chose an extension of the [Feature Branch Workflow](https://www.atlassian.com/de/git/tutorials/comparing-workflows/feature-branch-workflow). Here, some elements from the [Git-flow workflow](https://www.atlassian.com/de/git/tutorials/comparing-workflows/gitflow-workflow) were added.
+Our current approach works as follows:
 
 Development is done in **Feature-Branches**. A possibility for a naming convention would be to use the jira issue number as a name here.
 When the Feature is implemented and tested a pull request is created.
 After the pull-request is reviewed and accepted, the code then gets merged into the **develop** branch.
 The **develop** branch then contains the latest version of software.
+<br>
+Up until this point, we don't do anything different than described in the [Feature Branch Workflow](https://www.atlassian.com/de/git/tutorials/comparing-workflows/feature-branch-workflow).
+<br>
 In addition, we want a **main** branch. Nobody pushes directly to the main branch. This step is only done through our CI environment.
+
 With this approach, we want to guarantee for a stable production environment (the codebase on **main**). Whereas the pre-production code from the **develop** branch is deployed and released for testing-purposes. This helps to see the latest changes in a production-like environment before pushing them to the production environment.
 
 
