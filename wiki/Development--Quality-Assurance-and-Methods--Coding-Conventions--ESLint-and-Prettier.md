@@ -80,6 +80,6 @@ Or add in VSCode settings.json:
 |"singleQuote": false|Single quotes changed to double quotes.|
 |"printWidth": 120|Maximum line length is 120.|
 |"bracketSpacing": true|Spaces between brackets in object literals.|
-|"jsxBracketSameLine": true|Sole ">" parentheses in a line is not allowed.|
-|"arrowParens": "always"|Single arrow function paramters are surrounded by parentheses.|
+|"jsxBracketSameLine": true|A sole ">" parentheses in a line is not allowed.|
+|"arrowParens": "always"|Single arrow function parameters are surrounded by parentheses.|
 |"endOfLine": "auto"|Line endings are changed to windows or unix, depending on the system currently running the code.|
