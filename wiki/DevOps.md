@@ -70,6 +70,10 @@ A brief overview of the several stages:
 This is basically the "git pull" command. Here, the pipeline gathers the latest changes for the corresponding branch or pull request that it is acting upon.
 On this code basis, later steps are applied.
 
+- ### Pre-build
+In order to work with the code, it is possible that some preparations need to be done.
+For the frontend for example, 'npm install' is executed in this stage in order to get the latest dependencies.
+
 - ### Static Analysis
 After checking out the code, static analysis is done here. This are typically tests that don't require compilation like codestyle checks.
 
@@ -84,6 +88,11 @@ This includes several different testing techniques. Some of them are unit tests,
 
 - ### Deployment
 The last step of our pipeline is the Deployment. Depending on some conditions, the current code-base is deployed so that it is available and can be reached.
+This stage is currently only executed if we are on the *main* branch.
+
+- ### Release
+This stage is only executed when we are on the Develop Branch and the Pipeline Build is triggered manually (by a user).
+With this approach, we want to have control over when the code from the Develop branch is merged into the main branch.
 
 ---
 
