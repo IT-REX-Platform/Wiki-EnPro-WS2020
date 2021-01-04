@@ -4,8 +4,12 @@ These are going to be presented in the following.
 
 # DevOps Motivation
 
-! not yet finished !
+First of all the question: Why do we want DevOps? <br>
+The main motivation here is to maintain a stable code base and production environment.
+To achieve this, we don't want a lot of manual work, instead we rely on automated methods to help us.
 
+By using Continuous Integration, no code should be able to get into the shared code-base that does not fulfill our defined quality standards.
+Each commit therefore needs to pass the compiler, tests and other steps explained later to get integrated.
 
 
 # IDE
@@ -34,19 +38,57 @@ Up until this point, we don't do anything different than described in the [Featu
 <br>
 In addition, we want a **main** branch. Nobody pushes directly to the main branch. This step is only done through our CI environment.
 
+![Git-Workflow](./Images/Git-Workflow.png)
+
+
+
 With this approach, we want to guarantee for a stable production environment (the codebase on **main**). Whereas the pre-production code from the **develop** branch is deployed and released for testing-purposes. This helps to see the latest changes in a production-like environment before pushing them to the production environment.
 
 
 # CI-Environment
 
-! not yet finished !
+After evaluating various providers, we decided to use Jenkins as our CI-Environment.
+The main reason is that there is no cap on how many build minutes we are able to use without paying for them.
+
+Jenkins provides so-called pipelines. A Jenkins Pipeline is a suite of plugins that helps us to achieve automated actions that we want to perform with / on our code.
+Such a pipeline exists for every branch that we have in all of our projects.
+Each commit is automatically detected and a pipeline is triggered.
+
+As presented previously in the Git-Workflow section, we want to integrate Feature-Branches via Pull requests.
+When such a pull request is created, Jenkins also auto-detects it and runs a pipeline for the current code-base.
+
+*What does the pipeline do?* <br>
+We don't really want to get into too much detail, but each pipeline consists of several steps, mostly divided into the following parts:
 
 
+![Pipeline Stages](./Images/Pipeline-Stages.png)
 
-Is currently being evaluated. Most knowledge is available in Jenkins.
+*What does this mean?* <br>
+A brief overview of the several stages:
 
-[Frontend Travis](https://travis-ci.com/github/IT-REX-Platform/Frontend)
+- ### SCM Checkout
+This is basically the "git pull" command. Here, the pipeline gathers the latest changes for the corresponding branch or pull request that it is acting upon.
+On this code basis, later steps are applied.
 
-[Problems with Travis](https://travis-ci.community/t/builds-hang-in-queued-state/10250) are not only that the current pricing model doesn't allow infinite usage, but that builds can idle 
+- ### Static Analysis
+After checking out the code, static analysis is done here. This are typically tests that don't require compilation like codestyle checks.
 
-~33 mins.
+
+- ### Build
+After the static tests have passed, we know that the code looks as we want it to look. So the next step is to build it.
+Typically the code is compiled here and needed helper-processes are executed.
+
+- ### Dynamic Analysis
+The dynamic analysis stage is performing the tests that require the compiled and built version of the code.
+This includes several different testing techniques. Some of them are unit tests, smoke tests and integration tests.
+
+- ### Deployment
+The last step of our pipeline is the Deployment. Depending on some conditions, the current code-base is deployed so that it is available and can be reached.
+
+---
+
+Currently we decided on a sequential execution of pipeline stages. This means that each stage is executed when the previous one has finished.
+But only if the previous stage has finished succesfully(!).
+This also means that if a pipeline fails, further actions are not executed.
+
+Depending on the build result, indicators are shown in the Jenkins Frontend and for Pull-Requests you can see the status of the corresponding build inside the Pull Request on the Github site too.
