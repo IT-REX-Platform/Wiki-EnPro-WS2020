@@ -1,6 +1,6 @@
 # Project Roadmap
 
-![IT-Rex Roadmap](./../newsletter/graphix/roadmap_current.png)
+![IT-Rex Roadmap](https://github.com/IT-REX-Platform/Wiki/blob/main/newsletter/graphix/roadmap_current.png)
 
 # Project Scope
 
