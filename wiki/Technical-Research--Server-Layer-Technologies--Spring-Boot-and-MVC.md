@@ -2,7 +2,7 @@
 
 We want to build a simple todo list that writes new todos to a database and displays them in a web UI.
 
-The code for the finished application can be found here: ToDo
+The code for the finished application can be found here: https://github.com/Well5a/todolist
 
 Prerequisites:
 * JDK 11

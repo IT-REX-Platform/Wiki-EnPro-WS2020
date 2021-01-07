@@ -38,7 +38,7 @@ Up until this point, we don't do anything different than described in the [Featu
 <br>
 In addition, we want a **main** branch. Nobody pushes directly to the main branch. This step is only done through our CI environment.
 
-![Git-Workflow](./Images/Git-Workflow.png)
+![Git-Workflow](./Images/gitWorkflow.png)
 
 
 
