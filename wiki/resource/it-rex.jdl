@@ -3,7 +3,7 @@
 
 application {
   config {
-    baseName gateway
+    baseName Gateway
     applicationType gateway
     packageName de.uni_stutgart.it_rex.backend
     authenticationType oauth2
@@ -24,7 +24,7 @@ application {
 
 application {
   config {
-    baseName courseService
+    baseName CourseService
     applicationType microservice
     packageName de.uni_stutgart.it_rex.course
     authenticationType oauth2
@@ -136,7 +136,7 @@ dto * with mapstruct
 service Course with serviceClass
 // service Person, Participation with no
 
-microservice Person, Course, Participation with courseService
+microservice Person, Course, Participation with CourseService
 
 /**
  * The deployment configuration.
@@ -145,13 +145,13 @@ microservice Person, Course, Participation with courseService
 // will be created under 'docker-compose' folder
 deployment {
   deploymentType docker-compose
-  appsFolders [gateway, courseService]
+  appsFolders [Gateway, CourseService]
   dockerRepositoryName "itrex"
 }
 
 // will be created under 'kubernetes' folder
 deployment {
   deploymentType kubernetes
-  appsFolders [gateway, courseService]
+  appsFolders [Gateway, CourseService]
   dockerRepositoryName "itrex"
 }
