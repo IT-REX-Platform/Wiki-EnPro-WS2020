@@ -5,7 +5,7 @@ application {
   config {
     baseName Gateway
     applicationType gateway
-    packageName de.uni_stutgart.it_rex.backend
+    packageName de.uni_stuttgart.it_rex.backend
     authenticationType oauth2
     serviceDiscoveryType eureka
     prodDatabaseType postgresql
@@ -26,7 +26,7 @@ application {
   config {
     baseName CourseService
     applicationType microservice
-    packageName de.uni_stutgart.it_rex.course
+    packageName de.uni_stuttgart.it_rex.course
     authenticationType oauth2
     prodDatabaseType postgresql
     testFrameworks [cucumber]
