@@ -13,6 +13,7 @@ The following services are currently running on the server:
 | https://129.69.217.173:8083 | Keycloak testing instance (HTTPS only) |
 | http://129.69.217.173:8084  | Jenkins Server | 
 | http://129.69.217.173:8085  | Apache HTTP Server for running our Frontend testwise |
+| http://129.69.217.173:9001  | SonarQube|
 
 Files for running services are currently located at:
 | **Path** | **Description** |
