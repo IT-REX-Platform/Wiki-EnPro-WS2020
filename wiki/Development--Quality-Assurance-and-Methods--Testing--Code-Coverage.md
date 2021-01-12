@@ -7,8 +7,9 @@
     "coverage-gutters.showLineCoverage": true
 ```
 
-3. Create coverage report by running:<br>
-*npm run test*
+3. Create coverage report.<br>
+For frontend: *npm run test*<br>
+For backend: *--todo--*
 
 4. In VSCode click on "Watch" left on the bottom blue bar to display code coverage.
 
