@@ -37,10 +37,10 @@ application {
     languages [de]
     serviceDiscoveryType eureka
     serverPort 8081
-    skipUserManagement true
+    skipUserManagement false
     enableSwaggerCodegen true
   }
-  entities Person, Course, Participation
+  entities Course, Participation
 }
 
 application {
@@ -63,17 +63,10 @@ application {
   }
   entities Media, Video
 }
-
-enum ROLE {
+enum PARTICIPATIONTYPE {
 	STUDENT,
   LECTURER,
   HIWI
-}
-
-entity Person {
-	id UUID
-	name String
-  mail String
 }
 
 entity Course {
@@ -82,11 +75,11 @@ entity Course {
   startDate LocalDate
   endDate LocalDate
   maxFoodSum Integer
-  courseDescription Blob
+  courseDescription TextBlob
 }
 
 entity Participation {
-	status ROLE
+	type PARTICIPATIONTYPE
 }
 
 /*
@@ -123,7 +116,7 @@ enum MIMETYPE {
   AUDIO
 }
 
-entity Media /*(Content)*/ { // Abstract
+entity Media{ // Abstract
   title String
   uploadDate LocalDate
   mimeType MIMETYPE
@@ -148,22 +141,27 @@ entity Audio (Media) {
 */
 
 relationship OneToMany {
-	Person{course} to Participation{person}
   Course{participation} to Participation{course}
   //Course{chapter} to Chapter{course}
   //Chapter{content} to Content{chapter}
 }
 
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+  Participation{user(login)} to User
+}
 
-relationship OneToOne {
-	Person{user(login) required} to User
+
+//relationship OneToOne {
   /*
     Course to RexDuell
     Course to QuestionPool
     Course to ContentPool
     Course to Tur
   */
-}
+//}
 
 
 
@@ -172,8 +170,9 @@ service Course with serviceClass
 // service Person, Participation with no
 service Media with serviceClass
 
-microservice Person, Course, Participation with CourseService
+microservice Course, Participation with CourseService
 microservice Media, Video with MediaService
+
 
 /**
  * The deployment configuration.
