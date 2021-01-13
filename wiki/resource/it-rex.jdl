@@ -123,7 +123,7 @@ enum MIMETYPE {
   AUDIO
 }
 
-entity Media (/*Content*/) { // Abstract
+entity Media /*(Content)*/ { // Abstract
   title String
   uploadDate LocalDate
   mimeType MIMETYPE
@@ -170,8 +170,10 @@ relationship OneToOne {
 dto * with mapstruct
 service Course with serviceClass
 // service Person, Participation with no
+service Media with serviceClass
 
 microservice Person, Course, Participation with CourseService
+microservice Media, Video with MediaService
 
 /**
  * The deployment configuration.

@@ -15,6 +15,12 @@ Preconditions:
 npm install -g generator-jhipster
 ```
 
+### Alternativ with Docker
+
+```
+docker container run --name jhpster_generator -v $(pwd):/home/jhipster/app -v ~/.m2:/home/jhipster/.m2 -p 8080:8080 -p 9000:9000 -p 3001:3001 -it --rm jhipster/jhipster:v6.10.5 bash
+```
+
 ## JDL
 
 Can be edited with [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or [VS-Code](https://www.jhipster.tech/configuring-ide-visual-studio-code/)
@@ -51,6 +57,7 @@ Open the folders Gateway and CourseService with IntelliJ IDEA, start coding ;)
 
 ### Generate new microservice
 
+Marcel Weller: I got lots of issues adding the Media service with the import-jdl command. It also lead to some changes in the already generated services. Integration into existing docker compose files was tedious.
 
 
 ### Generate Code from JDL-File
@@ -59,4 +66,13 @@ Create new Directory and execute command:
 
 ```shell
 jhipster import-jdl my_file.jdl
+```
+
+
+### Generate Docker image in local Docker registry
+
+Go in root directory if the project and issue
+
+``` 
+./gradlew -Pprod bootJar jibDockerBuild
 ```
