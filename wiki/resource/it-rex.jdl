@@ -1,0 +1,157 @@
+// Example: https://medium.com/jhipster/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77
+// Example: https://blog.codecentric.de/en/2020/05/kick-start-your-microservice-project-with-jhipster
+
+application {
+  config {
+    baseName Gateway
+    applicationType gateway
+    packageName de.uni_stuttgart.it_rex.backend
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    prodDatabaseType postgresql
+    skipClient true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    // otherModules [{"name": "generator-jhipster-testcontainers", "version": "1.1.0"},{"name": "generator-codegen", "version": "0.3.1"}]
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName CourseService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.course
+    authenticationType oauth2
+    prodDatabaseType postgresql
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de]
+    serviceDiscoveryType eureka
+    serverPort 8081
+    skipUserManagement true
+    enableSwaggerCodegen true
+  }
+  entities Person, Course, Participation
+}
+
+enum ROLE {
+	STUDENT,
+  LECTURER,
+  HIWI
+}
+
+entity Person {
+	id UUID
+	name String
+  mail String
+}
+
+entity Course {
+	name String
+  id UUID
+  startDate LocalDate
+  endDate LocalDate
+  maxFoodSum Integer
+  courseDescription Blob
+}
+
+entity Participation {
+	status ROLE
+}
+
+/*
+entity Chapter {
+	maxFoodSum Integer
+}
+
+entity Content { // Abstract
+	order Integer
+  foodReward Integer
+  name String
+  id UUID
+  startDate LocalDate
+  endData LocalDate
+  referenceId UUID
+}
+
+entity Event (Content) {
+
+}
+
+entity Document (Content) {
+
+}
+
+entity LectureQuiz (Content) {
+
+}
+
+entity Media (Content) { // Abstract
+
+}
+
+entity Image (Media) {
+
+}
+
+entity Video (Media) {
+
+}
+
+entity Audio (Media) {
+
+}
+*/
+
+relationship OneToMany {
+	Person{course} to Participation{person}
+  Course{participation} to Participation{course}
+  //Course{chapter} to Chapter{course}
+  //Chapter{content} to Content{chapter}
+}
+
+
+relationship OneToOne {
+	Person{user(login) required} to User
+  /*
+    Course to RexDuell
+    Course to QuestionPool
+    Course to ContentPool
+    Course to Tur
+  */
+}
+
+
+
+dto * with mapstruct
+service Course with serviceClass
+// service Person, Participation with no
+
+microservice Person, Course, Participation with CourseService
+
+/**
+ * The deployment configuration.
+ * @author A true hipster
+ */
+// will be created under 'docker-compose' folder
+deployment {
+  deploymentType docker-compose
+  appsFolders [Gateway, CourseService]
+  dockerRepositoryName "itrex"
+}
+
+// will be created under 'kubernetes' folder
+deployment {
+  deploymentType kubernetes
+  appsFolders [Gateway, CourseService]
+  dockerRepositoryName "itrex"
+}

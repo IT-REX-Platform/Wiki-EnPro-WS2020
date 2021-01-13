@@ -30,6 +30,10 @@ For this, we chose an extension of the [Feature Branch Workflow](https://www.atl
 Our current approach works as follows:
 
 Development is done in **Feature-Branches**. A possibility for a naming convention would be to use the jira issue number as a name here.
+This ensures that for every branch a ticket exists, for documentation purposes.
+
+**Branch example**: feature/ITREX-123
+
 When the Feature is implemented and tested a pull request is created.
 After the pull-request is reviewed and accepted, the code then gets merged into the **develop** branch.
 The **develop** branch then contains the latest version of software.
@@ -43,7 +47,6 @@ In addition, we want a **main** branch. Nobody pushes directly to the main branc
 
 
 With this approach, we want to guarantee for a stable production environment (the codebase on **main**). Whereas the pre-production code from the **develop** branch is deployed and released for testing-purposes. This helps to see the latest changes in a production-like environment before pushing them to the production environment.
-
 
 # CI-Environment
 
