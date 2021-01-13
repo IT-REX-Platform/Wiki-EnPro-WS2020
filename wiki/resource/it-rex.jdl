@@ -43,6 +43,27 @@ application {
   entities Person, Course, Participation
 }
 
+application {
+  config {
+    baseName MediaService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.media
+    authenticationType oauth2
+    prodDatabaseType postgresql
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de]
+    serviceDiscoveryType eureka
+    serverPort 8082
+    skipUserManagement true
+    enableSwaggerCodegen true
+  }
+  entities Media, Video
+}
+
 enum ROLE {
 	STUDENT,
   LECTURER,
@@ -94,19 +115,33 @@ entity Document (Content) {
 entity LectureQuiz (Content) {
 
 }
+*/
 
-entity Media (Content) { // Abstract
-
+enum MIMETYPE {
+	VIDEO,
+  IMAGE,
+  AUDIO
 }
 
+entity Media (/*Content*/) { // Abstract
+  title String
+  uploadDate LocalDate
+  mimeType MIMETYPE
+  format String
+  location String
+}
+
+/*
 entity Image (Media) {
 
 }
+*/
 
 entity Video (Media) {
-
+  length Integer
 }
 
+/*
 entity Audio (Media) {
 
 }
@@ -145,13 +180,13 @@ microservice Person, Course, Participation with CourseService
 // will be created under 'docker-compose' folder
 deployment {
   deploymentType docker-compose
-  appsFolders [Gateway, CourseService]
+  appsFolders [Gateway, CourseService, MediaService]
   dockerRepositoryName "itrex"
 }
 
 // will be created under 'kubernetes' folder
 deployment {
   deploymentType kubernetes
-  appsFolders [Gateway, CourseService]
+  appsFolders [Gateway, CourseService, MediaService]
   dockerRepositoryName "itrex"
 }
