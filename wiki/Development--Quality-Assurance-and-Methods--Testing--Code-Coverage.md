@@ -8,8 +8,7 @@
 ```
 
 3. Create coverage report.<br>
-For frontend: *npm run test*<br>
-For backend: *--todo--*
+*npm run test*
 
 4. In VSCode click on "Watch" left on the bottom blue bar to display code coverage.
 
