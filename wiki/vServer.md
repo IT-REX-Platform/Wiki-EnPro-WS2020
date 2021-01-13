@@ -10,11 +10,13 @@ The following services are currently running on the server:
 | :--- | :--- |
 | http://129.69.217.173:8081/ | Moodle testing instance |
 | http://129.69.217.173:8082/ | Ilias testing instance |
-| https://129.69.217.173:8083 | Keycloak testing instance (HTTPS only) |
-| http://129.69.217.173:8084  | Jenkins Server | 
-| http://129.69.217.173:8085  | Apache HTTP Server for running our Frontend testwise |
-| http://129.69.217.173:9001  | SonarQube |
-| http://129.69.217.173:3000 | Grafana |
+| https://129.69.217.173:8083/ | Keycloak testing instance (HTTPS only) |
+| http://129.69.217.173:8084/  | Jenkins Server | 
+| http://129.69.217.173:8085/  | Apache HTTP Server for running our Frontend testwise |
+| http://129.69.217.173:8086/  | InfluxDB (?) |
+| http://129.69.217.173:8087/ | MinIO Dev instance for hosting videos |
+| http://129.69.217.173:9001/  | SonarQube |
+| http://129.69.217.173:3000/ | Grafana |
 
 Files for running services are currently located at:
 | **Path** | **Description** |
@@ -30,3 +32,5 @@ Files for running services are currently located at:
 | /srv/keycloak | Docker-compose for Keycloak |
 | /srv/keycloak/db_data | Mapped volume for Keycloak Postgres database files |
 | /srv/keycloak/https/tls.* | Mapped certificate and key for TLS |
+| /srv/minio | Docker-compose for MinIO dev instance |
+| /srv/minio/data | Mapped volume for MinIO blob storage |
