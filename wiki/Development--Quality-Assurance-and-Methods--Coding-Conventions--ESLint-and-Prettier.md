@@ -37,7 +37,7 @@ Add rules: [ESLint rules](https://eslint.org/docs/rules/), [ESLint Plugin TypeSc
 
 8. Install plugin "ESLint".
 
-9. Install plugin "Prettier - Code formatter".
+9. Install plugin "Prettier - Code formatter" (esbenp.prettier-vscode).
 
 10. In VSCode -> Preferences -> Settings -> activate "Format on save".<br>
 Or add in VSCode settings.json:
