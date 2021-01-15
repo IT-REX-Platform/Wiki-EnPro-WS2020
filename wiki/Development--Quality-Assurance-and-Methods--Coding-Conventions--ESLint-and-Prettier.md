@@ -35,9 +35,9 @@ Add rules: [ESLint rules](https://eslint.org/docs/rules/), [ESLint Plugin TypeSc
 
 ## VSCode
 
-8. Install plugin "ESLint".
+8. In VSCode -> extensions marketplace -> install plugin "ESLint" (dbaeumer.vscode-eslint).
 
-9. Install plugin "Prettier - Code formatter" (esbenp.prettier-vscode).
+9. In VSCode -> extensions marketplace -> install plugin "Prettier - Code formatter" (esbenp.prettier-vscode).
 
 10. In VSCode -> Preferences -> Settings -> activate "Format on save".<br>
 Or add in VSCode settings.json:
@@ -62,7 +62,9 @@ Or add in VSCode settings.json:
   },
 ```
 
-## Additional rules for ESLint
+## Addendum
+
+**Additional rules for ESLint:**
 | Rule | Comment |
 | ---- | ------- |
 |"@typescript-eslint/indent": ["warn", 4]|Indentation style is 4 spaces.|
@@ -71,7 +73,7 @@ Or add in VSCode settings.json:
 |"@typescript-eslint/no-explicit-any": "error"|Type "any" is not allowed.|
 |complexity: ["warn", 4]|Maximum cyclomatic complexity is 4.|
 
-## Additional rules for Prettier
+**Additional rules for Prettier:**
 | Rule | Comment |
 | ---- | ------- |
 |"trailingComma": "es5",|Trailing commas are removed.|
