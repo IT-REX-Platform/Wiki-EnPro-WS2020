@@ -36,7 +36,7 @@ application {
     nativeLanguage en
     languages [de]
     serviceDiscoveryType eureka
-    serverPort 8081
+    serverPort 8083
     skipUserManagement false
     enableSwaggerCodegen true
   }
