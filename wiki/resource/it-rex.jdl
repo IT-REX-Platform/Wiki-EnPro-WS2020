@@ -130,7 +130,12 @@ entity Image (Media) {
 }
 */
 
-entity Video (Media) {
+entity Video{
+  title String
+  uploadDate LocalDate
+  mimeType MIMETYPE
+  format String
+  location String
   length Integer
 }
 
@@ -168,7 +173,7 @@ relationship ManyToOne {
 dto * with mapstruct
 service Course with serviceClass
 // service Person, Participation with no
-service Media with serviceClass
+service Media, Video with serviceClass
 
 microservice Course, Participation with CourseService
 microservice Media, Video with MediaService
