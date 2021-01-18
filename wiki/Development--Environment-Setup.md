@@ -1,4 +1,12 @@
+<!-- omit in toc -->
 # Setup with Ubuntu 20.04
+
+- [General Things](#general-things)
+  - [Keycloak](#keycloak)
+  - [Install NodeJs / expo](#install-nodejs--expo)
+  - [Visual Studio Code (Frontend)](#visual-studio-code-frontend)
+  - [IntelliJ IDEA Ultimate (Backend)](#intellij-idea-ultimate-backend)
+  - [Static code analysis](#static-code-analysis)
 
 ## Install openjdk 11
 
