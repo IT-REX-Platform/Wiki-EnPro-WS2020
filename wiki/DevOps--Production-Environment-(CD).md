@@ -7,7 +7,7 @@ All relevant docker-compose files can be found in our *Backend-Deploy* repositor
 For our deployment cycle, we employ a small collection of helper tools. These can be found inside the ```tools/``` directory in *Backend-Deploy*.  
 In general, the flow works as follows:
 
-*continouslydeploy.sh* is monitoring ```/srv/Backend/cd/``` (which is mounted as a volume in our Jenkins docker container) for creation of new "deploy" files inside all subdirectories named after services.  
+*continuouslydeploy.sh* is monitoring ```/srv/Backend/cd/``` (which is mounted as a volume in our Jenkins docker container) for creation of new "deploy" files inside all subdirectories named after services.  
 As part of our Jenkins pipeline, specifically in the *deploy* stage, new versions of docker images of our services are being copied into this shared volume from inside the Jenkins docker container. After this is finished, Jenkins also creates an empty "deploy" file alongside the fresh image to signal to *continuouslydeploy.sh* that a service is ready for redeployment.  
 When this routine is triggered, *continuouslydeploy.sh* passes an image name to *updatecontainer.sh*, which will then stop the running container for the service in question, delete the old image, load the new image from file and restart the service.
 
