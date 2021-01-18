@@ -7,6 +7,15 @@ This page is about setting up the the tools that are needed for the local static
 
 This is already documented [here](./Development--Quality-Assurance-and-Methods--Static-Code-Analysis--Backend###Checkstyle).
 
+## SonarQube
+
+Everyone of us needs an account (except David maybe🤪)
+1. Go to [SonarQube](http://129.69.217.173:9001)
+2. Login with the username "admin" and the password "ContactChristianForThat42"
+3. Got to [Users](http://129.69.217.173:9001/admin/users) ![SonarQubeUsers](./Images/SonarQubeUser.png)
+4. Click on "Create User" and fill in that stuff. You can ignore the SCM stuff ![SonarQubeUsers](./Images/SonarQubeCreateUser.png)
+5. Congratulations:)
+
 ## SonarLint
 
 1. Navigate to: File → Settings → Plugins
