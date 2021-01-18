@@ -54,3 +54,7 @@ Please also check [Environment-Setup](https://reactnative.dev/docs/environment-s
 - usefule extensions
 
 ## IntelliJ IDEA Ultimate (Backend)
+
+## Static code analysis
+
+[This](./Development--Quality-Assurance-and-Methods--Setup-dev-environment)
