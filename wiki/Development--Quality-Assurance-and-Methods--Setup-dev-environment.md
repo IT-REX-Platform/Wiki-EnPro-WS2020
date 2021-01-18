@@ -3,11 +3,9 @@
 
 This page is about setting up the the tools that are needed for the local static code analysis. This is necessary because SonarQube is only triggered when a commit is merged onto the dev branch. 
 
-## Checkstyle
+## Backend
 
-This is already documented [here](./Development--Quality-Assurance-and-Methods--Static-Code-Analysis--Backend###Checkstyle).
-
-## SonarQube
+### SonarQube
 
 Everyone of us needs an account (except David maybe🤪)
 1. Go to [SonarQube](http://129.69.217.173:9001)
@@ -16,7 +14,11 @@ Everyone of us needs an account (except David maybe🤪)
 4. Click on "Create User" and fill in that stuff. You can ignore the SCM stuff ![SonarQubeUsers](./Images/SonarQubeCreateUser.png)
 5. Congratulations:)
 
-## SonarLint
+### Checkstyle
+
+This is already documented [here](./Development--Quality-Assurance-and-Methods--Static-Code-Analysis--Backend###Checkstyle).
+
+### SonarLint
 
 1. Navigate to: File → Settings → Plugins
 2. Search for SonarLint and install the plugin
