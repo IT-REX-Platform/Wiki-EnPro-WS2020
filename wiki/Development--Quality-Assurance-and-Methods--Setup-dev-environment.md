@@ -3,6 +3,13 @@
 
 This page is about setting up the the tools that are needed for the local static code analysis. This is necessary because SonarQube is only triggered when a commit is merged onto the dev branch. 
 
+- [Frontend](#frontend)
+  - [ESLint and Prettier](#eslint-and-prettier)
+- [Backend](#backend)
+  - [SonarQube](#sonarqube)
+  - [Checkstyle](#checkstyle)
+  - [SonarLint](#sonarlint)
+
 ## Frontend
 
 ### ESLint and Prettier
