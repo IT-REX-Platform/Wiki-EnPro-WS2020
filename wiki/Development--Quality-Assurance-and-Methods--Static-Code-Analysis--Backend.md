@@ -99,7 +99,7 @@ Under that list, the violations of the code conventions are described in more de
 
 **Tool:** Local: Jacoco/Intellij CI-Environment: Jacoco  
 
-###Jacoco
+### Jacoco
 Jacoco is a widely used well tested test coverage tool and has good documentation. The integration with gradle projecte is very easy. Reports are provided in .html, .csv and .xml format.
 
 ### Test Coverage Reporting
