@@ -1,7 +1,5 @@
 # jHipster
 
-
-
 ## Why jHipster
 
 ## Install jHipster-generator
@@ -35,6 +33,7 @@ We use keycloak as authentication provider.
 To use keycloak in a Docker container, the host name keycloak must point to localhost.
 
 Append `127.0.0.1 keycloak` to
+
 - UNIX: `/etc/hosts`
 - Windows: `%windir%\system32\drivers\etc\HOSTS`
 
@@ -49,27 +48,37 @@ Clone the following repos into the `Backend` folder.
 ### Start services
 
 Now start keycloak and the jHipster Registry
+
 - `docker-compose -f Gateway/src/main/docker/keycloak.yml up`
 - `docker-compose -f Gateway/src/main/docker/jhipster-registry.yml up`
 
 Open the folders Gateway and CourseService with IntelliJ IDEA, start coding ;)
 
+### Encountered errors while executing and how to resolve them
+
+- OS: Windows - While running the main class - :openApiGenerate is failing<br/>
+  `javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed` <br/>
+  When you see this error, check which Java version your IntelliJ is using - we need Java 11. You can do this under **File** - **Project Structure** - **Project Settings**
+
+- OS: Windows - While running the main class <br/>
+  `Command line is too long. Shorten command line for GatewayApp or also for Spring Boot default configuration?`<br/>
+  Go Into your **run configuration** - open the sub-menu **Environment** - In the select fiel **Shorten Command Line** change the value to: **@argfile (Java 9+)** instead of **user-local default:none**
 
 ### Generate new microservice
 
 Marcel Weller: I got lots of issues adding the Media service with the import-jdl command. It also lead to some changes in the already generated services. Integration into existing docker compose files was tedious.
 
 Steps:
-* Edit the JDL in resources/it-rex.jdl
-  * add new application config
-  * add the necessary entities and relationships
-* setup a folder structure with existing microservices
-  * execute the jdl and generate the services with ```jhipster import-jdl it-rex.jdl```
-  * discard changes in every project except for the newly generated one and the Gateway
-* In the new service add the package "_written" under "src/main/java/de.uni_stuttgart.it_rex.mynewprojectname
-* Add defined sonar exclusions in sonar-project.properties (you may have to readd them in the Gateway too)
-* Create GitHub repository and push initial commit (for the Gateway create a new Pull Request)
 
+- Edit the JDL in resources/it-rex.jdl
+  - add new application config
+  - add the necessary entities and relationships
+- setup a folder structure with existing microservices
+  - execute the jdl and generate the services with `jhipster import-jdl it-rex.jdl`
+  - discard changes in every project except for the newly generated one and the Gateway
+- In the new service add the package "\_written" under "src/main/java/de.uni_stuttgart.it_rex.mynewprojectname
+- Add defined sonar exclusions in sonar-project.properties (you may have to readd them in the Gateway too)
+- Create GitHub repository and push initial commit (for the Gateway create a new Pull Request)
 
 ### Generate Code from JDL-File
 
@@ -79,11 +88,10 @@ Create new Directory and execute command:
 jhipster import-jdl my_file.jdl
 ```
 
-
 ### Generate Docker image in local Docker registry
 
 Go in root directory if the project and issue
 
-``` 
+```
 ./gradlew -Pprod bootJar jibDockerBuild
 ```
