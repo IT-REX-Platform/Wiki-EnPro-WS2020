@@ -59,6 +59,17 @@ Open the folders Gateway and CourseService with IntelliJ IDEA, start coding ;)
 
 Marcel Weller: I got lots of issues adding the Media service with the import-jdl command. It also lead to some changes in the already generated services. Integration into existing docker compose files was tedious.
 
+Steps:
+* Edit the JDL in resources/it-rex.jdl
+  * add new application config
+  * add the necessary entities and relationships
+* setup a folder structure with existing microservices
+  * execute the jdl and generate the services with ```jhipster import-jdl it-rex.jdl```
+  * discard changes in every project except for the newly generated one and the Gateway
+* In the new service add the package "_written" under "src/main/java/de.uni_stuttgart.it_rex.mynewprojectname
+* Add defined sonar exclusions in sonar-project.properties (you may have to readd them in the Gateway too)
+* Create GitHub repository and push initial commit (for the Gateway create a new Pull Request)
+
 
 ### Generate Code from JDL-File
 
