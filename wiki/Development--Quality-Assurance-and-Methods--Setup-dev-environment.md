@@ -3,6 +3,10 @@
 
 This page is about setting up the the tools that are needed for the local static code analysis. This is necessary because SonarQube is only triggered when a commit is merged onto the dev branch. 
 
+ ![DevelopmentCycle](./Images/DevEnvironment/dev-cycle.png)
+ 
+ [Image Source](https://docs.sonarqube.org/latest/)
+
 - [Frontend](#frontend)
   - [ESLint and Prettier](#eslint-and-prettier)
 - [Backend](#backend)
@@ -20,6 +24,8 @@ Read [ESLint and Prettier](./Development--Quality-Assurance-and-Methods--Coding-
 
 ### SonarQube
 
+With SonarQube is a tool to automatically review Code to detect bugs, code smells and vulnerabilities. It can integrate with the existing workflow to enable continuous code inspection across the project branches and pull requests. [1](https://docs.sonarqube.org/latest/)
+
 Everyone of us needs an account (except David maybe🤪)
 1. Go to [SonarQube](http://129.69.217.173:9001)
 2. Login with the username "admin" and the password "ContactChristianForThat42"
@@ -33,6 +39,8 @@ This is already documented [here](./Development--Quality-Assurance-and-Methods--
 
 ### SonarLint
 
+After the SonarQube scanner has analysed the code, the results are sent to the SonarQube server and to the SonarLint plugin integrated in Intellij. With this feedback you can catch and fix issues before they get to the repository. [1](https://docs.sonarqube.org/latest/)
+
 1. Navigate to: File → Settings → Plugins
 2. Search for SonarLint and install the plugin
 3. Navigate to: File → Settings → Tools → SonarLint
@@ -42,3 +50,7 @@ This is already documented [here](./Development--Quality-Assurance-and-Methods--
 7. Generate your token [here](http://129.69.217.173:9001/account/security) or use your username and password ![7](./Images/DevEnvironment/7.png)
 8. Thats it (almost) ![8](./Images/DevEnvironment/8.png)
 9.  Now click on "Update binding"![9](./Images/DevEnvironment/9.png)
+
+ 
+## Sources
+- [SonarQube](https://docs.sonarqube.org/latest/)
