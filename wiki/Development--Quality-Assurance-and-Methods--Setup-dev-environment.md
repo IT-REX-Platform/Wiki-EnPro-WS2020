@@ -9,6 +9,7 @@ This page is about setting up the the tools that are needed for the local static
 
 - [Frontend](#frontend)
   - [ESLint and Prettier](#eslint-and-prettier)
+  - [Code Coverage](#code-coverage)
 - [Backend](#backend)
   - [SonarQube](#sonarqube)
   - [Checkstyle](#checkstyle)
@@ -19,6 +20,10 @@ This page is about setting up the the tools that are needed for the local static
 ### ESLint and Prettier
 
 Read [ESLint and Prettier](./Development--Quality-Assurance-and-Methods--Coding-Conventions--ESLint-and-Prettier##VSCode)
+
+### Code Coverage
+
+Read [Code Coverage](./Development--Quality-Assurance-and-Methods--Testing--Code-Coverage)
 
 ## Backend
 
