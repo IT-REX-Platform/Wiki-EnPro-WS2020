@@ -1,6 +1,6 @@
 # How to activate code coverage tool to visually display method/statement/decision coverage
 
-1. In VSCode install extension "Coverage Gutters".
+1. In VSCode install extension "Coverage Gutters" (ryanluker.vscode-coverage-gutters).
 
 2. In VSCode add to your settings.json:<br>
 ```json
