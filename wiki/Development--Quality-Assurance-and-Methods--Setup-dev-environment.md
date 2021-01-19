@@ -33,6 +33,16 @@ Everyone of us needs an account (except David maybe🤪)
 4. Click on "Create User" and fill in that stuff. You can ignore the SCM stuff ![SonarQubeUsers](./Images/SonarQubeCreateUser.png)
 5. Congratulations:)
 
+#### Quality Gate
+
+Quality Gates enforce a defined quality policy to determine whether the project is ready for release. For this purpose, different coditions can be defined, which are measured against the project.
+
+Here the recommended Sonar-Way Quality Gate was chosen, with the difference that not only the newly added code is analysed, but the overall code. The quality gate is called IT-Rex Way and can be edited if necessary. Please discuss with the team before making any changes. 
+The Qulity Gate can be found at this [link](http://129.69.217.173:9001/quality_gates/show/AXb2fp14nHCoTEaPRxpo) and contains the following rules: 
+
+
+ ![DevelopmentCycle](./Images/DevEnvironment/QualityGate.PNG)
+
 ### Checkstyle
 
 This is already documented [here](./Development--Quality-Assurance-and-Methods--Static-Code-Analysis--Backend###Checkstyle).
