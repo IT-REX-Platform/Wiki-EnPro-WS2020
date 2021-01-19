@@ -59,9 +59,15 @@ Please also check [Environment-Setup](https://reactnative.dev/docs/environment-s
 
 ## Visual Studio Code (Frontend)
 
-- usefule extensions
+- article with usefule extensions: https://x-team.com/blog/best-vscode-extensions/
 
 ## IntelliJ IDEA Ultimate (Backend)
+
+- install intelliJ from here: https://www.jetbrains.com/de-de/idea/download/#section=linux
+- Uni Stuttgart is providing you with the ultimate version
+- For ubuntu add intelliJ to the launcher:
+  - open intelliJ
+  - click on Tools>Create Desktop Entries
 
 ## Static code analysis
 
