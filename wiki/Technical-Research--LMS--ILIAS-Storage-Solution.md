@@ -1,4 +1,4 @@
-# Viability for ILIAS as a Storage Solution
+# Viability for ILIAS as Storage Solution
 
 As we have a need for hosting storage either ourselves or use already existing CMS solutions for keeping our data in sync with the one used by the University/professors, the viability for ILIAS as a storage solution for data uploaded to IT-REX has to be evaluated.
 
