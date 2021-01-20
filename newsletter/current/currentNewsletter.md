@@ -30,7 +30,7 @@ The first functionality is implemented, and with our newly set-up CI/CD pipeline
 
 * Implement first video upload and streaming functionality
 * Introduce log-in and start with user-specific UI elements
-* Add functionality to IT-Rex courses
+* Add functionality to IT-REX courses
 * Incorporate OpenCast as storage solution to verfiy feasability. Refine architecture and clarify organizational constraints.
 
 ## [Newsletter-Archive](https://github.com/IT-REX-Platform/Wiki/tree/main/newsletter/archive)
