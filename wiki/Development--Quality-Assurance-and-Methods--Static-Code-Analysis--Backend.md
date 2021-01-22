@@ -50,9 +50,10 @@ and marks violations of the Google Java Code Guidelines. A list of what conventi
 5. Adjust the scan scope if necessary 
 
 Adding the code style schema to the editor:
-5. Download the sun_style.xml 
-6. Navigate to:  File &rarr; Settings &rarr; Editor &rarr; Code Style
-7. Import the sun_style.xml scheme as follows: ![CodeStyleSchema](./Images/CodeStyleSchama.png)
+<br>
+1. Download the ["sun_checks.xml"](https://github.com/IT-REX-Platform/Wiki/tree/main/wiki/resource) 
+2. Navigate to:  File &rarr; Settings &rarr; Editor &rarr; Code Style
+3. Import the sun_style.xml scheme as follows: ![CodeStyleSchema](./Images/CodeStyleSchama.png)
 
  **&rarr; Restart Intellij**
  
