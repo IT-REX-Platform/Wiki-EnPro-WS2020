@@ -10,7 +10,4 @@
 3. Create coverage report.<br>
 *npm run test*
 
-4. In VSCode click on "Watch" left on the bottom blue bar to display code coverage.
-
-
-
+4. In VSCode click on "Watch" located on the left side of the bottom blue bar to display/hide code coverage.
