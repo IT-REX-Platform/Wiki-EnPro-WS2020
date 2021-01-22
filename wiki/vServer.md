@@ -10,7 +10,7 @@ The following services are currently running on the server:
 | :--- | :--- |
 | http://129.69.217.173:8081/ | Moodle testing instance |
 | http://129.69.217.173:8082/ | Ilias testing instance |
-| https://129.69.217.173:8083/ | Keycloak testing instance (HTTPS only) |
+| http://129.69.217.173:9080/ | Keycloak testing instance (HTTPS only) |
 | http://129.69.217.173:8084/  | Jenkins Server | 
 | http://129.69.217.173:8085/  | Apache HTTP Server for running our Frontend testwise |
 | http://129.69.217.173:8086/  | InfluxDB (?) |
