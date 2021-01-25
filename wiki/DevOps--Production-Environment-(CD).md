@@ -1,3 +1,12 @@
+# Deployment Overview Diagram
+
+The following components are currently deployed in a docker environment on our [vServer](./vServer).
+
+![cd_environment](./Images/Architecture/cd_environment.svg)
+(Source-File: [Sharepoint](https://rssiste.sharepoint.com/:u:/r/sites/IT-REX-Developers/Freigegebene%20Dokumente/Architecture/cd_environment?csf=1&web=1&e=c3GLOg))
+
+# Description
+
 This page aims to provide the reader with a quick overview of our deployment procedure.
 
 We're hosting an always-up-to-date version of our application (based on the latest main branch commit) on our development vServer.
