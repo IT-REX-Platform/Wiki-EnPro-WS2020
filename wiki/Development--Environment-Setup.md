@@ -59,7 +59,9 @@ Please also check [Environment-Setup](https://reactnative.dev/docs/environment-s
 
 ## Visual Studio Code (Frontend)
 
-- article with usefule extensions: https://x-team.com/blog/best-vscode-extensions/
+- Install and setup ESLint and Prettier extensions as described [here](./Development--Quality-Assurance-and-Methods--Coding-Conventions--ESLint-and-Prettier#vscode)
+- Install and setup Code Coverage extension as described [here](./Development--Quality-Assurance-and-Methods--Testing--Code-Coverage)
+- Article with useful extensions: https://x-team.com/blog/best-vscode-extensions/ (includes SSH plugin suggested by Benedikt Mehler)
 
 ## IntelliJ IDEA Ultimate (Backend)
 
@@ -68,7 +70,5 @@ Please also check [Environment-Setup](https://reactnative.dev/docs/environment-s
 - For ubuntu add intelliJ to the launcher:
   - open intelliJ
   - click on Tools>Create Desktop Entries
-
-## Static code analysis
-
-[This](./Development--Quality-Assurance-and-Methods--Setup-dev-environment)
+- Install the checkstyle plugin as described [here](./Development--Quality-Assurance-and-Methods--Static-Code-Analysis--Backend) (you can ignore the code style reporting part)
+- Setup SonarQube and SonarLint as described [here](./Development--Quality-Assurance-and-Methods--Setup-dev-environment#backend)
