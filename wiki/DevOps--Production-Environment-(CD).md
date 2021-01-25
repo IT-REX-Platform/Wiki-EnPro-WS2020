@@ -3,6 +3,7 @@
 The following components are currently deployed in a docker environment on our [vServer](./vServer).
 
 ![cd_environment](./Images/Architecture/cd_environment.svg)
+
 (Source-File: [Sharepoint](https://rssiste.sharepoint.com/:u:/r/sites/IT-REX-Developers/Freigegebene%20Dokumente/Architecture/cd_environment?csf=1&web=1&e=c3GLOg))
 
 # Description
