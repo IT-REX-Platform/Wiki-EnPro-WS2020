@@ -19,6 +19,6 @@ Keycloak can act as Identity Broker for: **SAMLv2.0, oAuthv2.0, OpenID Connect v
 
 **SAML/Shibboleth IDP of University of Stuttgart:** [SAML Config](https://idp.uni-stuttgart.de/idp/shibboleth). Feasibility was tested from a technical perspective: SAML Config can be read by keycloak. Organizational boundary: keycloak / IT-REX must be registered with the university SAML so it is allowed to use it.
 
-ILIAS may offer oAuth. However, the maturity of the implementation is a little unclear (see [Blogpost](https://docu.ilias.de/goto_docu_wiki_wpage_3521_1357.html))
+ILIAS may offer oAuth. However, the maturity of the implementation is a little unclear (see [Blogpost](https://docu.ilias.de/goto_docu_wiki_wpage_3521_1357.html)). Also, see https://github.com/IT-REX-Platform/Wiki/wiki/Technical-Research--LMS--ILIAS-API#getting-an-oauth2-token for more information about the ILIAS API.
 
 In keycloak, users may have additional roles/rights. For SAML (maybe for oAuth as well), it is possible to create "mappers" in keycloak: SAML attributes can be automatically mapped to roles in keycloak. 
