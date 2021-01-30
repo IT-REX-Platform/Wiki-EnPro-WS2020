@@ -63,10 +63,17 @@ application {
   }
   entities Media, Video
 }
+
+
 enum PARTICIPATIONTYPE {
 	STUDENT,
   LECTURER,
   HIWI
+}
+
+enum PUBLISHSTATE {
+  UNPUBLISHED,
+  PUBLISHED
 }
 
 entity Course {
@@ -76,6 +83,7 @@ entity Course {
   endDate LocalDate
   maxFoodSum Integer
   courseDescription TextBlob
+  publishState PUBLISHSTATE
 }
 
 entity Participation {
