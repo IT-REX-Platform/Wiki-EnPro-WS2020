@@ -1,4 +1,4 @@
-The Definition of Done is a collection of checkmarks that need to be fulfilled before an issue is considered as "Done".
+The Definition of Done is a collection of criteria that need to be fulfilled before an issue is considered as "Done".
 Our idea is, to have a review process at the end of each ticket, where following criteria hold.
 After they are fulfilled, the issue in Jira can be moved from "Review" to "Done"
 This helps us to ensure a higher quality.
