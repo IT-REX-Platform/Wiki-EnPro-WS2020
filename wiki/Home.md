@@ -9,5 +9,8 @@
 ### [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
 
 ### [Application Architecture](./Application-Architecture)
-* [Implementation View](./Application-Architecture--Implementation-View)
-* [Deployment View](./Application-Architecture--Deployment-View)
+
+- [Implementation View](./Application-Architecture--Implementation-View)
+- [Deployment View](./Application-Architecture--Deployment-View)
+
+### [Definition of Done](./Definition-of-Done)
