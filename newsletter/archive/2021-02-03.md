@@ -15,7 +15,7 @@ We're finishing up the most basic functionality and starting to put it together 
 
 ## Sprint Goal Overview:
 * **Last sprint** (finished Feb 02, 2021): All about Courses & Videos
-* **Current sprint** (started Feb 03, 2021): ¯\\\_ʕ•ᴥ•ʔ_/¯
+* **Current sprint** (started Feb 03, 2021): Architecture Alignement
 
 ## Latest Achievements
 * Refactored client app to support multiple UI languages
