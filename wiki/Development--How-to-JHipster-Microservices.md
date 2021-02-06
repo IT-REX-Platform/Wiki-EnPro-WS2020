@@ -1,4 +1,4 @@
-# Workflow for Implementing Micro-Services with jHipster and JDL
+# WIP Developing Micro-Services with jHipster and JDL
 
 ## Preconditions
 
@@ -23,11 +23,28 @@ What needs to be installed and how?
     docker container run --name jhpster_generator -v $(pwd):/home/jhipster/app -v ~/.m2:/home/jhipster/.m2 -p 8080:8080 -p 9000:9000 -p 3001:3001 -it --rm jhipster/jhipster:v6.10.5 bash
     ```
 
-## Setting up jHipster and JDL (?)
+## JDL
 
-Where to change config files? --> eher danach sinnvoll, wenn geänderte files überschriebn wurden o.ä.
+### repository
+- link to repository
 
-## Steps for Creating a Micro-Service
+### language description
+
+important fields for us
+- we don't use dtos anymore because they only serve a purpose when changing them and we don't wnat to do this with generated code. If we need to change the representation of the domain entity in the client we need to define our own dto.
+- use UUID in entities??
+
+#### Extensions
+describe other options for entities and when we might want to use them
+- serviceImpl: not needed because it just generates an unnecessary service abstraction
+- filter
+- pagination: large lists in frontend -> maybe list of courses?
+
+#### Relationships
+Todo
+
+
+## Creating a new Micro-Service
 
 1. Clone Repositories and Download itrex.jdl from Git
 
@@ -50,15 +67,23 @@ Where to change config files? --> eher danach sinnvoll, wenn geänderte files ü
 6. [Needs to be discussed] Add roles of usermanagement and secure routes Todo: specify which files and what needs to be added
 7. Create GitHub repository and push initial commit (for the Gateway create a new Pull Request)
 
-## Steps for Creating new Entities
+## Adding your own code to a Micro-service
+
+strategy with written package and extended routes.
+
+
+## Regenerating a Micro-Service
+
+changes to jdl and how to integrate them in existing microservice
+--ignore-application
+
+### Changing entities
 
 1. Create new Entity in the it-rex.jdl
 2. Assign the Entity to the according microservice in the application section
 3. Create a serviceClass, append the new Entity to the `service-line`
 4. Append the new Entity to the according `microservice-line`
 5. Execute `jhipster import-jdl it-rex.jdl --ignore-application` (Don't regenerate the whole application, like SecurityConfig.java and sonar-project.properties)
-
-## Auswirkungen von Enitity Definitions auf gernerierte Files
 
 Was wird von JDL generiert und wie wird die REST-Schnittstelle davon beeinflusst? (e.g. )
 Wie wird REST-Schnittstelle für Frontend implementiert?
