@@ -1,0 +1,1 @@
+This page describes general thoughts and design decisions that impact the architecture implementation regarding the communication flow in the application to implement the desired scenarios (dynamic viewpoint). 
