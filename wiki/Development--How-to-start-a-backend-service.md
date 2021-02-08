@@ -1,22 +1,42 @@
 # How to start a backend service
 
-Add the following to your "C:\windows\System32\drivers\etc\hosts" or "/etc/hosts" file.
+Add the following to your "C:\Windows\System32\drivers\etc\hosts" or "/etc/hosts" file.
 
 ```
 127.0.0.1   keycloak
 127.0.0.1   jhipster-registry
-```
-And entries for the other services that are needed for the system to run.
-
-```
-127.0.0.1   NameOfTheServiceInTheDockerComposeDotYmlFile
+127.0.0.1   minio
 ```
 
-Now go to the root of your project and from there to /src/main/docker/ and run 
+There are two flavors to choose from: **Full deployment** in Docker, where all services will run inside Docker containers, or **Partial deployment** in Docker, where only a lightweight environment consisting of Keycloak, MinIO and the JHipster Registry are launched.
+The former is likely to be the more interesting option if your aim is to develop frontend while the latter might be more appealing towards backend developers as it allows you to debug microservices by running them in IntelliJ instead.
 
-```
-docker-compose -f app.yml up -d 
-```
+## Steps
 
-Now start your service with IntelliJ.
-Congrats😇
+### 0. Clone all Service repos (Gateway, CourseService, MediaService, ...) and the Backend-Deploy repo
+
+`git clone [..]`
+
+### 1. **(Full deployment only)** Compile and load Docker images for all services into your local Docker daemon.  
+
+Navigate into each service's root directory and execute `./gradlew -Pdev jibDockerBuild`.  
+This will automatically build and import the image into Docker.
+
+### 2. Launch the backend
+
+Open a shell and navigate to *Backend-Deploy/docker-compose/local*.
+
+For **Full deployment**, run `docker-compose up -d` (or `docker-compose -f launch_for_services_inside_docker.yml up -d` if the symlink doesn't work).
+
+For **Partial deployment**, run `docker-compose -f launch_for_services_outside_docker.yml up -d`.
+
+### 3. **(Partial deployment only)** Launch the remaining services outside of Docker
+
+Launch your service(s) using IntelliJ or by executing `./gradlew -Pdev bootRun` in their respective root directories.
+
+**Note:** You will *always* also have to launch the Gateway outside of Docker in addition to your service(s) of choice.
+Trying to run one or more services on your host system while keeping the Gateway inside a Docker container will not work properly.
+
+
+The backend should be up and running now.  
+Congrats 😇
