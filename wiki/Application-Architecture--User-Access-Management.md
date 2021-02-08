@@ -1,7 +1,31 @@
+# Authz Verification Flow
+
+to do: something about stateless JWT stuff
+* current state: centrally generated JWT, decentral enforcement
+* considered alternatives (policy-based, central in gateway/BFF, ...) and argumentation
+
+# Authorization
+
+We have three system roles (Roles are typically assigned once and rarely changed):
+* Admin
+* Lecturer
+* Student
+
+And three course roles (Roles will be added and changed when using the IT-REX platform):
+* Owner
+* Manager
+* Participant
+
+(See all details: [User Data Model](Application-Architecture--Data-Model--User))
+
+As different micorservices require this information for authorization, it should all be included in the JWT. Consequence: The information must be available in keycloak as issuer of the JWT.
+
+As all rights within an individual course depend on the course role of a user, a microserive must store the course ID of all entities and resources it stores in order to manage access in a decentral way. So for instance, the media service must store the course ID for any video it stores.
+
 # Keycloak
 
-We are currently evaluating Keycloak as a possible solution for User Access Management.
-Our testing instance is running at [https://129.69.217.173:9443/](https://129.69.217.173:9443/) (use VPN!).  
+Keycloak is used for implementing the User Access Management. Keycloak is also the issuer of the JWTs.
+The keycloak instance in our CD environment is running at [https://129.69.217.173:9443/](https://129.69.217.173:9443/) (use VPN!).  
 Admin credentials are username `admin` and password `admin`.
 
 # External Identity Providers
