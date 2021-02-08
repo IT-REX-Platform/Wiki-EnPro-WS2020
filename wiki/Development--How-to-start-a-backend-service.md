@@ -37,6 +37,7 @@ Launch your service(s) using IntelliJ or by executing `./gradlew -Pdev bootRun` 
 **Note:** You will *always* also have to launch the Gateway outside of Docker in addition to your service(s) of choice.
 Trying to run one or more services on your host system while keeping the Gateway inside a Docker container will not work properly.
 
+---
 
 The backend should be up and running now.  
 Congrats 😇
