@@ -18,7 +18,9 @@ And three course roles (Roles will be added and changed when using the IT-REX pl
 
 (See all details: [User Data Model](Application-Architecture--Data-Model--User))
 
-As different micorservices require this information for authorization, it should all be included in the JWT. Consequence: The information must be available in keycloak as issuer of the JWT.
+As different micorservices require this information for authorization, it should all be included in the JWT. Consequence: The information must be available in keycloak as issuer of the JWT. All roles (system and course level) will be implemented as roles in keycloak. The system-level roles are static: there will be only admin, lecturer and student. 
+
+The course-level roles are dynamic: For each course, there will be the above mentioned three roles that can then be assigned to a user. The CourseService encapsulates all functionality for managing a course. Therefore, these roles must be created in keycloak when creating a course.
 
 As all rights within an individual course depend on the course role of a user, a microserive must store the course ID of all entities and resources it stores in order to manage access in a decentral way. So for instance, the media service must store the course ID for any video it stores.
 
