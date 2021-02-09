@@ -8,3 +8,5 @@ Currently, the system is deployed using docker compose. See:
 * [CD Environment](./DevOps--Production-Environment-(CD))
 * [Deployment Files GitHub Repo](https://github.com/IT-REX-Platform/Backend-Deploy)
 * [Local Deployment for Devs](./Development--How-to-start-a-backend-service)
+
+In response to the challenge of hardware resources stated in the [Architecture Docs Main Page](./Architecture-Documentation), we seek to support OpenCast as storage solution for videos. In a production deployment, setting-up and own OpenCast instance could be ommitted - in our current set-up however, we use our own instances to verify deployablitiy without having to adhere to organizational constraints. For reference, see the current state of the CD environment (link above).
