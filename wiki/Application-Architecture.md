@@ -12,6 +12,7 @@ In the requirements elicitation with our customers, we identified a couple of re
 * Indivudial application components require independent horizontal scaling. This is especially applicable if many videos are streamed at the same time, as many open connections have to be served efficiently. Therefore, a microservice-based approach was chosen to encapsulate media streaming functionality in an independent microservice. Consequently, other functionality was split into such microservices as well, see [Implementation View](Application-Architecture--Implementation-View) for more detail.
 * In order to make use of existing computing resources when setting-up IT-REX, decision was made to use OpenCast to store videos. OpenCast is often used by universities for recording lectures and hence already equipped with quite some hardware resources. Reusing such hardware with IT-REX might make setting-up the system more realistic. See more at: [Deployment View](Application-Architecture--Deployment-View)
 
+Design decisions on a lower level with some more details can be found in the description of different architectural viewpoints listed below.
 
 # Architecture Views and Topics
 
@@ -19,7 +20,7 @@ In the requirements elicitation with our customers, we identified a couple of re
 
 [Deployment View](Application-Architecture--Deployment-View)
 
-[Process View](Application-Architecture--Runtime-View)
+[Runtime View](Application-Architecture--Runtime-View)
 
 [Data Model](Application-Architecture--Data-Model)
 

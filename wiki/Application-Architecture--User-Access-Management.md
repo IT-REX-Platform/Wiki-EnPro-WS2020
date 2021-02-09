@@ -24,6 +24,12 @@ The course-level roles are dynamic: For each course, there will be the above men
 
 As all rights within an individual course depend on the course role of a user, a microserive must store the course ID of all entities and resources it stores in order to manage access in a decentral way. So for instance, the media service must store the course ID for any video it stores.
 
+## Known Authorization Limitations
+
+We do not have shared data between microservices. This may lead to limitations to enforcing access control if other properties than a course ID are relevant, e.g. the publication state of a content item.
+
+Currently, there are no limitations implemented. Once implemented, they will be listed here including measures to mitigate the effect.
+
 # Keycloak
 
 Keycloak is used for implementing the User Access Management. Keycloak is also the issuer of the JWTs.
