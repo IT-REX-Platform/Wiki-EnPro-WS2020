@@ -122,6 +122,7 @@ Related Pages:
 The course service provides course related information course name, details, which chapters exist, etc. It further invokes Keycloak to issue the creation of course-level roles and assign such roles to users.
 
 | :warning: This is the only intended component with service-to-service communication. |
+| --- |
 
 Another important task is to transform the invoked data into a single timeline that is split up by AdjustableTimePeriods and chapters. In order to do so, the course service is connected to a database, where course-specific information is stored persistently.
 
