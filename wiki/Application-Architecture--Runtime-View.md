@@ -28,6 +28,6 @@ Whenever special request patterns or exceptions to the restrictions above are im
 # Exceptional Runtime Behaviour
 
 |:warning: Whenever special request patterns or exceptions to the [restrictions above](#Restrictions-in-Runtime-Behaviour) are implemented, they must be documented here. |
-
+|---|
 ## Scenario: CreateCourse
 ![CreateCourse](./Images/Architecture/Runtime-View-CreateCourse.png)
