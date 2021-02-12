@@ -309,9 +309,11 @@ For the sake of simplicity in implementation, RESTful APIs were chosen to integr
 
 In the process, GraphQL was considered but discarded due to lack of knowledge in the team an unnecessary complextiy. See more: [REST vs. GraphQL](./Technical-Research--Api-Technologies).
 
-## Policy-based Authorization for Resources
+## Authorization service-based resource management
+In order to protect individual resources with fine-grained authorization policies, usage of an authorization service is a common concept. 
+Keycloak supports this concept with the Protection API, based on User-Managed Access (UMA)-complient REST endpoints. In this scenario authorization is granted based on policies in the authorization service, managed by the respective resource server.
 
-In order to protect individual resources with fine-grained access policies, policy-based authorization is a common concept. Keycloak also supports this concept. However, we stuck to the stateless JWT concept for two major reasons:
+However, we stick to the stateless JWT concept for two major reasons:
 * Interdependence on keycloak: Any microservice would have to communicate with keycloak on request-base which adds an enourmous communication overhead.
 * Authorization simplicity: We do not need fine-grained access policies, because our user role model only knows three different roles on course level that decide about access to a resource. 
 
