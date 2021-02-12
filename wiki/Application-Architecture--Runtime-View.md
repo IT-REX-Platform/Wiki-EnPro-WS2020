@@ -18,16 +18,16 @@ If user actions logically involve requests to mulitple microservices, this shoul
 
 Whenever special request patterns or exceptions to the restrictions above are implemented, they must be documented in [Exceptional Runtime Behaviour](#Exceptional-Runtime-Behaviour).
 
-
- 
-
-# Example Runtime Scenarios
-
-TODO:
-
-* Example Scenarios as best practices (UML Sequence Diagrams) -> Benedikt
-
-
+# Runtime Scenarios
+## Scenario: UploadVideo
+![CreateCourse](./Images/Architecture/Runtime-View-UploadVideo.png)
+## Scenario: AddVideo
+![CreateCourse](./Images/Architecture/Runtime-View-AddVideo.png)
+## Scenario: DownloadVideo
+![CreateCourse](./Images/Architecture/Runtime-View-DownloadVideo.png)
 # Exceptional Runtime Behaviour
 
-Whenever special request patterns or exceptions to the [restrictions above](#Restrictions-in-Runtime-Behaviour) are implemented, they must be documented here. 
+|:warning: Whenever special request patterns or exceptions to the [restrictions above](#Restrictions-in-Runtime-Behaviour) are implemented, they must be documented here. |
+
+## Scenario: CreateCourse
+![CreateCourse](./Images/Architecture/Runtime-View-CreateCourse.png)
