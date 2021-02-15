@@ -6,7 +6,6 @@
   - [Install NodeJs / expo](#install-nodejs--expo)
   - [Visual Studio Code (Frontend)](#visual-studio-code-frontend)
   - [IntelliJ IDEA Ultimate (Backend)](#intellij-idea-ultimate-backend)
-  - [Static code analysis](#static-code-analysis)
 
 ## Install openjdk 11
 
@@ -50,7 +49,7 @@ Append `127.0.0.1 keycloak` to
 
 ## Install NodeJs / expo
 
-Install nodejs from [NodeJS](https://nodejs.org/en/download/current/).
+Install nodejs from [NodeJS](https://nodejs.org/en/download/).
 And the following packages:
 
 - Install expo `npm install -g expo-cli`
