@@ -11,7 +11,6 @@
     - [JDL Options in Use](#jdl-options-in-use)
   - [Steps to create a new Microservice](#steps-to-create-a-new-microservice)
   - [Updating existing microservices with JHipster](#updating-existing-microservices-with-jhipster)
-    - [Changing entities](#changing-entities)
 
 # Preliminary 
 
@@ -118,29 +117,27 @@ We only use the JDL for generation of the project containing the single applicat
 
 Most of these options can also be set manually using the JHipster generator in interactive mode, or passing command-line flags to the generator. We decided to use the following options via the JDL: 
 
+The following options should be used to create new microservices, see also [Create new Microservices](#creating-new-microservices-with-jhipster).
 * baseName - to be set for each serivce, unique name
 * applicationType gateway | microservice - one gateway, many microservices
-* packageName de.uni_stuttgart.it_rex.backend ??? (do not change!)
+* packageName de.uni_stuttgart.it_rex.ABC - set the name of your base java package
+* serverPort - specify your server port here
+* prodDatabaseType postgresql - choose your production db
+* devDatabaseType h2Disk - choose your development db
+
+The following flags should be rather stable - no need to change anything.
 * authenticationType oauth2 (do not change!)
 * serviceDiscoveryType eureka (do not change!)
 * skipClient true (only for gateway, set for microservices per default)
-* skipUserManagement true (currently not working)
-* testFrameworks [cucumber] ????
+* skipUserManagement true (currently not working correctly...)
+* testFrameworks [] (do not change!)
 * buildTool gradle (do not change!)
 * cacheProvider hazelcast (do not change!)
 * nativeLanguage en (do not change!)
 * languages [de] (do not change!)
 * enableSwaggerCodegen true (enable or disabel generation of a swagger/OpenAPI Spec)
-* prodDatabaseType postgresql - choose your production db
-* devDatabaseType h2Disk - choose your development db
 
-Additionally, for updating microservices, we use the ```--ignore-application```-flag for the JHipster generator, see more at [Updating Microserivces](#updating-existing-microservices-with-jhipster).
-
-- do we need cucumber!?
-
-important fields for us
-- we don't use dtos anymore because they only serve a purpose when changing them and we don't wnat to do this with generated code. If we need to change the representation of the domain entity in the client we need to define our own dto.
-- use UUID in entities??
+Additionally, some flags are useful when operating the JHipster generator to update existing components, see more at [Updating Microserivces](#updating-existing-microservices-with-jhipster).
 
 ## Steps to create a new Microservice
 
@@ -158,9 +155,8 @@ important fields for us
     jhipster import-jdl path-to-JDL-repository/MyNewRexService.jdl
     ```
    - discard changes in every project except for the newly generated one and the Gateway (to avoid overriding important changes done by others). Discard Changes: Git command (git reset o.ä.)
-4. Add the defined sonar exclusions in sonar-project.properties
-   TODO - link!?
-   And discard the following files!? - TODO (helper-script?)
+4. Replace the auto-generated configuration for SonarQube in sonar-project.properties with the file stored in the JDL-repository (see: configfiles/sonar-project.properties).
+5. You may discard the following files (they are only used for a in-repo installation of the JHipster generator as well as client-app stuff, which we both don't make use of): 
    * .husykrc
    * .lintstagedrc.js
    * .prettierignore
@@ -168,10 +164,9 @@ important fields for us
    * checkstyle.xml
    * package.json
    * package-lock.json
-5. [Needs to be discussed] Add roles of usermanagement and secure routes 
-6. TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
-7. Create GitHub repository and push initial commit 
-8. [If you implement new functionality]: 4. Remember to add the ```written```-packages [as described earlier](#written-packages).
+5. [Needs to be discussed] Add roles of usermanagement and secure routes TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
+6. Create GitHub repository and push initial commit 
+7. [If you implement new functionality]: Remember to add the ```written```-packages [as described earlier](#written-packages).
 
 
 :clap: Congrats! You created a new microservice!
@@ -180,22 +175,17 @@ You might want to consider integrating it into the CI/CD as well.
 * CI: For the Jenkins pipeline, see the other microservices as reference. See also: [Devops in Wiki](./DevOps.md).
 * CD: https://github.com/IT-REX-Platform/Backend-Deploy
 
-TODO - clarify if request forwarding from Gateway to microservices works, issues already detected for mediaservice
-
 ## Updating existing microservices with JHipster
 
-TODO
+| :warning: Be cautious when updating microservices with JHipster! |
+| --- |
 
-changes to jdl and how to integrate them in existing microservice
---ignore-application
+After our decision to not using JHipster for the creation of entities etc, updating a microservice should usually not happen again.
 
-### Changing entities
-
-1. Create new Entity in the it-rex.jdl
-2. Assign the Entity to the according microservice in the application section
-3. Create a serviceClass, append the new Entity to the `service-line`
-4. Append the new Entity to the according `microservice-line`
-5. Execute `jhipster import-jdl it-rex.jdl --ignore-application` (Don't regenerate the whole application, like SecurityConfig.java and sonar-project.properties)
-
-Was wird von JDL generiert und wie wird die REST-Schnittstelle davon beeinflusst? (e.g. )
-Wie wird REST-Schnittstelle für Frontend implementiert?
+If you encounter the situation that you have to alter the application configuration of your microservice, you have two general options:
+* Perform the changes manually. Suggestion: Make a comment in the microservice's JDL-file that you did so and the JDL-file might represent the latest configuration anymore.
+* Use the JHipster generator to update the config. Existing files **will** change/be overriden. It is not clearly documented, which files are affected, so **always use caution! :warning:**  Useful flags:
+  * ```--force```: force the changes to be performed (shoud however, if the docs are correct, only influence entities)
+  * ```--ignore-application```: do not use this flag to update your application, because it won't. 
+  
+  Only listed here, because usage is often encouraged when updating entities and stuff (which we do not do).
