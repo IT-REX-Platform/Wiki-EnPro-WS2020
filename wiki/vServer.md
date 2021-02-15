@@ -15,6 +15,7 @@ The following services are currently running on the server:
 | http://129.69.217.173:8085/  | Apache HTTP Server for running our Frontend testwise |
 | http://129.69.217.173:8086/  | InfluxDB (?) |
 | http://129.69.217.173:8087/ | MinIO Dev instance for hosting videos |
+| http://129.69.217.173:8761/ | JHipster Registry | 
 | http://129.69.217.173:9001/  | SonarQube |
 | http://129.69.217.173:3000/ | Grafana |
 
