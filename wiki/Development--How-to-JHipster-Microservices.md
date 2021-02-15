@@ -26,7 +26,7 @@ We version the JDL-files in our central [JDL Git-Repository](https://github.com/
 
 This chapter describes how we work with the project structure created with the JHipster generator. I.e., we describe how we put our code in an existing JHipster microservice.
 
-If you want to set-up a nem microservice, continue reading [Creating a new Microservice with JHipster](#creating-new-microservices-with-jhipster).
+If you want to set-up a new microservice, continue reading [Creating a new Microservice with JHipster](#creating-new-microservices-with-jhipster).
 
 ## Preconditions
 
