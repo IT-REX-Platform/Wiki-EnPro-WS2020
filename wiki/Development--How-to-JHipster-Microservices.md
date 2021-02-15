@@ -146,7 +146,7 @@ Additionally, some flags are useful when operating the JHipster generator to upd
     git clone https://github.com/IT-REX-Platform/JDL.git
     ```
 
-2. Create a new JDL file based on the template available in the JDL-Repository (we will call the new service ```MyNewRexService``` and the JDL-File ```MyNewRexService.jdl```). Use existing Microservices as Orientation and consider the list of [JDL Options in Use](#jdl-options-in-use)
+2. Create a new JDL file based on the template available in the JDL-Repository at ```configfiles/MicroserviceTemplate.jdl``` (we will call the new service ```MyNewRexService``` and the JDL-File ```MyNewRexService.jdl```). Use existing Microservices as Orientation and consider the list of [JDL Options in Use](#jdl-options-in-use)
 
 3. Go to the Backend-dir in and create a new directory called ```MyNewRexService```
    - navgiate inside the new directory
