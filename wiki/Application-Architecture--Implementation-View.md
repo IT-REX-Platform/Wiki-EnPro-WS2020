@@ -48,7 +48,7 @@ Exceptional cases for delegation to other services are:
 ## Known Limitations
 * **No shared data**: For all data, there should be a single source of truth. Data is not being replicated between services. Only exception: Nothing in IT-REX can happen "outside a course", e.g. videos, pdfs, quizzes, ... ca only be uploaded/created in a course structure. Consequence: **All microservices store course IDs for all entities.** This als serves to implement access control, as authorization is enforced on course level. 
 * **Synchronous respones**: As opposed to other microservice architectures, we do not have a message bus for asynchronous request processing. 
-* **No transactional safety spanning microservices**: The Gateway-Component is responsible for request forwarding, but does not act as a mediator splitting up a request between different microservices. There is currently no transaction manager in place, that's why we avoid
+* **No transactional safety spanning microservices**: The Gateway-Component is responsible for request forwarding, but does not act as a mediator splitting up a request between different microservices. There is currently no transaction manager in place, that's why we avoid service-to-service communication and complex actions that require multiple services to reach a consistent state. Instead, each single backend call should achieve a consistent state able to be handled by the client app. 
 
 ## Best Practices
 * When new functionality is implemented, identify the responsible microservice for the required data. 
@@ -75,15 +75,15 @@ As the name suggests, it runs on the client's machine locally.
 
 This Component is used for displaying all the relevant information to the user.
 It's main tasks are:
- * Manage user Input and forward it to the Backend for Frontend
- * Visualize Data that is received from the Backend for Frontend
+ * Manage user Input and forward it to the Gateway
+ * Visualize Data that is received from the Gateway
 
 With this small set of functionality, the goal was to minimize computational/logical code in order to keep the Frontend Component as light-weight as possible.
 This helps to achieve a smooth User Experience, as well as better performance on the Client Layer.
 
 ## Server Layer
 
-The Server Layer consists out of 13 Microservices that together form the Backend of the IT-Rex Application.
+The Server Layer consists out of several Microservices that together form the Backend of the IT-Rex Application.
 
 ### Gateway
 | :white_check_mark: RUNNING |
@@ -95,6 +95,14 @@ Its core features are:
 * Identification of available services using the JHipster registry
 * Load-balanced distribution of requests
 * Initial authentication
+
+### JHipster Registry
+| :white_check_mark: RUNNING |
+| -------------------------- |
+
+The JHipster Regsitry is a standard component of the [JHipster Microservices Architecture](https://www.jhipster.tech/microservices-architecture/). Currently, we only use it as service registry: The microservices register with the the JHipster registry upon starting. The Gateway may then query available services and their API-routes from the registry. 
+
+The JHipster Registry can be also used for monitoring the microservices as well as Spring Cloud Config. See more here: https://www.jhipster.tech/jhipster-registry/
 
 ### Keycloak
 | :white_check_mark: RUNNING |
@@ -150,6 +158,8 @@ Related Pages:
 
 
 ### Media Service
+| :white_check_mark: RUNNING |
+| -------------------------- |
 
 The Media Service is very similar to the Document service, but focuses on other types of media.
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
