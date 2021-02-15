@@ -42,15 +42,25 @@ If you want to set-up a nem microservice, continue reading [Creating a new Micro
 
 ## ```written```-Packages
 
-Unfortunately, as the JHipster generator does not properly respond to all flags and configuration options, we cannot avoid generated code at all times. In ordert to not interfer with generated code and the JHipster generator, we decided to move **all custom java code to subpackages named ```written```**. Accordingly, this is the resulting procject structure: 
+Unfortunately, as the JHipster generator does not properly respond to all flags and configuration options, we cannot avoid generated code at all times. In order to avoid interfering with generated code and the JHipster generator, we decided to move **all custom Java code to subpackages named ```written```**. Accordingly, this is the resulting package structure: 
 
-TODO
+* src/main/java/de.uni_stuttgart.it_rex.ABC
+  * domain
+    * written
+  * respository
+    * written
+  * service
+    * written
+  * web.rest
+    * written
+
+Remember to create these packages if they do not yet exist when you implement new functionality.
 
 ## Implementing Business Logic
 
 After the decision to stop using the JDL for the creation of custom domain entities, we decided to add the required Java-Classes manually, as we will also need manual implementation in order to fullfill our requirements. All classes should therefore be added in the ```written```-Packages described above.
 
-Follow the structure introduced in the [Spring Boot Workshop (see docs)](Technical-Research--Server-Layer-Technologies--Spring-Boot-and-MVC.md): Entities, Repositories, Services and RestControllers.
+Follow the structure introduced in the [Spring Boot Workshop (see docs)](Technical-Research--Server-Layer-Technologies--Spring-Boot-and-MVC.md): Entities, Repositories, Services and RestControllers. Add the Java code to the package structure [described above](#written-packages), specifically add the Entities to the domain.written-package and RestControllers to web.rest.written.
 
 ## Running Microservices
 
@@ -104,7 +114,29 @@ JDL-Files can be edited with [JDL-Studio](https://start.jhipster.tech/jdl-studio
 
 ### JDL Options in Use
 
-TODO
+We only use the JDL for generation of the project containing the single application components, i.e. the microservices and the gateway. Consequently, we only use JDL options regarding the application configuration. The documenation is available here: https://www.jhipster.tech/jdl/applications#available-application-configuration-options. Be careful: not everything works as intended.
+
+Most of these options can also be set manually using the JHipster generator in interactive mode, or passing command-line flags to the generator. We decided to use the following options via the JDL: 
+
+* baseName - to be set for each serivce, unique name
+* applicationType gateway | microservice - one gateway, many microservices
+* packageName de.uni_stuttgart.it_rex.backend ??? (do not change!)
+* authenticationType oauth2 (do not change!)
+* serviceDiscoveryType eureka (do not change!)
+* skipClient true (only for gateway, set for microservices per default)
+* skipUserManagement true (currently not working)
+* testFrameworks [cucumber] ????
+* buildTool gradle (do not change!)
+* cacheProvider hazelcast (do not change!)
+* nativeLanguage en (do not change!)
+* languages [de] (do not change!)
+* enableSwaggerCodegen true (enable or disabel generation of a swagger/OpenAPI Spec)
+* prodDatabaseType postgresql - choose your production db
+* devDatabaseType h2Disk - choose your development db
+
+Additionally, for updating microservices, we use the ```--ignore-application```-flag for the JHipster generator, see more at [Updating Microserivces](#updating-existing-microservices-with-jhipster).
+
+- do we need cucumber!?
 
 important fields for us
 - we don't use dtos anymore because they only serve a purpose when changing them and we don't wnat to do this with generated code. If we need to change the representation of the domain entity in the client we need to define our own dto.
@@ -117,28 +149,38 @@ important fields for us
     git clone https://github.com/IT-REX-Platform/JDL.git
     ```
 
-2. Create a new JDL file based on the template available in the JDL-Repository (we will call the new service ```MyNewRexService``` and the JDL-File ```myNewRexService.jdl```). Use existing Microservices as Orientation and consider the list of [JDL Options in Use](#jdl-options-in-use)
+2. Create a new JDL file based on the template available in the JDL-Repository (we will call the new service ```MyNewRexService``` and the JDL-File ```MyNewRexService.jdl```). Use existing Microservices as Orientation and consider the list of [JDL Options in Use](#jdl-options-in-use)
 
 3. Go to the Backend-dir in and create a new directory called ```MyNewRexService```
    - navgiate inside the new directory
    - execute the jdl to generate the service with: 
     ```bash
-    jhipster import-jdl path-to-JDL-repository/myNewRexService.jdl
+    jhipster import-jdl path-to-JDL-repository/MyNewRexService.jdl
     ```
    - discard changes in every project except for the newly generated one and the Gateway (to avoid overriding important changes done by others). Discard Changes: Git command (git reset o.ä.)
-4. In the new service add the ```written```-packages [as described earlier](#written-packages).
-5. Add the defined sonar exclusions in sonar-project.properties
+4. Add the defined sonar exclusions in sonar-project.properties
    TODO - link!?
-6. [Needs to be discussed] Add roles of usermanagement and secure routes TODO: specify which files and what needs to be added
+   And discard the following files!? - TODO (helper-script?)
+   * .husykrc
+   * .lintstagedrc.js
+   * .prettierignore
+   * .prettierrc
+   * checkstyle.xml
+   * package.json
+   * package-lock.json
+5. [Needs to be discussed] Add roles of usermanagement and secure routes 
+6. TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
 7. Create GitHub repository and push initial commit 
+8. [If you implement new functionality]: 4. Remember to add the ```written```-packages [as described earlier](#written-packages).
+
 
 :clap: Congrats! You created a new microservice!
 
 You might want to consider integrating it into the CI/CD as well.
+* CI: For the Jenkins pipeline, see the other microservices as reference. See also: [Devops in Wiki](./DevOps.md).
+* CD: https://github.com/IT-REX-Platform/Backend-Deploy
 
-TODO - link!?
-
-TODO - clarify if anything in the gateway has to be changed if new microservices are created.
+TODO - clarify if request forwarding from Gateway to microservices works, issues already detected for mediaservice
 
 ## Updating existing microservices with JHipster
 
