@@ -19,15 +19,34 @@ If user actions logically involve requests to mulitple microservices, this shoul
 Whenever special request patterns or exceptions to the restrictions above are implemented, they must be documented in [Exceptional Runtime Behaviour](#Exceptional-Runtime-Behaviour).
 
 # Runtime Scenarios
+In this section we list important runtime scenarios. This list has tow purposes:
+* Reflect about the design and identify the relevant microservices before implementation.
+* Document the implemented scenarios.
+
 ## Scenario: UploadVideo
+Key assumption: In IT-REX, videos can only exist within courses. Consequently, the course must have been created before, i.e., an courseID is available. Only the MediaSerivce is responsible for uploading the video - all videos with the same courseID form the courses video-pool.
+
+Authorization is handled on course level: the course roles specified in the JWT provide the information, if a user is eligible to upload a video.
+
 ![CreateCourse](./Images/Architecture/Runtime-View-UploadVideo.png)
+
 ## Scenario: AddVideo
-![CreateCourse](./Images/Architecture/Runtime-View-AddVideo.png)
+In this scenario, a lecturer typically wants to upload a video directly into a chapter of a certain course. The MediaService is responsible for creating the video-pool for a course. The course structure including the linking of a video to a specific chapter are however a task of the Course Service. Both backend calls should be handled independently and lead to a response/state the client app can handle, e.g., video created but not yet linked to the course. 
+
+![AddVideo](./Images/Architecture/Runtime-View-AddVideo.png)
+
 ## Scenario: DownloadVideo
-![CreateCourse](./Images/Architecture/Runtime-View-DownloadVideo.png)
+Authorization is handled on course level: the course roles specified in the JWT provide the information, if a user is eligible to download a video.
+
+![DownloadVideo](./Images/Architecture/Runtime-View-DownloadVideo.png)
+
 # Exceptional Runtime Behaviour
 
 |:warning: Whenever special request patterns or exceptions to the [restrictions above](#Restrictions-in-Runtime-Behaviour) are implemented, they must be documented here. |
 |---|
+
 ## Scenario: CreateCourse
+
+KeyCloak is the issuer of the JWT, so it must be the single source of truth regarding user authorizations. As new user roles have to be created upon creating a course, there has to be a service-to-service communication between the CourseService and KeyCloak.
+
 ![CreateCourse](./Images/Architecture/Runtime-View-CreateCourse.png)
