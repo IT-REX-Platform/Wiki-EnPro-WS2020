@@ -25,7 +25,7 @@ Feature Types: Basic, Performance, Excitement - see https://de.wikipedia.org/wik
  |  Study Progress | P | 2 | Track the progress of individual users when working with courses. Display this information appropriately for students and lecturers. | 
  |  Course Quizzes | P | 3 | Create quizzes as part of courses. | 
  |  Gamification: Quizzes | E | 3 | Incentivate student activity by quizzes in different modes (playing against other users, against the time, …) | 
- |  Gamification: Progress Incentivisation | P | 3 | Incentivize student progress by (graphical) gamification elements (rewards, artwork, …). | 
+ |  Gamification: Progress Incentivization | P | 3 | Incentivize student progress by (graphical) gamification elements (rewards, artwork, …). | 
  |  Notifications | P | 4 | Trigger notifications for relevant events in IT-Rex. | 
  |  User Identity Integration | P | 4 | Reuse data from external Identity Management Systems. | 
  |  ILIAS Integration | P | 4 | Reuse data from ILIAS (forward) and/or synchronize data to ILIAS (backward) | 
