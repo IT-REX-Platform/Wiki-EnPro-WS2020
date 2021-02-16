@@ -1,11 +1,52 @@
-# Authz Verification Flow
 
-to do: something about stateless JWT stuff
+# Security concept
+The security concept is based on OAuth2.0, OpenID Connect (OIDC) and JSON Web Tokens (JWT, pronounced: [dʒɒt], „jot“).
 
-- current state: centrally generated JWT, decentral enforcement
-- considered alternatives (policy-based, central in gateway/BFF, ...) and argumentation
+OAuth2.0 defines the following roles (for further details see [OAuth2.0 roles](https://tools.ietf.org/html/rfc6749#section-1.1)):
+- resource owner - an entity capable of grantin acces to a protected ressource
+    - => e.g. a lecturer
+- resource server - the server hosting the protected resources, access decision based on access tokens
+    - => a microservice
+- client - an application making protected resource requests on behalf of a user
+    - => frontend
+- authorization server - a server issuing access tokens to the client
+    - => keycloak
 
-# Authorization
+Helpful links:
+- JWT documentation and token debugger [jwt.io](https://jwt.io/)
+- Spring security reference [Spring security reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
+- The OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749)
+- The OAuth 2.0 Authorization Framework: Bearer Token Usage [RFC 6750](https://tools.ietf.org/html/rfc6750)
+
+## Authentication (authn) and Authorization (authz) flow
+This concept is implemented based on OIDC and JWT with Spring security and keycloak. Spring security provides mechanisms to protect resources represented as REST endpoint in the Spring security configuration (SecurityConfiguration.java).
+
+If a user wants to acces a protected resource, the user authenticates at keycloak with his user credentials. In exchange keycloak sends an access token implemented as JWT. 
+Now the user is enabled to access the protected ressource by sending the request to the respective microservice alonside with the JWT. 
+The JWT is stateless and self-contained. The microservice can verify the claims (e.g. username, roles) contained in the token with the help of a signature based on public key cryptography (in our case RS256). The service can retrieve the necessary public key from keycloak with a defined REST endpoint.
+
+This flow is visualized in the following figure:
+![SecurityFlow](Images/Architecture/SecurityFlow.PNG)
+
+This flow enables a decentral authorization enforcement, which allows better scalability due to the reduction of needed communication to a minimum.
+## Architectural alternatives
+- OAuth2.0 and Spring security offer a mechanism called **opaque** token verfication. In this case the access tokens can be verified in an [OAuth2.0 introspection endpoint](https://tools.ietf.org/html/rfc7662) on an authorization service. It provides benefits in terms of security but introduces communication overhead and the introspection endpoint as performance bottleneck. Therefore we do not use this approach. If needed at a later point of time, both approaches can be combined/used in parallel for different use cases.
+- Keycloak provides a uma-compliant **policy based** approach for authz where keycloak acts as **central** [authorization service](https://www.keycloak.org/docs/latest/authorization_services/index.html). In this scenario each request is intercepted by a policy enforcer in the resource server, which delegates the request to the authz service. The authz service evaluates the currently valid policy and informs the policy enforcer about the result. It provides benefits in terms of security and flexibility in access rights, but introduces communication overhead, complexity and the authz service as performance bottleneck. Therefore we do not use this approach.
+- As architectural pattern we could introduce a central gateway or BFF as "authz" firewall in order to implement the authz in a central way. This would reduce the complexity of the decentral enforcement as well as ressource overhead for verification in each microservice. Due to the limitations of the JHipster "architecture" we decided to reduce inter-microservice communication to an absolute minimum. Therefore we do not use the approach at the moment.
+## Spring security examples
+For more details see [Spring security reference](https://docs.spring.io/)
+
+Security Config example:
+- URI based
+- paths can be matched
+- HttpMethod based
+
+![SecurityConfigExample](Images/Architecture/SecurityConfigExample.PNG)
+
+Same mechanisms can be applied annotation based:
+![SecurityAnnotationExample](Images/Architecture/SecurityAnnotationExample.PNG)
+
+## Role-based Authorization
 
 We have three system roles (Roles are typically assigned once and rarely changed):
 
