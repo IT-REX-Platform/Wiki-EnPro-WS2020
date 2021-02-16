@@ -161,12 +161,11 @@ Additionally, some flags are useful when operating the JHipster generator to upd
    * .lintstagedrc.js
    * .prettierignore
    * .prettierrc
-   * checkstyle.xml
    * package.json
    * package-lock.json
-5. [Needs to be discussed] Add roles of usermanagement and secure routes TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
-6. Create GitHub repository and push initial commit 
-7. [If you implement new functionality]: Remember to add the ```written```-packages [as described earlier](#written-packages).
+6. [Needs to be discussed] Add roles of usermanagement and secure routes TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
+7. Create GitHub repository and push initial commit 
+8. [If you implement new functionality]: Remember to add the ```written```-packages [as described earlier](#written-packages).
 
 
 :clap: Congrats! You created a new microservice!
