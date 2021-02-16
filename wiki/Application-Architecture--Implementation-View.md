@@ -43,7 +43,9 @@ Microservices only provide HTTP interfaces. Generally, we want to avoid that ser
 
 Exceptional cases for delegation to other services are: 
 * The Course Service will have to delegate the creation of user roles to keycloak, see [Course Service](#Course-Service).
-* [to be implemented] Likely, the RexDuel Service will make use of the Quiz Service to respond to requests.
+* [to be implemented] Potentially, the RexDuel Service will make use of the Quiz Service to respond to requests.
+
+For a complete list representing the state of implementation, see [Exceptional Runtime Scenarios](Application-Architecture--Runtime-View.md#exceptional-runtime-behaviour).
 
 ## Known Limitations
 * **No shared data**: For all data, there should be a single source of truth. Data is not being replicated between services. Only exception: Nothing in IT-REX can happen "outside a course", e.g. videos, pdfs, quizzes, ... ca only be uploaded/created in a course structure. Consequence: **All microservices store course IDs for all entities.** This als serves to implement access control, as authorization is enforced on course level. 
@@ -153,6 +155,8 @@ The main functionality inside the service is the management of documents. For th
 
 The Document service may be connected to an outside service via the Document Adapter. Currently this source is set up by us but in the future this could be an LMS system.
 
+**:warning: Soon to be the new "Media Service"** serving all files like audio, images, pdfs. Reason: Similarity between these files higher, as only simple storage without streaming is planned for this kind of data.
+
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
 
@@ -171,6 +175,8 @@ Additionally, it reads from the Database in order to provide the requested Media
 Modifying, Updating and adding content are other tasks that are handled inside here.
 
 The Media service is connected to an outside service via the Media Adapter.
+
+**:warning: Soon to be the new "Video Service"** focusing on videos only as they require special storage solutions and streaming behaviour, as opposed to other media files.
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
