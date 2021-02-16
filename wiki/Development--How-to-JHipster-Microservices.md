@@ -129,7 +129,7 @@ The following flags should be rather stable - no need to change anything.
 * authenticationType oauth2 (do not change!)
 * serviceDiscoveryType eureka (do not change!)
 * skipClient true (only for gateway, set for microservices per default)
-* skipUserManagement true (currently not working correctly...)
+* skipUserManagement true (currently not working with jhipster-generator 6.10.5, see https://github.com/jhipster/generator-jhipster/issues/12366)
 * testFrameworks [] (do not change!)
 * buildTool gradle (do not change!)
 * cacheProvider hazelcast (do not change!)
