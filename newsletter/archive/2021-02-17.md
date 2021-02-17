@@ -2,7 +2,7 @@
 <br/>
 <br/>
 
-# IT-REX Newsletter #5
+# IT-REX Newsletter #6
 
 <p align="right">Published: Feb 17, 2021</p>
 <br/>
