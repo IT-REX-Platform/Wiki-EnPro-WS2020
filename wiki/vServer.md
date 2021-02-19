@@ -18,6 +18,7 @@ The following services are currently running on the server:
 | http://129.69.217.173:8761/ | JHipster Registry | 
 | http://129.69.217.173:9001/  | SonarQube |
 | http://129.69.217.173:3000/ | Grafana |
+| http://129.69.217.173:8088 | Opencast |
 
 Files for running services are currently located at:
 | **Path** | **Description** |
