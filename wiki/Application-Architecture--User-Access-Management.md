@@ -84,6 +84,16 @@ Admin credentials are username `admin` and password `admin`.
 
 When the Keycloak instance is launched via our default Docker compose file, as in our dev environments as well as on our vServer, multiple users and groups/roles are predefined.
 
+JHipster Roles:
+- JHipster-Admin
+  - Username: jhipster_admin
+  - Password: admin
+  - Groups: Admins
+- JHipster-User
+  - Username: jhipster_user
+  - Password: user
+  - Groups: Users
+
 Roles:
 
 - ITREX_STUDENT
@@ -107,8 +117,8 @@ Users:
   - Password: lecturer
   - Groups: ITREX_Lecturers
 - Admin-User
-  - Username: itrexadmin
-  - Password: itrexadmin
+  - Username: admin
+  - Password: admin
   - Groups: ITREX_Admins
 
 # External Identity Providers
