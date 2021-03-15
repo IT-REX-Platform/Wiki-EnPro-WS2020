@@ -15,6 +15,8 @@ UNPUBLISHED courses can also be deleted without consequences.
 
 ![Course Lifecycle](./Images/Architecture/Publishing_Process-Course%20Lifecycle.png)
 
+Courses also have an implicit state of being ACTIVE or INACTIVE. This state is not explicit as the states described above. Courses have this state implicitly depending on their start and end-date: A course is ACTIVE, if its start date has passed and its end-date (+ potential offset) has not passed yet. Ideally, only published courses are active. What must be enforced though is that courses cannot be ARCHIVED when they are still active.
+
 ## Course Content Lifecycle
 
 Course contents should follow the following lifecycle. When course contents are PUBLISHED or UPDATED, they can be accessed by students.
