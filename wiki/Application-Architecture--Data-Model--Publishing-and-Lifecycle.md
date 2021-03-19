@@ -9,7 +9,7 @@ In the following, we want to give an overview about the publishing process and t
 
 ## Course Lifecycle
 
-Courses should follow the following lifecycle. When courses are PUBLISHED, students can join them. Courses can only be deleted after being archived, which can be used to implement a time period that is required to pass before transitioning from ARCHIVED to beion deleted.
+Courses should follow the following lifecycle. When courses are PUBLISHED, students can join them. Courses can only be deleted after being archived, which can be used to implement a time period that is required to pass before transitioning from ARCHIVED to being deleted.
 
 UNPUBLISHED courses can also be deleted without consequences.
 
