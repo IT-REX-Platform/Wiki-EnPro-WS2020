@@ -1,12 +1,16 @@
 # Content Data Model
 
-![ContentDataModel](./Images/Architecture/Content-Data-Model-version2.png)
+![ContentDataModel](./Images/Architecture/Content-Data-Model-update-28032021.png)
 
 ## Description
 
+### IdentifiableElement
+
+An IdentifiableElement has a name and an id. The id is used to identify an entity globally and uses a "Universally Unique Identifier" as data type (see https://www.uuidgenerator.net/). It is used as a Stereotype on other components.
+
 ### Content
 
-The Content class contains a url. This url is used to fetch this content item from the service that manages it. The other attributes are used to identify to which Course/AdjustabelTimePeriod/Chapter this Content belong. They are optional because there has to be no association to those elements. For more information regarding those, please refer to the [Course Structure Data Model](Application-Architecture--Data-Model--Course). Additionally there is the attribute uploaderId. It is used to identify the uploader. All other classes of Contents inherit from this class.
+The Content class contains a url. This url is used to fetch this content item from the service that manages it. The courseId field is used to identify to which Course this Content belongs. For more information regarding the Course, please refer to the [Course Structure Data Model](Application-Architecture--Data-Model--Course). Additionally there is the attribute uploaderId. It is used to identify the uploader. All other classes of Contents inherit from this class.
 
 ### Resource
 
