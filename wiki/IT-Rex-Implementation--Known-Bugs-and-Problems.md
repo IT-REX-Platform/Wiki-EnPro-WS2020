@@ -2,6 +2,7 @@
 
 ## Unprotected API routes in Media Service
 
+(Relevant commit: MediaService/[f24830d4e17e20b57f745df94b56ad831412dde5](https://github.com/IT-REX-Platform/MediaService/blob/f24830d4e17e20b57f745df94b56ad831412dde5/src/main/java/de/uni_stuttgart/it_rex/media/config/SecurityConfiguration.java#L75))  
 IT-REX hosts videos, which can be streamed from a MinIO backend through the Media Service.
 The Frontend uses an HTML5 videoplayer (wrapped in expo-av) for video playback.
 Our authorization model, which relies on a JWT passed in a header with every request, is incompatible with this approach as the HTML5 video player does not support defining custom headers to be sent with the video file request. While expo-av does in fact appear to offer such a property to be defined, this only works with the iOS and Android targets.
