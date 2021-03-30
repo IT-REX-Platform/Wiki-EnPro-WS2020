@@ -10,7 +10,7 @@ This page aims to provide an overview about the implementation progress that was
   - [User Access Management :large_blue_circle:](#user-access-management-large_blue_circle)
   - [Course Structuring :white_circle:](#course-structuring-white_circle)
   - [Study Progress :large_blue_circle:](#study-progress-large_blue_circle)
-  - [Course Quizzes _large_blue_circle:](#course-quizzes-_large_blue_circle)
+  - [Course Quizzes :large_blue_circle:](#course-quizzes-large_blue_circle)
   - [Gamification: Quizzes :black_circle:](#gamification-quizzes-black_circle)
   - [Gamification: Progress Incentivization :black_circle:](#gamification-progress-incentivization-black_circle)
   - [Notifications :black_circle:](#notifications-black_circle)
@@ -114,7 +114,7 @@ Each feature description covers:
 * Anything foreseeable to do that's not in the backlog yet?
   * Nope :smiley:
 
-## Course Quizzes _large_blue_circle:
+## Course Quizzes :large_blue_circle:
 * Related Backlog Entries
   * https://it-rex.atlassian.net/browse/ITREX-30
 * What has been implemented?
