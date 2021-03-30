@@ -83,8 +83,8 @@ Each feature description covers:
   * Manage user roles of a course (e.g., make someone a course manager).
   * Implement either self-registering or usage of external identities for authentication.
 * Anything foreseeable to do that's not in the backlog yet?
-  * Related: Admin User Interface, specifically for the admin
-
+  * Related: [Admin User Interface](#admin-user-interface)
+  
 ## Course Structuring :white_circle:
 * Related Backlog Entries
   * https://it-rex.atlassian.net/browse/ITREX-17
@@ -164,7 +164,7 @@ Each feature description covers:
   * Create an inbox for notifications.
   * Notify about quizzes, comments and course announcements.
 * Anything foreseeable to do that's not in the backlog yet?
-  * Define more notifyable events in the course, e.g., update of a content item.
+  * Define more notifiable events in the course, e.g., update of a content item, publishing of new content, ...
   * Enable to (de)activate notifications for a certain course.
   * Enable to (de)activate certain kinds of notifications.
 
@@ -213,7 +213,7 @@ This feature was not closely considered for implementation yet, so no backlog en
 
 # Cross-cutting / non-feature Progress
 
-Some remarks should be made about the implementation progress regarding parts of IT-REX that do not directly map to one single feature.
+Some remarks should be made about the implementation progress regarding parts of IT-REX that do not directly map to one single feature. In this context, the esteemed reader may also want to refer to the list of [Known Bugs and Problems](IT-Rex-Implementation--Known-Bugs-and-Problems.md) that could not be resolved with the end of the project.
 
 ## Mobile Application
 
