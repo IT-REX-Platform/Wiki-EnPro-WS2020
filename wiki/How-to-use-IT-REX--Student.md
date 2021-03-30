@@ -3,40 +3,19 @@ This page is a short user guide that is applicable to you, esteemed reader, if y
 - [How to use IT-REX as a student?](#how-to-use-it-rex-as-a-student)
   - [Login](#login)
   - [Join a Course](#join-a-course)
-  - [Add Course Contents](#add-course-contents)
-    - [Upload Videos](#upload-videos)
-    - [Create a Quiz](#create-a-quiz)
-  - [Structure a Course](#structure-a-course)
-    - [Create Chapters](#create-chapters)
-    - [Schedule Contents](#schedule-contents)
-    - [Access the Student View](#access-the-student-view)
-  - [Manage a Course](#manage-a-course)
-    - [Delete a Course](#delete-a-course)
-    - [Publish a Course](#publish-a-course)
-    - [Edit the Course Description](#edit-the-course-description)
+  - [Track study progress](#track-study-progress)
+  - [Study a course](#study-a-course)
+    - [Watch Videos](#watch-videos)
+    - [Solve Quizzes](#solve-quizzes)
 
 ## Login
 
-## Create a Course
+## Join a Course
 
-## Add Course Contents
+## Track study progress
 
-### Upload Videos
+## Study a course
 
-### Create a Quiz
+### Watch Videos
 
-## Structure a Course
-
-### Create Chapters
-
-### Schedule Contents
-
-### Access the Student View
-
-## Manage a Course
-
-### Delete a Course
-
-### Publish a Course
-
-### Edit the Course Description
+### Solves Quizzes
