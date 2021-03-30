@@ -147,40 +147,31 @@ Related Pages:
 | :black_square_button: FUTURE |
 | ---------------------------- |
 
-The Document service handles all logic related to displayable documents in the application.
+The Document service handles all logic related to documents/files in the application. As it is not implemented yet, it may also be renamed to File Service.
 For the beginning, the main focus will be on handling PDF files.
-Later-on, other Document formats like .pptx or similar could be supported as well.
+Later-on, other Document formats like .pptx or similar could be supported as well, or maybe different media types.
 
 The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
 
-The Document service may be connected to an outside service via the Document Adapter. Currently this source is set up by us but in the future this could be an LMS system.
-
-**:warning: Soon to be the new "Media Service"** serving all files like audio, images, pdfs. Reason: Similarity between these files higher, as only simple storage without streaming is planned for this kind of data.
+**:warning: Difference to [Media Service](#media-service)** The Document Service ist designed to serve all files like PDFs as downloadable files. No streaming of media. Consequence: It might be useful put all resources with streaming behaviour (range downloads etc.) into a separate service, the Media Service, and let the Document Service potentially use a suitable data source for its purpose. However, the service might also be merged, e.g., because they would use the same data store anyway or because the download/streaming behaviour doesn't actually differ that much. See also [Implemenation of the Content Data Model](IT-Rex-Implementation--Known-Bugs-and-Problems.md#content-data-model-implementation).
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
+* [Implemenation of the Content Data Model](IT-Rex-Implementation--Known-Bugs-and-Problems.md#content-data-model-implementation)
 
 
 ### Media Service
 | :white_check_mark: RUNNING |
 | -------------------------- |
 
-The Media Service is very similar to the Document service, but focuses on other types of media.
+The Media Service is very similar to the Document Service, but focuses on media streaming.
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
 
-Just like the Document Service, the Media Service is invoked by the course service.
-This is necessary for basic functionality like uploading and displaying videos for chapters.
-When uploading, chosen files get passed to the document service, which manages the storage in its own Media Database.
-Additionally, it reads from the Database in order to provide the requested Media to each user.
-Modifying, Updating and adding content are other tasks that are handled inside here.
-
-The Media service is connected to an outside service via the Media Adapter.
-
-**:warning: Soon to be the new "Video Service"** focusing on videos only as they require special storage solutions and streaming behaviour, as opposed to other media files.
+In order to enable exchangeable storage solutions, the intention was to abstract the storage solution in use via a Media Adapter with abstract interface so that different implementations of this adapter could exist and chosen when deploying IT-REX. See also [Implementation of the Media Adapter](IT-Rex-Implementation--Known-Bugs-and-Problems.md#media-adapter).
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
-
+* [Implementation of the Media Adapter](IT-Rex-Implementation--Known-Bugs-and-Problems.md#media-adapter)
 
 
 ### Quiz Service
