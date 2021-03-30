@@ -31,11 +31,11 @@ Find the line that sets the environment variable named `SPRING_SECURITY_OAUTH2_C
 (In the following, the IP address `192.168.0.2` is being used to represent your host machine. Use your own IP address in its place when making edits!)
 
 **Example:**  
-Change...
-> `- "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://129.69.217.173:9080/auth/realms/jhipster"`
+Change...  
+`- "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://129.69.217.173:9080/auth/realms/jhipster"`
 
-...to...
-> `- "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://192.168.0.2:9080/auth/realms/jhipster"`
+...to...  
+`- "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://192.168.0.2:9080/auth/realms/jhipster"`
 
 Make sure to only replace the IP address while leaving the rest of the line (i.e. the port, path, etc.) unmodified!
 
