@@ -12,3 +12,4 @@ In the current implementation state, IT-REX supports only videos, no PDFs, audio
 
 ## Media Adapter
 
+The definition of a Media Interface and implementation of an according adapter for OpenCast was started, but not finished during the project. See details here: [OpenCast in our Wiki](Technical-Research--Data-Storage--OpenCast.md#implementation-attempt).
