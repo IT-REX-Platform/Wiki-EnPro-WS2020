@@ -8,11 +8,13 @@ The project scope is described in the roadmap above. Its purpose is to provide a
 
 As the project proceeds, the roadmap will be continuously adjusted to the current project state and potential changes of priorities.
 
+A progress description with more details is available here: [Implementation Progress](./IT-Rex-Implementation--Feature-Progress.md).
+
 # Product Scope
 
 The following list of features attempts to describe all functionality that IT-REX should eventually encompass. The priorization serves to realize the product incrementally during the project period.
 
-The priorization will be continously adjusted in discussion with the relevant stakeholders.
+The priorization will be continuously adjusted in discussion with the relevant stakeholders.
 
 Feature Types: Basic, Performance, Excitement - see https://de.wikipedia.org/wiki/Kano-Modell
 
