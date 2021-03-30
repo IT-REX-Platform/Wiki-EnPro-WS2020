@@ -1,6 +1,6 @@
 # Preliminary
 
-This page aims to provide a perspective of the implementation progress that was already achieved regarding the individual features. A high-level description of features is available in the [IT-REX Scope and Roadmap](IT-Rex-Scope-and-Roadmap.md). 
+This page aims to provide an overview about the implementation progress that was already achieved in each individual feature. A high-level description of features is available in the [IT-REX Scope and Roadmap](IT-Rex-Scope-and-Roadmap.md). 
 
 - [Preliminary](#preliminary)
 - [High-level Progress Visualization](#high-level-progress-visualization)
@@ -20,6 +20,9 @@ This page aims to provide a perspective of the implementation progress that was 
   - [Moodle Integration :black_circle:](#moodle-integration-black_circle)
   - [Mobile Offline Behaviour :black_circle:](#mobile-offline-behaviour-black_circle)
   - [Desktop Client Offline Behaviour :black_circle:](#desktop-client-offline-behaviour-black_circle)
+- [Cross-cutting / non-feature Progress](#cross-cutting--non-feature-progress)
+  - [Mobile Application](#mobile-application)
+  - [Admin User Interface](#admin-user-interface)
 
 # High-level Progress Visualization
 
@@ -176,37 +179,46 @@ Each feature description covers:
   * Nope :smiley:
 
 ## ILIAS Integration :black_circle:
-* Related Backlog Entries
-* What has been implemented?
-* What's left to do in the backlog?
-* Anything foreseeable to do that's not in the backlog yet?
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View.md#application-level). Some technical research was done and documented:
+* [ILIAS API](Technical-Research--LMS--ILIAS-API.md)
+* [ILIAS Plugin Development](Technical-Research--LMS--ILIAS-Plugin-Development.md)
+* [ILIAS as Storage Solution](Technical-Research--LMS--ILIAS-Storage-Solution.md)
 
 ## Social Media Interaction :black_circle:
 * Related Backlog Entries
+  * https://it-rex.atlassian.net/browse/ITREX-66
+  * https://it-rex.atlassian.net/browse/ITREX-57
 * What has been implemented?
+  * Nothing yet.
 * What's left to do in the backlog?
+  * Publish and view course announcements.
+  * Comment on course contents, respond to comments and watch comment threads.
 * Anything foreseeable to do that's not in the backlog yet?
-    - like/dislike
-    - comment / q&a
-    - announcements
-    - watchlist/watch later
+  * like/dislike functionality
+  * watchlist/watch later functionality
 
 ## Moodle Integration :black_circle:
-* Related Backlog Entries
-* What has been implemented?
-* What's left to do in the backlog?
-* Anything foreseeable to do that's not in the backlog yet?
-
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View.md#application-level).
+Some technical research was done and documented:
+* [Moodle API](Technical-Research--LMS--Moodle-API.md)
+* [Moodle Misc](Technical-Research--LMS--Moodle-Misc..md)
+* [Moodle Setup](Technical-Research--LMS--Moodle-Setup.md)
 
 ## Mobile Offline Behaviour :black_circle:
-* Related Backlog Entries
-* What has been implemented?
-* What's left to do in the backlog?
-* Anything foreseeable to do that's not in the backlog yet?
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. 
 
 
 ## Desktop Client Offline Behaviour :black_circle:
-* Related Backlog Entries
-* What has been implemented?
-* What's left to do in the backlog?
-* Anything foreseeable to do that's not in the backlog yet?
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. Some technical research was done regarding client frameworks that allow creating desktop apps. See [Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework.md) and subpages.
+
+# Cross-cutting / non-feature Progress
+
+Some remarks should be made about the implementation progress regarding parts of IT-REX that do not directly map to one single feature.
+
+## Mobile Application
+
+The Frontend is build with ReactNative. Expo is used to generate the web-archive, and may as well be used to create mobile apps for Android and iOS. This was also done in the beginning of the project, but in order to speed up the implementation progress, specific styling and testing on mobile platforms was ommitted. Consequently, this would have to be done in order to make the frontend ready for mobile apps. See also[Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework.md) and subpages.
+
+## Admin User Interface
+
+While an admin user was considered from the very beginning, no specific functionality and user interface was created for the admin user. See [User Access Management](Application-Architecture--User-Access-Management.md) for more information. Specific admin functionality may be that an admin can access a list of all courses, contents, etc and can modify, delete, ... anything that's in the applicatoin. A specific user interface for such application administration topics may be useful in the far future. Additionally, it might mnight make sense to add a system admin section that includes links to the JHipster Registry etc in order to provide an easy entry into the system for a system admin.
