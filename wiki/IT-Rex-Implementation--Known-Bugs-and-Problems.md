@@ -42,3 +42,12 @@ In the current implementation state, IT-REX supports only videos, no PDFs, audio
 ## Media Adapter
 
 The definition of a Media Interface and implementation of an according adapter for OpenCast was started, but not finished during the project. See details here: [OpenCast in our Wiki](Technical-Research--Data-Storage--OpenCast#implementation-attempt).
+
+## Video Upload Size
+
+Currently the upper limit of the size of videos to upload is ~70MB. This is because of a problem with the Gateway service, which JVM Heap Memory gets over utilized with larger video files. This leads to an exception in the Gateway and an internal server error.
+
+Screenshot from Grafana:
+![JVM Memory](./Images/heapOutOfMemory.PNG)
+
+A logfile of the thrown exception can be found [here](https://github.com/IT-REX-Platform/Wiki/blob/main/wiki/resource/logs/heapOutOfMemory.md).
