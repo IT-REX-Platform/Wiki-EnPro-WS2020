@@ -3,6 +3,13 @@
 This page aims to help you, as a platform administrator or lecturer looking to use IT-REX, to set up your own functioning instance.
 The goal of this guide is to set up IT-REX with Docker.
 
+| :warning: Attention! IT-REX in its current configuration is insecure and should therefore not be exposed to the internet! |
+| --- |
+
+<br/>
+___
+<br/><br/>
+
 ## Prerequisites
 
 - Working **Docker** and **Git** installations
