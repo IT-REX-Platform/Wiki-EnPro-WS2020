@@ -74,4 +74,4 @@ After solving the quiz, the student receives feedback directly. <br/>
 IT-REX provides the quiz results in this way:
 
 ![Quiz-Results](./Images/Student-Perspective/Quiz-Results.png)
-(_Also here the answers in the picture are just for demo purposes_)
+(_Also here the answers in the picture are just for demo purposes_).
