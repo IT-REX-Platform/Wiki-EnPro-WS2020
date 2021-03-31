@@ -37,12 +37,14 @@ The latest achievements are best visible by using the system or reading the guid
 * Students can use the combined structure-and-timeline view to quickly get an overview about the course.
 * Students can navigate through all contents, watch videos and solve quizzes.
 * The progress of all videos is stored per user indicating how much a student has left to do in a particular course.
-  
+
+Additionally, there is a overview [about the roadmap](https://github.com/IT-REX-Platform/Wiki/wiki/IT-Rex-Scope-and-Roadmap), the [implementation progress](https://github.com/IT-REX-Platform/Wiki/wiki/IT-Rex-Implementation--Feature-Progress) and [known limitations](https://github.com/IT-REX-Platform/Wiki/wiki/IT-Rex-Implementation--Known-Bugs-and-Problems).
+
 
 ## Curtain Call
 Thank you very much, dear IT-REX developers, for your commitment, time and effort! :muscle: Thank you Anna, Benedikt, Christian, Daniel, Katja, Niklas, Noel, Marko, Marcel, Marcel, Philipp and Slawa!
 
-Thanks also to David for onwing the project. :blush:
+Thanks also to David for owning the project. :blush:
 
 Thank you dear Sandro, Steffen and Uwe for your inputs and especially the close cooperation in the past two months as well as today's retrospective meeting. :smiley:
 
