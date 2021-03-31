@@ -14,7 +14,7 @@ ToC:
 
 The following diagram shows how we envisioned the applicaton architecture, being split up in individual microservices. It also shows the current state of implementation differing between components that are already running and planned ones.
 
-![Component-Diagram-v3.0](./Images/Architecture/Component-Diagram-v3.0.png)
+![Component-Diagram-v3.0](./Images/Architecture/Component-Diagram-v3.1.png)
 
 For a better understandability, each (intended) microservice will be explained in a section below: See [The Microservices](#The-Microservices).
 
@@ -45,7 +45,7 @@ Exceptional cases for delegation to other services are:
 * The Course Service will have to delegate the creation of user roles to keycloak, see [Course Service](#Course-Service).
 * [to be implemented] Potentially, the RexDuel Service will make use of the Quiz Service to respond to requests.
 
-For a complete list representing the state of implementation, see [Exceptional Runtime Scenarios](Application-Architecture--Runtime-View.md#exceptional-runtime-behaviour).
+For a complete list representing the state of implementation, see [Exceptional Runtime Scenarios](./Application-Architecture--Runtime-View#exceptional-runtime-behaviour).
 
 ## Known Limitations
 * **No shared data**: For all data, there should be a single source of truth. Data is not being replicated between services. Only exception: Nothing in IT-REX can happen "outside a course", e.g. videos, pdfs, quizzes, ... ca only be uploaded/created in a course structure. Consequence: **All microservices store course IDs for all entities.** This als serves to implement access control, as authorization is enforced on course level. 
@@ -91,7 +91,7 @@ The Server Layer consists out of several Microservices that together form the Ba
 | :white_check_mark: RUNNING |
 | -------------------------- |
 
-The API Gateway is the single entry point into the system. It unites all API routes the individual microservices offers and exposes them externally to the client layer. The implementation is highly influenced by the choice of using JHipster, see: 
+The Gateway is the single entry point into the system and acts as an API Gateway: It unites all API routes the individual microservices offers and exposes them externally to the client layer. The implementation is highly influenced by the choice of using JHipster.
 
 Its core features are:
 * Identification of available services using the JHipster registry
@@ -153,11 +153,11 @@ Later-on, other Document formats like .pptx or similar could be supported as wel
 
 The main functionality inside the service is the management of documents. For this, documents need to be created and stored, modified/replaced and deleted.
 
-**:warning: Difference to [Media Service](#media-service)** The Document Service ist designed to serve all files like PDFs as downloadable files. No streaming of media. Consequence: It might be useful put all resources with streaming behaviour (range downloads etc.) into a separate service, the Media Service, and let the Document Service potentially use a suitable data source for its purpose. However, the service might also be merged, e.g., because they would use the same data store anyway or because the download/streaming behaviour doesn't actually differ that much. See also [Implemenation of the Content Data Model](IT-Rex-Implementation--Known-Bugs-and-Problems.md#content-data-model-implementation).
+**:warning: Difference to [Media Service](#media-service)** The Document Service ist designed to serve all files like PDFs as downloadable files. No streaming of media. Consequence: It might be useful put all resources with streaming behaviour (range downloads etc.) into a separate service, the Media Service, and let the Document Service potentially use a suitable data source for its purpose. However, the service might also be merged, e.g., because they would use the same data store anyway or because the download/streaming behaviour doesn't actually differ that much. See also [Implemenation of the Content Data Model](./IT-Rex-Implementation--Known-Bugs-and-Problems#content-data-model-implementation).
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
-* [Implemenation of the Content Data Model](IT-Rex-Implementation--Known-Bugs-and-Problems.md#content-data-model-implementation)
+* [Implemenation of the Content Data Model](./IT-Rex-Implementation--Known-Bugs-and-Problems#content-data-model-implementation)
 
 
 ### Media Service
@@ -167,27 +167,23 @@ Related Pages:
 The Media Service is very similar to the Document Service, but focuses on media streaming.
 The main focus here lies on video, audio and image formats like .mp4, .mp3 and .svg or .png files.
 
-In order to enable exchangeable storage solutions, the intention was to abstract the storage solution in use via a Media Adapter with abstract interface so that different implementations of this adapter could exist and chosen when deploying IT-REX. See also [Implementation of the Media Adapter](IT-Rex-Implementation--Known-Bugs-and-Problems.md#media-adapter).
+In order to enable exchangeable storage solutions, the intention was to abstract the storage solution in use via a Media Adapter with abstract interface so that different implementations of this adapter could exist and chosen when deploying IT-REX. See also [Implementation of the Media Adapter](./IT-Rex-Implementation--Known-Bugs-and-Problems#media-adapter).
 
 Related Pages:
 * [Content Data Model](./Application-Architecture--Data-Model--Content)
-* [Implementation of the Media Adapter](IT-Rex-Implementation--Known-Bugs-and-Problems.md#media-adapter)
+* [Implementation of the Media Adapter](./IT-Rex-Implementation--Known-Bugs-and-Problems#media-adapter)
 
 
 ### Quiz Service
-| :black_square_button: FUTURE |
-| ---------------------------- |
+| :white_check_mark: RUNNING |
+| -------------------------- |
 
-
-The Quiz service is used to get, create, modify or delete quizzes.
+The Quiz Service is used to get, create, modify or delete quizzes.
 By providing questions and answers, along with quiz settings and meta information, quizzes can be created inside the quiz service and stored in the connected Quiz Database.
 
 The main functionality resides in delivering a quiz object to the course service with correct questions and answers for the given context (i.e. Questions for the correct chapter in the correct course).
 
-Depending on the context, three different modes for the returned quizzes seem to be useful:
-* Lecture Quiz: This is the normal quiz that would be used in the context of a chapter inside a Course.
-* Turbo Quiz: A timed Quiz that contains all questions inside a course for an exam-like feeling.
-* Rex-Duel Quiz: Specified rex-duel approved questions, that are course-wide.
+The Quiz Service may also provide addtional quiz mode functionality that enables Gamification feature.
 
 Related Pages:
 * [Quiz Data Model](./Application-Architecture--Data-Model--Quiz)
@@ -198,14 +194,9 @@ Related Pages:
 | ---------------------------- |
 
 
-Although there is already a Quiz service that handles quiz-based logic, the Rex-Duel Service is another microservice that is invoked by the course service.
-In order to provide competitive and interactive rex-duels, we chose to extract this functionality from the Quiz service and create an own service instead.
+Although there is already a Quiz service that handles quiz-based logic, the Rex-Duel Service was originally intendes as a separate microservice. In order to provide competitive and interactive rex-duels, the idea was to extract this functionality from the Quiz service and create an own service instead, potentiall making use of the Quiz Service. 
 
-Simply spoken, the Rex Duel Service sends a request to the Quiz Service, which in turn returns a rex-duel quiz.
-The returned rex-duel quiz is just a data object without the necessary logic to play against other users.
-
-This is where the Rex Duel Service comes into place.
-The game-logic is implemented here and storing of the session progress and other meta-data relevant for the rex-duel is handled in a separate database that is connected to this service.
+This original idea must be reconsidered when implementing the according features: This functionality may as well be inhabited by the Quiz Service.
 
 Related Pages:
 * [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
@@ -216,16 +207,19 @@ Related Pages:
 | :black_square_button: FUTURE |
 | ---------------------------- |
 
-
-The Gamification Service is the entry point for gamification-based requests.
-It's main goal is to combine all underlying, more specific gamification services.
-In order to do so, incoming requests get processed and the logic inside the Gamification Service then decides which more specific services need to be invoked.
+The Gamification Service was initially intended to be the entry point for gamification-based requests. It's main goal is to combine all underlying, more specific gamification services.In order to do so, incoming requests get processed and the logic inside the Gamification Service then decides which more specific services need to be invoked.
 
 To fulfill a set of gamification aspects, a combination of following components may be implemented incrementally:
-* Scoring service
+* Scoring Component
 * Customization Inventory
 * Customization Shop
-* Ranking Service
+* Ranking Component
+
+This original idea must be reconsidered when implementing the according features: This functionality may as well be inhabited in antoher service.
+
+Related Pages:
+* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
+* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
 #### Scoring Component
 
@@ -257,10 +251,6 @@ Users can spend IT-Coins in order to own inventories, which in turn can be used 
 The Ranking component contains the logic to compare users between each other.
 This could be done through various characteristics like progress and score.
 By using such metrics, a ranking can be created, showing how each user has performed, compared to the others.
-
-Related Pages:
-* [The Story of IT Rex](./Gamification--The-Story-of-IT-Rex)
-* [Ranking and Scoring](./Gamification--Ranking-and-Scoring-System)
 
 ## External Services
 
@@ -324,7 +314,7 @@ However, we stick to the stateless JWT concept for two major reasons:
 * Interdependence on keycloak: Any microservice would have to communicate with keycloak on request-base which adds an enourmous communication overhead.
 * Authorization simplicity: We do not need fine-grained access policies, because our user role model only knows three different roles on course level that decide about access to a resource. 
 
-See: [User Access Management](Application-Architecture--User-Access-Management)
+See: [User Access Management](./Application-Architecture--User-Access-Management)
 
 # Retired Microservices
 
@@ -356,13 +346,13 @@ Related Pages:
 ## Document Adapter
 | :x: RETIRED |
 | --- |
-| Not an indepentent service, but a layer in the [Document Servcie](#Document-Service). |
+| Not an indepentent service, but potentially a layer in the [Document Servcie](#Document-Service). |
 
 The Document Adapter connects the Document service to an outside datasource. Currently this source is set up by us but in the future this could be an LMS system.
 
 ### Media Adapter
 | :x: RETIRED |
 | --- |
-| Not an indepentent service, but a layer in the [Media Servcie](#Media-Service). |
+| Not an indepentent service, but potentially a layer in the [Media Servcie](#Media-Service). |
 
-The Media Adapter connects the Media Service to an outside datasource. Currently this source is set up by us but in the future this could be an LMS system.
+The Media Adapter connects the Media Service to an outside datasource. Currently this source is set up by us but in the future this could be an OpenCast instance.

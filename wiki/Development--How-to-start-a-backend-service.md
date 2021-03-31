@@ -1,5 +1,12 @@
 # How to start a backend service
 
+| :warning: This documentation describes an outdated approach. The newest tools for running IT-REX locally are available here: https://github.com/IT-REX-Platform/IT-Rex-dev |
+| --- |
+
+<br/>
+___
+<br/><br/>
+
 Add the following to your "C:\Windows\System32\drivers\etc\hosts" or "/etc/hosts" file.
 
 ```

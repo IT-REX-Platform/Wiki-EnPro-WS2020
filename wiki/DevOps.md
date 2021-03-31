@@ -66,6 +66,9 @@ We don't really want to get into too much detail, but each pipeline consists of 
 
 ![Pipeline Stages](./Images/Pipeline-Stages.png)
 
+| :warning: This is the documentation of the initial pipeline design. The pipelines were target of continuous change and improvement which is not reflected in this documentation. |
+| --- |
+
 *What does this mean?* <br>
 A brief overview of the several stages:
 
