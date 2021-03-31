@@ -6,7 +6,6 @@ The goal of this guide is to set up IT-REX with Docker.
 | :warning: Attention! IT-REX in its current configuration is insecure and should therefore not be exposed to the internet! |
 | --- |
 
-<br/>
 ---
 <br/><br/>
 
