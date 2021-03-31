@@ -81,15 +81,14 @@ Download the following service Docker images:
 
 | Service | Download link |
 | --- | --- |
-| **Gateway** | |
-| **Course Service** | |
-| **Media Service** | |
-| **Quiz Service** | |
+| **Frontend** | [Release v1.0.0](https://github.com/IT-REX-Platform/Frontend/releases/tag/v1.0.0) |
+| **Gateway** | [Release v1.0.0](https://github.com/IT-REX-Platform/Gateway/releases/tag/v1.0.0) |
+| **Course Service** | [Release v1.0.0](https://github.com/IT-REX-Platform/CourseService/releases/tag/v1.0.0) |
+| **Media Service** | [Release v1.0.0](https://github.com/IT-REX-Platform/MediaService/releases/tag/v1.0.0) |
+| **Quiz Service** | [Release v1.0.0](https://github.com/IT-REX-Platform/QuizService/releases/tag/v1.0.0) |
 
 Import the images into your Docker daemon one-by-one by executing the following command:
 > `$ docker load -i {filename}`
-
-[TODO: Ask Marcel for links.]
 
 ## Step 5: Launch the platform
 
