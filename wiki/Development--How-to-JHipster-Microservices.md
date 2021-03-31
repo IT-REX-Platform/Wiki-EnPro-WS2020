@@ -156,14 +156,47 @@ Additionally, some flags are useful when operating the JHipster generator to upd
     ```
    - discard changes in every project except for the newly generated one and the Gateway (to avoid overriding important changes done by others). Discard Changes: Git command (git reset o.ä.)
 4. Replace the auto-generated configuration for SonarQube in sonar-project.properties with the file stored in the JDL-repository (see: configfiles/sonar-project.properties).
-5. You may discard the following files (they are only used for a in-repo installation of the JHipster generator as well as client-app stuff, which we both don't make use of): 
+5. You may discard the following files (they are only used for a in-repo installation of the JHipster generator as well as client-app stuff, which we both don't make use of). This list is probably incomplete. Authority and Auditing classes are also not used at the moment and probably removed/replaced or adapted to project needs.
    * .husykrc
    * .lintstagedrc.js
    * .prettierignore
    * .prettierrc
+   * node_modules
    * package.json
    * package-lock.json
-6. [Needs to be discussed] Add roles of usermanagement and secure routes TODO: specify which files and what needs to be added -> AuthorityConstants.java!?
+   * src/main/java/\<package name\>/domain/User.java
+   * src/main/java/\<package name\>/repository/UserRepository.java
+   * src/main/java/\<package name\>/service/dto/package-info.java
+   * src/main/java/\<package name\>/service/dto/UserDTO.java
+   * src/main/java/\<package name\>/service/mapper/UserMapper.java
+   * src/main/java/\<package name\>/service/UserService.java
+   * src/main/java/\<package name\>/web/rest/UserResource.java
+   * src/main/java/\<package name\>/web/rest/vm/
+   * src/main/java/\<package name\>/web/rest/vm/ManagedUserVM.java
+   * src/main/java/\<package name\>/web/rest/vm/package-info.java
+   * src/test/java/\<package name\>/service/mapper/UserMapperTest.java
+   * src/test/java/\<package name\>/service/UserServiceIT.java
+   * src/test/java/\<package name\>/web/rest/UserResourceIT.java
+
+6. Add RexAuthz lib to your service. At the moment there is no external lib, so you have to copy the files from e.g. MediaService:
+   * src/main/java/\<package name\>/domain/written/enumeration/COURSEROLE.java
+   * src/main/java/\<package name\>/domain/written/enumeration/REXROLE.java
+   * src/main/java/\<package name\>/security/written/RexAuthz.java
+   * src/main/java/\<package name\>/security/written/RexAuthzConstants.java
+   * src/main/java/\<package name\>/security/written/RexAuthzException.java
+
+7. In src/main/resources/config/application.yml set "issuer-uri" to "http://keycloak:9080/auth/realms/jhipster"
+
+6. Add a beautiful ascii art greeting in: src/main/resources/banner.txt :)
+```
+   _____ ______ _______      _______ _____ ______ 
+  / ____|  ____|  __ \ \    / /_   _/ ____|  ____|
+ | (___ | |__  | |__) \ \  / /  | || |    | |__   
+  \___ \|  __| |  _  / \ \/ /   | || |    |  __|  
+  ____) | |____| | \ \  \  /   _| || |____| |____ 
+ |_____/|______|_|  \_\  \/   |_____\_____|______|
+```
+
 7. Create GitHub repository and push initial commit 
 8. [If you implement new functionality]: Remember to add the ```written```-packages [as described earlier](#written-packages).
 
