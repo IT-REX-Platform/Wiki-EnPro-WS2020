@@ -119,7 +119,24 @@ The following two Keycloak meta accounts exist:
 
 | Username | Password |
 | --- | --- |
-| jhipster_admin | jhipster_admin |
-| jhipster_user | jhipster_user |
+| jhipster_admin | admin |
+| jhipster_user | user |
 
-[TODO: How to proceed with these? Delete? Change password?]
+<br>
+
+For more information, check out [user access management](https://github.com/IT-REX-Platform/Wiki/wiki/Application-Architecture--User-Access-Management).
+
+It is strongly recommended that you change the passwords for all of these preexisting accounts for security reasons.
+
+## Creating new accounts
+
+- Open the Keycloak admin console (http://your-hostname-or-ip:9080/) and log in as user "admin"
+- Click on "Users" under the "Manage" grouping on the lefthand side
+- Click on "Add user" and enter a username as well as additional information
+	- Under "Required User Actions", pick "Update Password", then click "save" to proceed to the freshly created account's settings page
+- Switch to the "Groups" tab and assign one of the three platform roles (ITREX_*)
+- Click on the credentials tab and set a new temporary password
+
+Share these credentials with your user. On their first login, they will be prompted to update their password.
+
+
