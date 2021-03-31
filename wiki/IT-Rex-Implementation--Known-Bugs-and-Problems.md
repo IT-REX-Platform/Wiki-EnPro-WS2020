@@ -54,10 +54,10 @@ A logfile of the thrown exception can be found [here](https://github.com/IT-REX-
 
 ## Amount of joined Courses per User
 
-In the current approach the id of the assinged courses of an Student/Lecturer are stored in the jwt which is locatet in the header of each http-request to the backend.
+In the current approach the id of the assinged courses of an Student/Lecturer are stored in the jwt which is located in the header of each http-request to the backend.
 So each time a User join a course, the jwt and therefore the http-header gets bigger and bigger.
 The default max header size which is accepted by spring is 8kb.
-So a User can maximal join ~80 Groups.
+So a User can maximal join ~40 Courses.
 The Frontend checks the amount of joined Courses and displays a message if the "maximum" number is exeeded (See MaxCoursesAllowed.ts).
 As workaround the application.yml of the microservices can be modified to let the server accept bigger headers.
 
