@@ -1,6 +1,6 @@
 # Preliminary
 
-This page aims to provide an overview about the implementation progress that was already achieved in each individual feature. A high-level description of features is available in the [IT-REX Scope and Roadmap](IT-Rex-Scope-and-Roadmap.md). 
+This page aims to provide an overview about the implementation progress that was already achieved in each individual feature. A high-level description of features is available in the [IT-REX Scope and Roadmap](IT-Rex-Scope-and-Roadmap).
 
 - [Preliminary](#preliminary)
 - [High-level Progress Visualization](#high-level-progress-visualization)
@@ -49,7 +49,7 @@ Each feature description covers:
   * Courses have a description and a term.
   * Users can join courses via their id.
 * What's left to do in the backlog?
-  * Published courses can be archived and deleted. 
+  * Published courses can be archived and deleted.
   * Courses can be created based on templates or existing courses.
   * Course joining can be restricted by password or listed/unlisted courses and can be affected via invitation links or a public course list.
   * [Course settings depending on other features.]
@@ -84,7 +84,7 @@ Each feature description covers:
   * Implement either self-registering or usage of external identities for authentication.
 * Anything foreseeable to do that's not in the backlog yet?
   * Related: [Admin User Interface](#admin-user-interface)
-  
+
 ## Course Structuring :white_circle:
 * Related Backlog Entries
   * https://it-rex.atlassian.net/browse/ITREX-17
@@ -95,7 +95,7 @@ Each feature description covers:
   * A course has a timeline, and course contents can be scheduled within this timeline.
   * Course participants as well as managers or owners have distinct views to work with the course structure.
 * What's left to do in the backlog?
-  * Support custom timeline creation and scheduling of course contents and improve user friendlyness. 
+  * Support custom timeline creation and scheduling of course contents and improve user friendlyness.
 * Anything foreseeable to do that's not in the backlog yet?
   * Nope :smiley:
 
@@ -110,7 +110,7 @@ Each feature description covers:
 * What's left to do in the backlog?
   * Track the progress of quizzes, including marking them as completed only when a quiz is passed.
   * Visualize the study progress in comparison to the recommended course timeline for a course participant.
-  * Visualize the student's study progress for a course owner or manager. 
+  * Visualize the student's study progress for a course owner or manager.
 * Anything foreseeable to do that's not in the backlog yet?
   * Nope :smiley:
 
@@ -126,7 +126,7 @@ Each feature description covers:
 * Anything foreseeable to do that's not in the backlog yet?
   * Graded quizzes for examination purposes
   * Question points or difficulty for different weight of individual questions.
-  * Different answer types, see also [Quizzes](Quizzes.md)
+  * Different answer types, see also [Quizzes](Quizzes)
 
 ## Gamification: Quizzes :black_circle:
 * Related Backlog Entries
@@ -137,7 +137,7 @@ Each feature description covers:
   * Use questions from Course Quizzes for Gamification Quizzes
   * Answer questions in Turbo Mode
 * Anything foreseeable to do that's not in the backlog yet?
-  * Alternative quiz modes like RexDuell, see [Quizzes](Quizzes.md) and [Gamification Ideas](Gamification--The-Story-of-IT-Rex.md).
+  * Alternative quiz modes like RexDuell, see [Quizzes](Quizzes) and [Gamification Ideas](Gamification--The-Story-of-IT-Rex).
   * Jokers, difficulty, scores
 
 ## Gamification: Progress Incentivization :black_circle:
@@ -151,7 +151,7 @@ Each feature description covers:
   * Visualize progess with IT-REX feeding state.
   * User ranking.
 * Anything foreseeable to do that's not in the backlog yet?
-  * See all Gamificaiton ideas in [The Story of IT-REX](Gamification--The-Story-of-IT-Rex.md) and [Ranking and Scoring](Gamification--Ranking-and-Scoring-System.md).
+  * See all Gamificaiton ideas in [The Story of IT-REX](Gamification--The-Story-of-IT-Rex) and [Ranking and Scoring](Gamification--Ranking-and-Scoring-System).
 
 
 ## Notifications :black_circle:
@@ -179,10 +179,10 @@ Each feature description covers:
   * Nope :smiley:
 
 ## ILIAS Integration :black_circle:
-This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View.md#application-level). Some technical research was done and documented:
-* [ILIAS API](Technical-Research--LMS--ILIAS-API.md)
-* [ILIAS Plugin Development](Technical-Research--LMS--ILIAS-Plugin-Development.md)
-* [ILIAS as Storage Solution](Technical-Research--LMS--ILIAS-Storage-Solution.md)
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View#application-level). Some technical research was done and documented:
+* [ILIAS API](Technical-Research--LMS--ILIAS-API)
+* [ILIAS Plugin Development](Technical-Research--LMS--ILIAS-Plugin-Development)
+* [ILIAS as Storage Solution](Technical-Research--LMS--ILIAS-Storage-Solution)
 
 ## Social Media Interaction :black_circle:
 * Related Backlog Entries
@@ -198,27 +198,27 @@ This feature was not closely considered for implementation yet, so no backlog en
   * watchlist/watch later functionality
 
 ## Moodle Integration :black_circle:
-This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View.md#application-level).
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. See [general thoughts on integrating external systems on application level](Application-Architecture--Implementation-View#application-level).
 Some technical research was done and documented:
-* [Moodle API](Technical-Research--LMS--Moodle-API.md)
-* [Moodle Misc](Technical-Research--LMS--Moodle-Misc..md)
-* [Moodle Setup](Technical-Research--LMS--Moodle-Setup.md)
+* [Moodle API](Technical-Research--LMS--Moodle-API)
+* [Moodle Misc](Technical-Research--LMS--Moodle-Misc.)
+* [Moodle Setup](Technical-Research--LMS--Moodle-Setup)
 
 ## Mobile Offline Behaviour :black_circle:
-This feature was not closely considered for implementation yet, so no backlog entries are available at all. 
+This feature was not closely considered for implementation yet, so no backlog entries are available at all.
 
 
 ## Desktop Client Offline Behaviour :black_circle:
-This feature was not closely considered for implementation yet, so no backlog entries are available at all. Some technical research was done regarding client frameworks that allow creating desktop apps. See [Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework.md) and subpages.
+This feature was not closely considered for implementation yet, so no backlog entries are available at all. Some technical research was done regarding client frameworks that allow creating desktop apps. See [Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework) and subpages.
 
 # Cross-cutting / non-feature Progress
 
-Some remarks should be made about the implementation progress regarding parts of IT-REX that do not directly map to one single feature. In this context, the esteemed reader may also want to refer to the list of [Known Bugs and Problems](IT-Rex-Implementation--Known-Bugs-and-Problems.md) that could not be resolved with the end of the project.
+Some remarks should be made about the implementation progress regarding parts of IT-REX that do not directly map to one single feature. In this context, the esteemed reader may also want to refer to the list of [Known Bugs and Problems](IT-Rex-Implementation--Known-Bugs-and-Problems) that could not be resolved with the end of the project.
 
 ## Mobile Application
 
-The Frontend is build with ReactNative. Expo is used to generate the web-archive, and may as well be used to create mobile apps for Android and iOS. This was also done in the beginning of the project, but in order to speed up the implementation progress, specific styling and testing on mobile platforms was ommitted. Consequently, this would have to be done in order to make the frontend ready for mobile apps. See also[Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework.md) and subpages.
+The Frontend is build with ReactNative. Expo is used to generate the web-archive, and may as well be used to create mobile apps for Android and iOS. This was also done in the beginning of the project, but in order to speed up the implementation progress, specific styling and testing on mobile platforms was ommitted. Consequently, this would have to be done in order to make the frontend ready for mobile apps. See also[Cross Platform Frameworks](Technical-Research--Cross-Platform-Framework) and subpages.
 
 ## Admin User Interface
 
-While an admin user was considered from the very beginning, no specific functionality and user interface was created for the admin user. See [User Access Management](Application-Architecture--User-Access-Management.md) for more information. Specific admin functionality may be that an admin can access a list of all courses, contents, etc and can modify, delete, ... anything that's in the applicatoin. A specific user interface for such application administration topics may be useful in the far future. Additionally, it might mnight make sense to add a system admin section that includes links to the JHipster Registry etc in order to provide an easy entry into the system for a system admin.
+While an admin user was considered from the very beginning, no specific functionality and user interface was created for the admin user. See [User Access Management](Application-Architecture--User-Access-Management) for more information. Specific admin functionality may be that an admin can access a list of all courses, contents, etc and can modify, delete, ... anything that's in the applicatoin. A specific user interface for such application administration topics may be useful in the far future. Additionally, it might mnight make sense to add a system admin section that includes links to the JHipster Registry etc in order to provide an easy entry into the system for a system admin.
