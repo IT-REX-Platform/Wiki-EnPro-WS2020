@@ -23,6 +23,7 @@ This page aims to provide an overview about the implementation progress that was
 - [Cross-cutting / non-feature Progress](#cross-cutting--non-feature-progress)
   - [Mobile Application](#mobile-application)
   - [Admin User Interface](#admin-user-interface)
+  - [Quality Assurance and Test Coverage](#quality-assurance-and-test-coverage)
 
 # High-level Progress Visualization
 
@@ -222,3 +223,9 @@ The Frontend is build with ReactNative. Expo is used to generate the web-archive
 ## Admin User Interface
 
 While an admin user was considered from the very beginning, no specific functionality and user interface was created for the admin user. See [User Access Management](Application-Architecture--User-Access-Management) for more information. Specific admin functionality may be that an admin can access a list of all courses, contents, etc and can modify, delete, ... anything that's in the applicatoin. A specific user interface for such application administration topics may be useful in the far future. Additionally, it might mnight make sense to add a system admin section that includes links to the JHipster Registry etc in order to provide an easy entry into the system for a system admin.
+
+## Quality Assurance and Test Coverage
+
+The original intentions for Quality Assurance are documented here: [Quality Assurance and Methods](./Development--Quality-Assurance-and-Methods). Due to rather slow implementation progress, code coverage was not enforced anymore after Feb 15, 2021. Cosequently, the actual coverage varies. 
+
+In this context, also refer to the list of [Known Bugs and Limitations](./IT-Rex-Implementation--Known-Bugs-and-Problems) that could not be solved in time anymore. 
