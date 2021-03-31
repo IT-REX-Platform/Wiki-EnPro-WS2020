@@ -1,2 +1,5 @@
 [Guide to implement new Microservices](How-to-Microservice)
+[How to run IT-REX for development](./Development--How-to-start-a-backend-service.md)
 [How to work with the Wiki](How-to-Wiki)
+[How to use IT-REX](./How-to-use-IT-REX)
+[How to operate IT-REX](./How-to-operate-IT-REX.md)
