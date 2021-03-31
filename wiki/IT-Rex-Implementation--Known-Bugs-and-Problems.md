@@ -27,7 +27,7 @@ The exceptions occur every time the watching of a video is started and continuou
 
 Perhaps this is a version incompatibility of two components that are used by Jhipster.
 
-A logfile of the thrown exception can be found [here](../resource/logs/zuulException).
+A logfile of the thrown exception can be found [here](https://github.com/IT-REX-Platform/Wiki/blob/main/wiki/resource/logs/zuulException.md).
 
 See also JIRA for open bug tickets: [IT-REX@Jira](https://it-rex.atlassian.net/jira/software/c/projects/ITREX/issues/ITREX-671?jql=project%20%3D%20%22ITREX%22%20ORDER%20BY%20created%20DESC)
 
