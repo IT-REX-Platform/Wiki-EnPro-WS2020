@@ -7,7 +7,7 @@ The goal of this guide is to set up IT-REX with Docker.
 | --- |
 
 <br/>
-___
+---
 <br/><br/>
 
 ## Prerequisites
