@@ -224,6 +224,9 @@ The Frontend is build with ReactNative. Expo is used to generate the web-archive
 
 While an admin user was considered from the very beginning, no specific functionality and user interface was created for the admin user. See [User Access Management](Application-Architecture--User-Access-Management) for more information. Specific admin functionality may be that an admin can access a list of all courses, contents, etc and can modify, delete, ... anything that's in the applicatoin. A specific user interface for such application administration topics may be useful in the far future. Additionally, it might mnight make sense to add a system admin section that includes links to the JHipster Registry etc in order to provide an easy entry into the system for a system admin.
 
+## Security
+The application is not configured securely. For operation "in the real world" several measures need to be taken into accout. E.g. https, encryption, certificates, rights management, etc. Furthermore only initial/hard coded secrets and keys are used. Those must be changed/generated for operating the system. In addition legal requirements need to be analyzed and taken into account.
+
 ## Quality Assurance and Test Coverage
 
 The original intentions for Quality Assurance are documented here: [Quality Assurance and Methods](./Development--Quality-Assurance-and-Methods). Due to rather slow implementation progress, code coverage was not enforced anymore after Feb 15, 2021. Cosequently, the actual coverage varies. 
