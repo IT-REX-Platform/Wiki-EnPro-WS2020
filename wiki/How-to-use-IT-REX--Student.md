@@ -40,13 +40,13 @@ When clicking on a specific course (e.g. on _"Programmierung und Softwareentwick
 
 The student is directed to the course timeline, which is necessary to track and compare personal and expected learning progress. This page also provides the student information about the chapters in the course and learning material, i.e. lecture videos and quizzes. This material is marked with labels indicating in which week the student should watch a video or solve a quiz. <br/>
 
-In order to compare the personal learning progress with the expected one, the student gets the finished, started and open learning tasks (on the right side of a chapter) displayed. This is the current learning progress. For the expected learning progress, the grey/green circles between the chapters show the status of the chapter:
+In order to compare the personal learning progress with the expected one, the student gets the finished, started and open learning tasks (on the right side of a chapter) displayed. This is the current learning progress. For the expected learning progress, the grey/green circles between the chapters represent the week that contents are scheduled for:
 
 ![Study-Progress](./Images/Student-Perspective/Study-Progress.png)
 
-- A _**grey outer**_ and _**grey inner**_ circle indicates that the chapter should be done in future. <br/>
-- The _**green outer**_ and _**grey inner**_ circle means that the student should work on the chapter in this week (i.e. right now). So the chapter has to be finished with the end of the week. <br/>
-- The _**green outer**_ and _**green inner**_ circle indicates a chapter which should already be done in the past. So the student should be finished and worked on that chapter. 
+- A _**grey outer**_ and _**grey inner**_ circle indicates that the week lies in the future. <br/>
+- The _**green outer**_ and _**grey inner**_ circle means that the student should work on the contents scheduled for this week (i.e. right now). So the contents have to be finished with the end of the week. <br/>
+- The _**green outer**_ and _**green inner**_ circle indicates a week in the past. So the student should be finished studying the content. 
 
 ## Study a course
 
@@ -74,4 +74,4 @@ After solving the quiz, the student receives feedback directly. <br/>
 IT-REX provides the quiz results in this way:
 
 ![Quiz-Results](./Images/Student-Perspective/Quiz-Results.png)
-(_Also here the answers in the picture are just for demo purposes_).
+(_Also here the answers in the picture are just for demo purposes_)
